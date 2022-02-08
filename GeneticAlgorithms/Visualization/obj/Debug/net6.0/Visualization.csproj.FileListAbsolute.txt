@@ -1,0 +1,12 @@
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Visualization.deps.json
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Visualization.dll
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\ref\Visualization.dll
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Visualization.pdb
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.csproj.AssemblyReference.cache
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.GeneratedMSBuildEditorConfig.editorconfig
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.AssemblyInfoInputs.cache
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.AssemblyInfo.cs
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.csproj.CoreCompileInputs.cache
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.dll
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\ref\Visualization.dll
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.pdb

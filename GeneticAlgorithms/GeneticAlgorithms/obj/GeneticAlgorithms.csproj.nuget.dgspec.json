@@ -1,17 +1,71 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Workspaces\\Coding Game\\GeneticAlgorithms\\GeneticAlgorithms\\GeneticAlgorithms.csproj": {}
+    "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\GeneticAlgorithms\\GeneticAlgorithms.csproj": {}
   },
   "projects": {
-    "C:\\Workspaces\\Coding Game\\GeneticAlgorithms\\GeneticAlgorithms\\GeneticAlgorithms.csproj": {
+    "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Workspaces\\Coding Game\\GeneticAlgorithms\\GeneticAlgorithms\\GeneticAlgorithms.csproj",
-        "projectName": "GeneticAlgorithms",
-        "projectPath": "C:\\Workspaces\\Coding Game\\GeneticAlgorithms\\GeneticAlgorithms\\GeneticAlgorithms.csproj",
+        "projectUniqueName": "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj",
+        "projectName": "Common",
+        "projectPath": "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj",
         "packagesPath": "C:\\Users\\jacob\\.nuget\\packages\\",
-        "outputPath": "C:\\Workspaces\\Coding Game\\GeneticAlgorithms\\GeneticAlgorithms\\obj\\",
+        "outputPath": "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jacob\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\GeneticAlgorithms\\GeneticAlgorithms.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\GeneticAlgorithms\\GeneticAlgorithms.csproj",
+        "projectName": "GeneticAlgorithms",
+        "projectPath": "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\GeneticAlgorithms\\GeneticAlgorithms.csproj",
+        "packagesPath": "C:\\Users\\jacob\\.nuget\\packages\\",
+        "outputPath": "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\GeneticAlgorithms\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jacob\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,7 +81,17 @@
         "frameworks": {
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj": {
+                "projectPath": "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj"
+              },
+              "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\IOParsing\\IOParsing.csproj": {
+                "projectPath": "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\IOParsing\\IOParsing.csproj"
+              },
+              "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Visualization\\Visualization.csproj": {
+                "projectPath": "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Visualization\\Visualization.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -55,6 +119,124 @@
             },
             "Microsoft.WindowsDesktop.App.WindowsForms": {
               "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\IOParsing\\IOParsing.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\IOParsing\\IOParsing.csproj",
+        "projectName": "IOParsing",
+        "projectPath": "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\IOParsing\\IOParsing.csproj",
+        "packagesPath": "C:\\Users\\jacob\\.nuget\\packages\\",
+        "outputPath": "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\IOParsing\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jacob\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj": {
+                "projectPath": "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Visualization\\Visualization.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Visualization\\Visualization.csproj",
+        "projectName": "Visualization",
+        "projectPath": "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Visualization\\Visualization.csproj",
+        "packagesPath": "C:\\Users\\jacob\\.nuget\\packages\\",
+        "outputPath": "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Visualization\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\jacob\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"

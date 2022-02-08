@@ -1,0 +1,12 @@
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\obj\Debug\net6.0\Common.csproj.AssemblyReference.cache
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\obj\Debug\net6.0\Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\obj\Debug\net6.0\Common.AssemblyInfoInputs.cache
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\obj\Debug\net6.0\Common.AssemblyInfo.cs
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\obj\Debug\net6.0\Common.csproj.CoreCompileInputs.cache
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\bin\Debug\net6.0\Common.deps.json
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\bin\Debug\net6.0\Common.dll
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\bin\Debug\net6.0\ref\Common.dll
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\bin\Debug\net6.0\Common.pdb
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\obj\Debug\net6.0\Common.dll
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\obj\Debug\net6.0\ref\Common.dll
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\obj\Debug\net6.0\Common.pdb

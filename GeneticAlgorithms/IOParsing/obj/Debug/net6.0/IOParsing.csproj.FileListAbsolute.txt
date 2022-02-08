@@ -1,0 +1,15 @@
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\bin\Debug\net6.0\IOParsing.deps.json
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\bin\Debug\net6.0\IOParsing.dll
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\bin\Debug\net6.0\ref\IOParsing.dll
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\bin\Debug\net6.0\IOParsing.pdb
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.GeneratedMSBuildEditorConfig.editorconfig
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.AssemblyInfoInputs.cache
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.AssemblyInfo.cs
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.csproj.CoreCompileInputs.cache
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.dll
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\ref\IOParsing.dll
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.pdb
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.csproj.AssemblyReference.cache
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\bin\Debug\net6.0\Common.dll
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\bin\Debug\net6.0\Common.pdb
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.csproj.CopyComplete

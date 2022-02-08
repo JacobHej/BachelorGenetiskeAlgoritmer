@@ -15,3 +15,27 @@ C:\Workspaces\Coding Game\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-w
 C:\Workspaces\Coding Game\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\ref\GeneticAlgorithms.dll
 C:\Workspaces\Coding Game\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.pdb
 C:\Workspaces\Coding Game\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.genruntimeconfig.cache
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\GeneticAlgorithms.exe
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\GeneticAlgorithms.deps.json
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\GeneticAlgorithms.runtimeconfig.json
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\GeneticAlgorithms.dll
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\ref\GeneticAlgorithms.dll
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\GeneticAlgorithms.pdb
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.csproj.AssemblyReference.cache
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.Form1.resources
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.csproj.GenerateResource.cache
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.AssemblyInfoInputs.cache
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.AssemblyInfo.cs
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.csproj.CoreCompileInputs.cache
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.dll
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\ref\GeneticAlgorithms.dll
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.pdb
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.genruntimeconfig.cache
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\Visualization.dll
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\Visualization.pdb
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.csproj.CopyComplete
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\IOParsing.dll
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\IOParsing.pdb
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\Common.dll
+C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\Common.pdb

@@ -8,4 +8,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj" />
+    <ProjectReference Include="..\IOParsing\IOParsing.csproj" />
+    <ProjectReference Include="..\Visualization\Visualization.csproj" />
+  </ItemGroup>
+
 </Project>

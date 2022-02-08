@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "PgtksjlhqxLqyWvqwR2Oikab1OHlTzNihqlzAA2FbRzWRcNeD1RJA1EkrbOeKGAdnwflWN2y58HfD62iovk7ew==",
+  "success": true,
+  "projectFilePath": "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Visualization\\Visualization.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jacob\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\jacob\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
