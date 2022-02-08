@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "cfb7bfdc-2037-4ce0-afb0-943a480587ee": {
+      "ProjectGuid": "cfb7bfdc-2037-4ce0-afb0-943a480587ee",
+      "DisplayName": "GeneticAlgorithms",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}

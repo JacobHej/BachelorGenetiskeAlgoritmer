@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "GeneticAlgorithms/1.0.0": {
+        "runtime": {
+          "GeneticAlgorithms.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "GeneticAlgorithms/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

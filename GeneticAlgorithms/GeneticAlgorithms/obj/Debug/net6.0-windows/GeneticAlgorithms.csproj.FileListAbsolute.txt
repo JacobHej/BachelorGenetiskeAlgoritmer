@@ -1,0 +1,17 @@
+C:\Workspaces\Coding Game\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\GeneticAlgorithms.exe
+C:\Workspaces\Coding Game\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\GeneticAlgorithms.deps.json
+C:\Workspaces\Coding Game\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\GeneticAlgorithms.runtimeconfig.json
+C:\Workspaces\Coding Game\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\GeneticAlgorithms.dll
+C:\Workspaces\Coding Game\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\ref\GeneticAlgorithms.dll
+C:\Workspaces\Coding Game\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\GeneticAlgorithms.pdb
+C:\Workspaces\Coding Game\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.csproj.AssemblyReference.cache
+C:\Workspaces\Coding Game\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.Form1.resources
+C:\Workspaces\Coding Game\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.csproj.GenerateResource.cache
+C:\Workspaces\Coding Game\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Workspaces\Coding Game\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.AssemblyInfoInputs.cache
+C:\Workspaces\Coding Game\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.AssemblyInfo.cs
+C:\Workspaces\Coding Game\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.csproj.CoreCompileInputs.cache
+C:\Workspaces\Coding Game\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.dll
+C:\Workspaces\Coding Game\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\ref\GeneticAlgorithms.dll
+C:\Workspaces\Coding Game\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.pdb
+C:\Workspaces\Coding Game\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.genruntimeconfig.cache
