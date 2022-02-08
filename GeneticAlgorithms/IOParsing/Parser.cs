@@ -12,6 +12,8 @@ namespace IOParsing
 
             var vertex = xml.ChildNodes[1].ChildNodes[5].ChildNodes;
 
+            var temp = xml.InnerText.Split(' ');
+
             Graph tsp = new Graph();
 
             foreach (XmlNode node in vertex)

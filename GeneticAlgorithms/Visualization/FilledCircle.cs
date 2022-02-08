@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace Visualization
 {
-    public class Node : IDrawable
+    public class FilledCircle : IDrawable
     {
         public readonly Point location;
         public readonly Size size;
         public readonly Color color;
 
-        public Node(Point location, Size size, Color color)
+        public FilledCircle(Point location, Size size, Color color)
         {
             this.location = location;
             this.size = size;

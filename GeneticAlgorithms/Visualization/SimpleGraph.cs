@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Visualization
 {
-    public class Graph : IDrawable
+    public class SimpleGraph : IDrawable
     {
-        public List<Node> Nodes = new List<Node>();
-        public List<Edge> Edges = new List<Edge>();
+        public List<FilledCircle> Nodes = new List<FilledCircle>();
+        public List<Line> Edges = new List<Line>();
 
         public void Draw(Graphics g)
         {
