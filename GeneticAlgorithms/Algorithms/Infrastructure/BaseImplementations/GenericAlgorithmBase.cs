@@ -7,29 +7,79 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Infrastructure.BaseImplementations
 {
-    public class GenericAlgorithmBase : IGeneticAlgorithm
+    public class GenericAlgorithmBase<TIndividual> : IGeneticAlgorithm<TIndividual> where TIndividual : IIndividual
     {
-        private ICrossover crossover;
-        private IMutator mutator;
-        private IFitnessCalculator fitnessCalculator;
-        private IPopulation population;
-        
-        public GenericAlgorithmBase(ICrossover crossover, IMutator mutator, IFitnessCalculator fitnessCalculator, IPopulation population)
+        private ICrossover<TIndividual> crossover;
+        private IMutator<TIndividual> mutator;
+        private IFitnessCalculator<TIndividual> fitnessCalculator;
+        private IPopulation<TIndividual> population;
+        private ISelector<TIndividual> selector;
+        private int fitness = int.MinValue;
+
+        public int maxAttempts = 1000;
+        public ILogger<TIndividual> Logger {get; private set;}
+
+        public GenericAlgorithmBase(
+            ICrossover<TIndividual> crossover, 
+            IMutator<TIndividual> mutator, 
+            IFitnessCalculator<TIndividual> fitnessCalculator, 
+            IPopulation<TIndividual> population, 
+            ISelector<TIndividual> selector, 
+            ILogger<TIndividual> logger)
         {
             this.crossover = crossover;
             this.mutator = mutator;
             this.fitnessCalculator = fitnessCalculator;
             this.population = population;
+            this.selector = selector;
+            this.Logger = logger;
         }
 
-        public void Evolve()
+
+        public virtual void Evolve()
         {
-            throw new NotImplementedException();
+            int count = 0;
+            while (count++ < maxAttempts)
+            {
+                IPopulation<TIndividual> newPopulation = new PopulationBase<TIndividual>(population.PopulationSize);
+
+                for (int i = 0; i < newPopulation.PopulationSize; i++)
+                {
+                    TIndividual individual1 = selector.Select(population);
+                    TIndividual individual2 = selector.Select(population);
+
+                    while (individual1.Equals(individual2))
+                    {
+                        individual1 = selector.Select(population);
+                        individual2 = selector.Select(population);
+                    }
+
+                    TIndividual newIndividual = crossover.Crossover(individual1, individual2);
+
+                    mutator.Mutate(newIndividual);
+
+                    newPopulation.Individuals.Add(newIndividual);
+                }
+
+                int newFitness = 0;
+                newPopulation.Individuals.ForEach(i => newFitness += fitnessCalculator.CalculateFitness(i));
+
+                if (newFitness > fitness)
+                {
+                    population = newPopulation;
+                    fitness = newFitness;
+                    Logger.LogGeneration(newPopulation, fitnessCalculator);
+                    return;
+                }
+            }
         }
 
-        public void Optimize()
+        public virtual void Optimize(Predicate<GenericAlgorithmBase<TIndividual>> stoppingCriteria)
         {
-            throw new NotImplementedException();
+            while (!stoppingCriteria.Invoke(this))
+            {
+                Evolve();
+            }
         }
     }
 }

@@ -3,6 +3,9 @@ using Visualization;
 using Visualization.Conversion;
 using Common;
 using Algorithms;
+using Algorithms.Infrastructure.Interfaces;
+using Algorithms.Infrastructure.BaseImplementations;
+using Algorithms.BitStuff;
 
 namespace GeneticAlgorithms
 {
@@ -58,7 +61,8 @@ namespace GeneticAlgorithms
                 this.interval_tb.Text = "Please enter a valid interval";
                 this.interval_tb.BackColor = Color.Red;
                 return;
-            } else
+            }
+            else
             {
                 this.interval_tb.BackColor = Color.White;
             }
@@ -70,10 +74,11 @@ namespace GeneticAlgorithms
 
             int interval = int.Parse(this.interval_tb.Text);
 
-            timedEvent = new TimedEvent(interval, new Action(() => {
-                    model.EvaluateGraph();
-                    this.Invoke(new Action(() => this.Invalidate(true)));
-                })) ;
+            timedEvent = new TimedEvent(interval, new Action(() =>
+            {
+                model.EvaluateGraph();
+                this.Invoke(new Action(() => this.Invalidate(true)));
+            }));
 
             timedEvent.Start();
         }
@@ -94,19 +99,34 @@ namespace GeneticAlgorithms
             this.graph_pb.Invalidate();
         }
 
-        private void test_btn_Click(object sender, EventArgs e)
-        {
-            this.files_lb.Items.Add("Test");
-        }
-
         private void files_lb_SelectedIndexChanged(object sender, EventArgs e)
-        {            
-            if(sender is ListBox lb && lb.SelectedItem is string s && !string.IsNullOrEmpty(s))
+        {
+            if (sender is ListBox lb && lb.SelectedItem is string s && !string.IsNullOrEmpty(s))
             {
                 model.LoadGraph(s);
                 this.loadedFile_lbl.Text = "Loaded File: " + s;
             }
-
         }
+
+        private GenericAlgorithmBase<BitStringIndividual> algorithm = new GenericAlgorithmBase<BitStringIndividual>(
+            new RandomSelectionBitStringCrossover(),
+            new OneOverNBitStringMutation(),
+            new OneMaxFitnessCalculator(),
+            new BitStringPopulation(2, 1000),
+            new RandomBitStringSelector(),
+            new LoggerBase<BitStringIndividual>());
+
+        private void test_btn_Click(object sender, EventArgs e)
+        {
+            algorithm.Optimize(new Predicate<GenericAlgorithmBase<BitStringIndividual>>((algorithm) =>
+            {
+                if (algorithm.Logger?.History.Count < 1)
+                {
+                    return false;
+                }
+                return algorithm.Logger?.History?.Last()?.HighestFitness == 1000;
+            }));
+        }
+
     }
 }

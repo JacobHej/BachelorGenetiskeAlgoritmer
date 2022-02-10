@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Infrastructure.BaseImplementations
 {
-    public abstract class CrossoverBase<TIndividual> : ICrossover<TIndividual> where TIndividual : IIndividual
+    public abstract class SelectorBase<TIndividual> : ISelector<TIndividual> where TIndividual : IIndividual
     {
-        public abstract TIndividual Crossover(TIndividual individual1, TIndividual individual2);
+        public abstract TIndividual Select(IPopulation<TIndividual> population);
     }
 }

@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Infrastructure.BaseImplementations
 {
-    public abstract class MutatorBase : IMutator
+    public abstract class MutatorBase<TIndividual> : IMutator<TIndividual> where TIndividual : IIndividual
     {
-        public abstract void Mutate(IIndividual individual);
+        public abstract void Mutate(TIndividual individual);
     }
 }

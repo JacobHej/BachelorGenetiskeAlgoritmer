@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Infrastructure.Interfaces
 {
-    public interface IFitnessCalculator<TIndividual> where TIndividual : IIndividual
+    public interface ISelector<TIndividual> where TIndividual : IIndividual
     {
-        public int CalculateFitness(TIndividual individual);
+        public TIndividual Select(IPopulation<TIndividual> population);
     }
 }

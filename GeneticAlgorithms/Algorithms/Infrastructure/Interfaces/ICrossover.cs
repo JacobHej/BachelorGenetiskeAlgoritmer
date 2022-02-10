@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Infrastructure.Interfaces
 {
-    public interface ICrossover
+    public interface ICrossover<TIndividual> where TIndividual : IIndividual
     {
-        public IIndividual Crossover(IIndividual individual1, IIndividual individual2);
+        public TIndividual Crossover(TIndividual individual1, TIndividual individual2);
     }
 }

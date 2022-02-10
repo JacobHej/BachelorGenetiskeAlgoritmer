@@ -7,8 +7,15 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Infrastructure.BaseImplementations
 {
-    public abstract class PopulationBase : IPopulation
+    public class PopulationBase<TIndividual> : IPopulation<TIndividual> where TIndividual : IIndividual
     {
-        public List<IIndividual> Individuals { get; private set; }
+        public List<TIndividual> Individuals { get; set; }
+        public int PopulationSize { get; }
+
+        public PopulationBase(int populationSize)
+        {
+            Individuals = new List<TIndividual>();
+            this.PopulationSize = populationSize;
+        }
     }
 }

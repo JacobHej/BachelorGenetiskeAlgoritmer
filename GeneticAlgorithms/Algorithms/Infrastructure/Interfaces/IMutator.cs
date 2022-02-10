@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Infrastructure.Interfaces
 {
-    public interface IMutator
+    public interface IMutator<TIndividual> where TIndividual : IIndividual
     {
-        public void Mutate(IIndividual individual);
+        public void Mutate(TIndividual individual);
     }
 }

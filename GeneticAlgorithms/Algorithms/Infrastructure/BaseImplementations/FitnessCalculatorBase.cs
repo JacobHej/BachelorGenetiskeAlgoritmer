@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Infrastructure.BaseImplementations
 {
-    public abstract class FitnessCalculatorBase : IFitnessCalculator
+    public abstract class FitnessCalculatorBase<TIndividual> : IFitnessCalculator<TIndividual> where TIndividual : IIndividual
     {
-        public abstract int CalculateFitness(IPopulation population);
+        public abstract int CalculateFitness(TIndividual individual);
     }
 }
