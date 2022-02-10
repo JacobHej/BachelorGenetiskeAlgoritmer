@@ -5,10 +5,10 @@ namespace IOParsing
 {
     public class Parser
     {
-        public Graph LoadGraph()
+        public Graph LoadGraph(string path)
         {
             XmlDocument xml = new XmlDocument();
-            xml.Load("C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\a280.xml");
+            xml.Load(path);
 
             var vertex = xml.ChildNodes[1].ChildNodes[5].ChildNodes;
 

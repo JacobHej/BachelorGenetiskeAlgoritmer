@@ -9,9 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Algorithms\Algorithms.csproj" />
     <ProjectReference Include="..\Common\Common.csproj" />
     <ProjectReference Include="..\IOParsing\IOParsing.csproj" />
     <ProjectReference Include="..\Visualization\Visualization.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Rescources\" />
   </ItemGroup>
 
 </Project>

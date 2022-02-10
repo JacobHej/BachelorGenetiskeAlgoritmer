@@ -27,19 +27,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jacob\\.nuget\\packages\\": {}
+    "C:\\Users\\Jacob Hejlsberg\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\IOParsing\\IOParsing.csproj",
+      "projectUniqueName": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\IOParsing\\IOParsing.csproj",
       "projectName": "IOParsing",
-      "projectPath": "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\IOParsing\\IOParsing.csproj",
-      "packagesPath": "C:\\Users\\jacob\\.nuget\\packages\\",
-      "outputPath": "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\IOParsing\\obj\\",
+      "projectPath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\IOParsing\\IOParsing.csproj",
+      "packagesPath": "C:\\Users\\Jacob Hejlsberg\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\IOParsing\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\jacob\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jacob Hejlsberg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -53,8 +60,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj": {
-              "projectPath": "C:\\Workspaces\\BacehelorProject\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj"
+            "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj": {
+              "projectPath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj"
             }
           }
         }
@@ -83,7 +90,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

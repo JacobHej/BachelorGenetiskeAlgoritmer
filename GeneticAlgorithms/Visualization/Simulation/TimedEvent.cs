@@ -11,16 +11,17 @@ namespace Visualization
         public TimedEvent(int interval, Action action)
         {
             this.interval = interval;
+
             this.eventAction = action;
+
+            this.timer = new System.Timers.Timer();
+            this.timer.Interval = interval;
+            this.timer.AutoReset = true;
+            this.timer.Elapsed += OnTimedEvent;
         }
 
         public void Start()
         {
-            timer = new System.Timers.Timer();
-
-            timer.Interval = interval;
-            timer.AutoReset = true;
-            timer.Elapsed += OnTimedEvent;
             timer.Start();
         }
 
