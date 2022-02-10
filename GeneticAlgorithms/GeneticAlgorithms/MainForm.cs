@@ -6,19 +6,25 @@ using Algorithms;
 using Algorithms.Infrastructure.Interfaces;
 using Algorithms.Infrastructure.BaseImplementations;
 using Algorithms.BitStuff;
+using Visualization.Components;
 
 namespace GeneticAlgorithms
 {
     public partial class MainForm : Form
     {
         private MainFormModel model;
+        SimpleBitStringAlgorithmModel modelAlgo;
         private TimedEvent timedEvent;
+        private bool GraphOrBit = false;
 
         public MainForm()
         {
-            model = new MainFormModel();
             InitializeComponent();
+
+            model = new MainFormModel();
             this.files_lb.Items.AddRange(model.Files.Keys.ToArray());
+
+            modelAlgo = new SimpleBitStringAlgorithmModel();
         }
 
         #region Paint events
@@ -30,16 +36,32 @@ namespace GeneticAlgorithms
 
         private void graph_pb_Paint(object sender, PaintEventArgs e)
         {
-            if (model.EvaluatedGraph == null) return;
+            if (GraphOrBit)
+            {
+                if (model.EvaluatedGraph == null) return;
 
-            int padding = 20;
+                int padding = 20;
 
-            SimpleGraph graph = Converter.ConvertToSimpleGraph(
-                model.EvaluatedGraph,
-                new Point(graph_pb.Width / 2, graph_pb.Height / 2),
-                Math.Min(graph_pb.Width, graph_pb.Height) / 2 - padding);
+                SimpleGraph graph = Converter.ConvertToSimpleGraph(
+                    model.EvaluatedGraph,
+                    new Point(graph_pb.Width / 2, graph_pb.Height / 2),
+                    Math.Min(graph_pb.Width, graph_pb.Height) / 2 - padding);
 
-            graph.Draw(e.Graphics);
+                graph.Draw(e.Graphics);
+            }
+            else
+            {
+                if (modelAlgo.algorithm.Logger.History.Count > 0)
+                {
+                    Chart chart = new Chart(200, 400, new Point(50, 50), "Latest Population");
+                    chart.values.AddRange(modelAlgo.algorithm.Logger.History.Last().IndividualFitness.Values.Select(v => (double)v).ToList());
+                    chart.Draw(e.Graphics);
+
+                    Chart chartBest = new Chart(200, 400, new Point(50, 450), "Best Of Each Population");
+                    modelAlgo.algorithm.Logger.History.ForEach(v => chartBest.values.Add(v.HighestFitness));
+                    chartBest.Draw(e.Graphics);
+                }
+            }           
         }
 
         private void timesEvaluated_lbl_Paint(object sender, PaintEventArgs e)
@@ -50,8 +72,16 @@ namespace GeneticAlgorithms
 
         private void evaluate_btn_Click(object sender, EventArgs e)
         {
-            model.EvaluateGraph();
-            this.Invalidate(true);
+            if (GraphOrBit)
+            {
+                model.EvaluateGraph();
+                this.Invalidate(true);
+            }
+            else
+            {
+                modelAlgo.algorithm.Evolve();
+                this.graph_pb.Invalidate();
+            }
         }
 
         private void play_btn_Click(object sender, EventArgs e)
@@ -76,7 +106,15 @@ namespace GeneticAlgorithms
 
             timedEvent = new TimedEvent(interval, new Action(() =>
             {
-                model.EvaluateGraph();
+                if (GraphOrBit)
+                {
+                    model.EvaluateGraph();
+                }
+                else
+                {
+                    modelAlgo.algorithm.Evolve();
+                }
+
                 this.Invoke(new Action(() => this.Invalidate(true)));
             }));
 
@@ -95,7 +133,21 @@ namespace GeneticAlgorithms
 
         private void clear_btn_Click(object sender, EventArgs e)
         {
-            model.Clear();
+            if (GraphOrBit)
+            {
+                model.Clear();
+            }
+            else
+            {
+                modelAlgo.algorithm = new GenericAlgorithmBase<BitStringIndividual>(
+                    new RandomSelectionBitStringCrossover(),
+                    new OneOverNBitStringMutation(),
+                    new OneMaxFitnessCalculator(),
+                    new BitStringPopulation(20, 100),
+                    new RandomBitStringSelector(),
+                    new LoggerBase<BitStringIndividual>());
+            }
+
             this.graph_pb.Invalidate();
         }
 
@@ -108,25 +160,32 @@ namespace GeneticAlgorithms
             }
         }
 
-        private GenericAlgorithmBase<BitStringIndividual> algorithm = new GenericAlgorithmBase<BitStringIndividual>(
-            new RandomSelectionBitStringCrossover(),
-            new OneOverNBitStringMutation(),
-            new OneMaxFitnessCalculator(),
-            new BitStringPopulation(2, 1000),
-            new RandomBitStringSelector(),
-            new LoggerBase<BitStringIndividual>());
-
         private void test_btn_Click(object sender, EventArgs e)
         {
-            algorithm.Optimize(new Predicate<GenericAlgorithmBase<BitStringIndividual>>((algorithm) =>
+            modelAlgo.algorithm.Optimize(new Predicate<GenericAlgorithmBase<BitStringIndividual>>((algorithm) =>
             {
                 if (algorithm.Logger?.History.Count < 1)
                 {
                     return false;
                 }
-                return algorithm.Logger?.History?.Last()?.HighestFitness == 1000;
+                return algorithm.Logger?.History?.Last()?.HighestFitness == 100;
             }));
+
+            this.graph_pb.Invalidate();
         }
 
+        private void bit_btn_Click(object sender, EventArgs e)
+        {
+            this.bit_btn.Enabled = false;
+            this.graph_btn.Enabled = true;
+            GraphOrBit = false;
+        }
+
+        private void graph_btn_Click(object sender, EventArgs e)
+        {
+            this.bit_btn.Enabled = true;
+            this.graph_btn.Enabled = false;
+            GraphOrBit = true;
+        }
     }
 }

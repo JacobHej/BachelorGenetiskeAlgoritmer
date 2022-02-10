@@ -39,6 +39,8 @@
             this.files_lb = new System.Windows.Forms.ListBox();
             this.test_btn = new System.Windows.Forms.Button();
             this.loadedFile_lbl = new System.Windows.Forms.Label();
+            this.bit_btn = new System.Windows.Forms.Button();
+            this.graph_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.graph_pb)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,12 +145,12 @@
             // test_btn
             // 
             this.test_btn.BackColor = System.Drawing.Color.White;
-            this.test_btn.Location = new System.Drawing.Point(885, 663);
+            this.test_btn.Location = new System.Drawing.Point(885, 405);
             this.test_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.test_btn.Name = "test_btn";
-            this.test_btn.Size = new System.Drawing.Size(263, 37);
+            this.test_btn.Size = new System.Drawing.Size(132, 37);
             this.test_btn.TabIndex = 9;
-            this.test_btn.Text = "Test";
+            this.test_btn.Text = "Optimize";
             this.test_btn.UseVisualStyleBackColor = false;
             this.test_btn.Click += new System.EventHandler(this.test_btn_Click);
             // 
@@ -162,12 +164,35 @@
             this.loadedFile_lbl.TabIndex = 10;
             this.loadedFile_lbl.Text = "Loaded File:";
             // 
+            // bit_btn
+            // 
+            this.bit_btn.Enabled = false;
+            this.bit_btn.Location = new System.Drawing.Point(885, 362);
+            this.bit_btn.Name = "bit_btn";
+            this.bit_btn.Size = new System.Drawing.Size(132, 38);
+            this.bit_btn.TabIndex = 11;
+            this.bit_btn.Text = "Select Bit";
+            this.bit_btn.UseVisualStyleBackColor = true;
+            this.bit_btn.Click += new System.EventHandler(this.bit_btn_Click);
+            // 
+            // graph_btn
+            // 
+            this.graph_btn.Location = new System.Drawing.Point(1023, 362);
+            this.graph_btn.Name = "graph_btn";
+            this.graph_btn.Size = new System.Drawing.Size(125, 38);
+            this.graph_btn.TabIndex = 12;
+            this.graph_btn.Text = "Select Graph";
+            this.graph_btn.UseVisualStyleBackColor = true;
+            this.graph_btn.Click += new System.EventHandler(this.graph_btn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(1168, 712);
+            this.Controls.Add(this.graph_btn);
+            this.Controls.Add(this.bit_btn);
             this.Controls.Add(this.loadedFile_lbl);
             this.Controls.Add(this.test_btn);
             this.Controls.Add(this.files_lb);
@@ -202,5 +227,7 @@
         private ListBox files_lb;
         private Button test_btn;
         private Label loadedFile_lbl;
+        private Button bit_btn;
+        private Button graph_btn;
     }
 }

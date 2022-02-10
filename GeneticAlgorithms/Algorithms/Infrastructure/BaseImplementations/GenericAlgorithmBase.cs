@@ -36,30 +36,42 @@ namespace Algorithms.Infrastructure.BaseImplementations
         }
 
 
-        public virtual void Evolve()
+        public virtual async Task Evolve()
         {
             int count = 0;
+            object lockobj = new object();
+
             while (count++ < maxAttempts)
             {
                 IPopulation<TIndividual> newPopulation = new PopulationBase<TIndividual>(population.PopulationSize);
 
+                //Task[] tasks = new Task[population.PopulationSize];
+
                 for (int i = 0; i < newPopulation.PopulationSize; i++)
                 {
-                    TIndividual individual1 = selector.Select(population);
-                    TIndividual individual2 = selector.Select(population);
+                    //tasks[i] = Task.Run(() =>
+                    //{
+                        TIndividual individual1 = selector.Select(population);
+                        TIndividual individual2 = selector.Select(population);
 
-                    while (individual1.Equals(individual2))
-                    {
-                        individual1 = selector.Select(population);
-                        individual2 = selector.Select(population);
-                    }
+                        while (individual1.Equals(individual2))
+                        {
+                            individual1 = selector.Select(population);
+                            individual2 = selector.Select(population);
+                        }
 
-                    TIndividual newIndividual = crossover.Crossover(individual1, individual2);
+                        TIndividual newIndividual = crossover.Crossover(individual1, individual2);
 
-                    mutator.Mutate(newIndividual);
+                        mutator.Mutate(newIndividual);
 
-                    newPopulation.Individuals.Add(newIndividual);
+                        lock (lockobj)
+                        {
+                            newPopulation.Individuals.Add(newIndividual);
+                        }
+                   // });
                 }
+
+                //await Task.WhenAll(tasks);
 
                 int newFitness = 0;
                 newPopulation.Individuals.ForEach(i => newFitness += fitnessCalculator.CalculateFitness(i));

@@ -12,17 +12,18 @@ namespace Visualization.Components
         private Color color;
         Point p1;
         Point p2;
-
-        public ChartLine(Point p1, Point p2, Color color)
+        float width;
+        public ChartLine(Point p1, Point p2, Color color, float width)
         {
             this.p1 = p1;
             this.p2 = p2;
             this.color = color;
+            this.width = width;
         }
 
         public void Draw(Graphics g)
         {
-            g.DrawLine(new Pen(new SolidBrush(color)), p1, p2);
+            g.DrawLine(new Pen(new SolidBrush(color), width), p1, p2);
         }
     }
 }

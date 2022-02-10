@@ -14,7 +14,7 @@ namespace GeneticAlgorithms
 
             RescourceManager.ScanRescources();
 
-            Application.Run(new MainForm());
+            Application.Run(new BitManipulation());
         }
     }
 }
