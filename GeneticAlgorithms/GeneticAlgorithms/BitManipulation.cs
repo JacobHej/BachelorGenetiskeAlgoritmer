@@ -47,13 +47,20 @@ namespace GeneticAlgorithms
 
         private async void evolve_btn_Click(object sender, EventArgs e)
         {
-            await model.Evolve();
+            await Task.Run(async () =>
+            {
+                await model.Evolve();
+            });
             this.data_pb.Invalidate();
         }
 
-        private void optimize_btn_Click(object sender, EventArgs e)
+        private async void optimize_btn_Click(object sender, EventArgs e)
         {
-           model.Optimize();
+            await Task.Run(async () =>
+            {
+                await model.Optimize();
+            });
+
            this.data_pb.Invalidate();
         }
 
@@ -77,9 +84,9 @@ namespace GeneticAlgorithms
 
             int interval = int.Parse(this.interval_tb.Text);
 
-            model.EvolutionSimulation = new TimedEvent(interval, new Action(() =>
+            model.EvolutionSimulation = new TimedEvent(interval, new Action(async () =>
             {
-                model.algorithm.Evolve();
+                await model.Evolve();
                 this.Invoke(new Action(() => this.Invalidate(true)));
             }));
 
@@ -102,14 +109,45 @@ namespace GeneticAlgorithms
             if (model.algorithm.Logger.History.Count > 0)
             {
                 Chart chart = new Chart(200, 400, new Point(50, 25), "Latest Population");
-                chart.values.AddRange(model.algorithm.Logger.History.Last().IndividualFitness.Values.Select(v => (double)v).ToList());
+                chart.values.AddRange(model.SelectedGeneration.IndividualFitness.Values.Select(v => (double)v).ToList());
                 chart.Draw(e.Graphics);
 
                 Chart chartBest = new Chart(200, 400, new Point(50, 350), "Best Of Each Population");
                 model.algorithm.Logger.History.ForEach(v => chartBest.values.Add(v.HighestFitness));
                 chartBest.Draw(e.Graphics);
+
+                e.Graphics.DrawString("Generation: " + model.SelectedgenerationNumber, new Font("Arial", 16), new SolidBrush(Color.Black), new Point(50, 600));
             }
         }
         #endregion
+
+        private async void test_btn_Click(object sender, EventArgs e)
+        {
+            Task[] tasks = new Task[10];
+
+            for (int i = 0; i < 10; i++)
+            {
+                tasks[i] = Task.Run(async () =>
+                {
+                    await Task.Delay(1000);
+                });
+            }
+
+            await Task.WhenAll(tasks);
+
+            this.test_btn.Text = "DONE!";
+        }
+
+        private void prevGen_btn_Click(object sender, EventArgs e)
+        {
+            model.SelectPreviousGeneration();
+            this.data_pb.Invalidate();
+        }
+
+        private void nextGen_btn_Click(object sender, EventArgs e)
+        {
+            model.SelectNextGeneration();
+            this.data_pb.Invalidate();
+        }
     }
 }

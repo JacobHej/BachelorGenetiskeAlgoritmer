@@ -22,6 +22,9 @@ namespace GeneticAlgorithms
 
         public TimedEvent EvolutionSimulation;
 
+        public Generation<BitStringIndividual> SelectedGeneration;
+        public int SelectedgenerationNumber => algorithm.Logger.History.IndexOf(SelectedGeneration);
+
         public int population = 10;
         public int bitLength = 100;
         public bool UseProbabilitySelector = false;
@@ -40,10 +43,12 @@ namespace GeneticAlgorithms
         public async Task Evolve()
         {
             await algorithm.Evolve();
+            SelectedGeneration = algorithm.Logger.History.Last();
         }
-        public void Optimize()
+
+        public async Task Optimize()
         {
-            algorithm.Optimize(new Predicate<GenericAlgorithmBase<BitStringIndividual>>((algorithm) =>
+            await algorithm.Optimize(new Predicate<GenericAlgorithmBase<BitStringIndividual>>((algorithm) =>
             {
                 if (algorithm.Logger?.History.Count < 1)
                 {
@@ -51,6 +56,26 @@ namespace GeneticAlgorithms
                 }
                 return algorithm.Logger?.History?.Last()?.HighestFitness == bitLength;
             }));
+
+            SelectedGeneration = algorithm.Logger.History.Last();
+        }
+
+        public void SelectPreviousGeneration()
+        {
+            int index = algorithm.Logger.History.IndexOf(SelectedGeneration);
+
+            if (index - 1 < 0) return;
+
+            SelectedGeneration = algorithm.Logger.History[index - 1];
+        }
+
+        public void SelectNextGeneration()
+        {
+            int index = algorithm.Logger.History.IndexOf(SelectedGeneration);
+
+            if (index + 1 >= algorithm.Logger.History.Count) return;
+
+            SelectedGeneration = algorithm.Logger.History[index + 1];
         }
     }
 }

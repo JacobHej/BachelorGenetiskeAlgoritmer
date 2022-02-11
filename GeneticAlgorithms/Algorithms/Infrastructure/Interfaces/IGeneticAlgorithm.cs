@@ -10,7 +10,7 @@ namespace Algorithms.Infrastructure.Interfaces
     public interface IGeneticAlgorithm<TIndividual> where TIndividual : IIndividual
     {
         public Task Evolve();
-        public void Optimize(Predicate<GenericAlgorithmBase<TIndividual>> p);
+        public Task Optimize(Predicate<GenericAlgorithmBase<TIndividual>> p);
 
         public ILogger<TIndividual> Logger { get; }
     }

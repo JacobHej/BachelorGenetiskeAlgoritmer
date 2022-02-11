@@ -45,33 +45,26 @@ namespace Algorithms.Infrastructure.BaseImplementations
             {
                 IPopulation<TIndividual> newPopulation = new PopulationBase<TIndividual>(population.PopulationSize);
 
-                //Task[] tasks = new Task[population.PopulationSize];
-
                 for (int i = 0; i < newPopulation.PopulationSize; i++)
                 {
-                    //tasks[i] = Task.Run(() =>
-                    //{
-                        TIndividual individual1 = selector.Select(population);
-                        TIndividual individual2 = selector.Select(population);
+                    TIndividual individual1 = selector.Select(population);
+                    TIndividual individual2 = selector.Select(population);
 
-                        while (individual1.Equals(individual2))
-                        {
-                            individual1 = selector.Select(population);
-                            individual2 = selector.Select(population);
-                        }
+                    while (individual1.Equals(individual2))
+                    {
+                        individual1 = selector.Select(population);
+                        individual2 = selector.Select(population);
+                    }
 
-                        TIndividual newIndividual = crossover.Crossover(individual1, individual2);
+                    TIndividual newIndividual = crossover.Crossover(individual1, individual2);
 
-                        mutator.Mutate(newIndividual);
+                    mutator.Mutate(newIndividual);
 
-                        lock (lockobj)
-                        {
-                            newPopulation.Individuals.Add(newIndividual);
-                        }
-                   // });
+                    lock (lockobj)
+                    {
+                        newPopulation.Individuals.Add(newIndividual);
+                    }
                 }
-
-                //await Task.WhenAll(tasks);
 
                 int newFitness = 0;
                 newPopulation.Individuals.ForEach(i => newFitness += fitnessCalculator.CalculateFitness(i));
@@ -86,11 +79,11 @@ namespace Algorithms.Infrastructure.BaseImplementations
             }
         }
 
-        public virtual void Optimize(Predicate<GenericAlgorithmBase<TIndividual>> stoppingCriteria)
+        public virtual async Task Optimize(Predicate<GenericAlgorithmBase<TIndividual>> stoppingCriteria)
         {
             while (!stoppingCriteria.Invoke(this))
             {
-                Evolve();
+               await Evolve();
             }
         }
     }

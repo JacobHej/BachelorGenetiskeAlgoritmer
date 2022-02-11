@@ -44,6 +44,7 @@ namespace Visualization.Components
             }
 
             g.DrawString(titel, new Font("Arial", 16), new SolidBrush(Color.Black), new Point(lowerLeft.X, lowerLeft.Y + 10));
+            g.DrawString("Highest Value", new Font("Arial", 16), new SolidBrush(Color.Black), new Point(location.X, location.Y - 30));
             g.DrawString(maxVal.ToString(), new Font("Arial", 16), new SolidBrush(Color.Black), new Point(location.X - 15 * maxVal.ToString().Length, location.Y));
         }
     }

@@ -37,6 +37,7 @@
             this.mutation_grp = new System.Windows.Forms.GroupBox();
             this.oneOverNMutation_rb = new System.Windows.Forms.RadioButton();
             this.selector_grp = new System.Windows.Forms.GroupBox();
+            this.probabilitySelector_rb = new System.Windows.Forms.RadioButton();
             this.randomSelection_rb = new System.Windows.Forms.RadioButton();
             this.createAlgorithm_btn = new System.Windows.Forms.Button();
             this.evolve_btn = new System.Windows.Forms.Button();
@@ -49,7 +50,9 @@
             this.bitStringLength_lbl = new System.Windows.Forms.Label();
             this.bitStringLength_tb = new System.Windows.Forms.TextBox();
             this.interval_lbl = new System.Windows.Forms.Label();
-            this.probabilitySelector_rb = new System.Windows.Forms.RadioButton();
+            this.test_btn = new System.Windows.Forms.Button();
+            this.prevGen_btn = new System.Windows.Forms.Button();
+            this.nextGen_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.data_pb)).BeginInit();
             this.crossover_grp.SuspendLayout();
             this.mutation_grp.SuspendLayout();
@@ -150,6 +153,19 @@
             this.selector_grp.Size = new System.Drawing.Size(439, 42);
             this.selector_grp.TabIndex = 7;
             this.selector_grp.TabStop = false;
+            // 
+            // probabilitySelector_rb
+            // 
+            this.probabilitySelector_rb.AutoSize = true;
+            this.probabilitySelector_rb.BackColor = System.Drawing.Color.Transparent;
+            this.probabilitySelector_rb.ForeColor = System.Drawing.Color.White;
+            this.probabilitySelector_rb.Location = new System.Drawing.Point(141, 17);
+            this.probabilitySelector_rb.Name = "probabilitySelector_rb";
+            this.probabilitySelector_rb.Size = new System.Drawing.Size(133, 19);
+            this.probabilitySelector_rb.TabIndex = 1;
+            this.probabilitySelector_rb.TabStop = true;
+            this.probabilitySelector_rb.Text = "Probability Selection";
+            this.probabilitySelector_rb.UseVisualStyleBackColor = false;
             // 
             // randomSelection_rb
             // 
@@ -275,18 +291,35 @@
             this.interval_lbl.TabIndex = 18;
             this.interval_lbl.Text = "Interval (ms)";
             // 
-            // probabilitySelector_rb
+            // test_btn
             // 
-            this.probabilitySelector_rb.AutoSize = true;
-            this.probabilitySelector_rb.BackColor = System.Drawing.Color.Transparent;
-            this.probabilitySelector_rb.ForeColor = System.Drawing.Color.White;
-            this.probabilitySelector_rb.Location = new System.Drawing.Point(141, 17);
-            this.probabilitySelector_rb.Name = "probabilitySelector_rb";
-            this.probabilitySelector_rb.Size = new System.Drawing.Size(133, 19);
-            this.probabilitySelector_rb.TabIndex = 1;
-            this.probabilitySelector_rb.TabStop = true;
-            this.probabilitySelector_rb.Text = "Probability Selection";
-            this.probabilitySelector_rb.UseVisualStyleBackColor = false;
+            this.test_btn.Location = new System.Drawing.Point(881, 411);
+            this.test_btn.Name = "test_btn";
+            this.test_btn.Size = new System.Drawing.Size(97, 123);
+            this.test_btn.TabIndex = 19;
+            this.test_btn.Text = "Test";
+            this.test_btn.UseVisualStyleBackColor = true;
+            this.test_btn.Click += new System.EventHandler(this.test_btn_Click);
+            // 
+            // prevGen_btn
+            // 
+            this.prevGen_btn.Location = new System.Drawing.Point(542, 411);
+            this.prevGen_btn.Name = "prevGen_btn";
+            this.prevGen_btn.Size = new System.Drawing.Size(85, 56);
+            this.prevGen_btn.TabIndex = 20;
+            this.prevGen_btn.Text = "Previous Generation";
+            this.prevGen_btn.UseVisualStyleBackColor = true;
+            this.prevGen_btn.Click += new System.EventHandler(this.prevGen_btn_Click);
+            // 
+            // nextGen_btn
+            // 
+            this.nextGen_btn.Location = new System.Drawing.Point(542, 482);
+            this.nextGen_btn.Name = "nextGen_btn";
+            this.nextGen_btn.Size = new System.Drawing.Size(85, 52);
+            this.nextGen_btn.TabIndex = 21;
+            this.nextGen_btn.Text = "Next Generation";
+            this.nextGen_btn.UseVisualStyleBackColor = true;
+            this.nextGen_btn.Click += new System.EventHandler(this.nextGen_btn_Click);
             // 
             // BitManipulation
             // 
@@ -294,6 +327,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.ClientSize = new System.Drawing.Size(1025, 679);
+            this.Controls.Add(this.nextGen_btn);
+            this.Controls.Add(this.prevGen_btn);
+            this.Controls.Add(this.test_btn);
             this.Controls.Add(this.interval_lbl);
             this.Controls.Add(this.bitStringLength_lbl);
             this.Controls.Add(this.bitStringLength_tb);
@@ -350,5 +386,8 @@
         private TextBox bitStringLength_tb;
         private Label interval_lbl;
         private RadioButton probabilitySelector_rb;
+        private Button test_btn;
+        private Button prevGen_btn;
+        private Button nextGen_btn;
     }
 }
