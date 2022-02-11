@@ -1,6 +1,7 @@
 ﻿using Algorithms;
 using Algorithms.BitStuff;
 using Algorithms.Infrastructure.BaseImplementations;
+using Benchmarking;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -123,19 +124,37 @@ namespace GeneticAlgorithms
 
         private async void test_btn_Click(object sender, EventArgs e)
         {
-            Task[] tasks = new Task[10];
+            //Task[] tasks = new Task[10];
 
-            for (int i = 0; i < 10; i++)
-            {
-                tasks[i] = Task.Run(async () =>
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    tasks[i] = Task.Run(async () =>
+            //    {
+            //        await Task.Delay(1000);
+            //    });
+            //}
+
+            //await Task.WhenAll(tasks);
+
+            //this.test_btn.Text = "DONE!";
+
+            var result = await Benchmarker.Benchmark<BitStringIndividual>(
+                new Func<GenericAlgorithmBase<BitStringIndividual>>(() => 
+                    new GenericAlgorithmBase<BitStringIndividual>(
+                        new RandomSelectionBitStringCrossover(),
+                        new OneOverNBitStringMutation(),
+                        new OneMaxFitnessCalculator(),
+                        new BitStringPopulation(10, 100),
+                        new RandomBitStringSelector(),
+                        new LoggerBase<BitStringIndividual>())),
+                new Predicate<GenericAlgorithmBase<BitStringIndividual>>((algorithm) =>
                 {
-                    await Task.Delay(1000);
-                });
-            }
-
-            await Task.WhenAll(tasks);
-
-            this.test_btn.Text = "DONE!";
+                    if (algorithm.Logger?.History.Count < 1)
+                    {
+                        return false;
+                    }
+                    return algorithm.Logger?.History?.Last()?.HighestFitness == 100;
+                }));
         }
 
         private void prevGen_btn_Click(object sender, EventArgs e)

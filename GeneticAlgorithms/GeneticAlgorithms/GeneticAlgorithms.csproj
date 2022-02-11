@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Algorithms\Algorithms.csproj" />
+    <ProjectReference Include="..\Benchmarking\Benchmarking.csproj" />
     <ProjectReference Include="..\Common\Common.csproj" />
     <ProjectReference Include="..\IOParsing\IOParsing.csproj" />
     <ProjectReference Include="..\Visualization\Visualization.csproj" />

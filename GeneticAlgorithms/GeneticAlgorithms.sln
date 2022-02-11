@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Algorithms", "Algorithms\Algorithms.csproj", "{C49C8226-5CD5-4528-8B99-A7894A1778A9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Benchmarking", "Benchmarking\Benchmarking.csproj", "{F29D1ECE-AA82-44BB-9E80-CCC4AD54D9E6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{C49C8226-5CD5-4528-8B99-A7894A1778A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C49C8226-5CD5-4528-8B99-A7894A1778A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C49C8226-5CD5-4528-8B99-A7894A1778A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F29D1ECE-AA82-44BB-9E80-CCC4AD54D9E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F29D1ECE-AA82-44BB-9E80-CCC4AD54D9E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F29D1ECE-AA82-44BB-9E80-CCC4AD54D9E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F29D1ECE-AA82-44BB-9E80-CCC4AD54D9E6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
