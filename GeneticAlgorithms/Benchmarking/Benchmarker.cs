@@ -6,10 +6,8 @@ namespace Benchmarking
 {
     public static class Benchmarker
     {
-        private static int amountOfIterations = 10;
-        private static int timeout = 100000; // 100 seconds
 
-        public static async Task<BenchmarkSummary<TIndividual>> Benchmark<TIndividual>(Func<IGeneticAlgorithm<TIndividual>> algorithmFactory, Predicate<GenericAlgorithmBase<TIndividual>> stoppingCriteria) where TIndividual : IIndividual
+        public static async Task<BenchmarkSummary<TIndividual>> Benchmark<TIndividual>(Func<IGeneticAlgorithm<TIndividual>> algorithmFactory, Predicate<IGeneticAlgorithm<TIndividual>> stoppingCriteria, int amountOfIterations = 100, int timeout = 1000000) where TIndividual : IIndividual
         {
             Task<IterationSummary<TIndividual>>[] tasks = new Task<IterationSummary<TIndividual>>[amountOfIterations];
 
@@ -78,12 +76,12 @@ namespace Benchmarking
             }
 
             return new BenchmarkSummary<TIndividual>(
-                meanOpTime / count, 
-                maxOpTime, 
-                minOpTime, 
-                (int)Math.Round(meanGen / count), 
-                minGen, 
-                maxGen, 
+                meanOpTime / count,
+                maxOpTime,
+                minOpTime,
+                (int)Math.Round(meanGen / count),
+                minGen,
+                maxGen,
                 algorithms);
         }   
         

@@ -35,5 +35,15 @@ namespace Common
                 Bits[index] = val;
             }
         }
+
+        public BitString Copy()
+        {
+            BitString copy = new BitString(Bits.Length);
+            for (int i = 0; i<Bits.Length; i++)
+            {
+                copy.SetBitAt(i, Bits[i]);
+            }
+            return copy;
+        }
     }
 }

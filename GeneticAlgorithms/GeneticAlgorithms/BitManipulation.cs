@@ -1,6 +1,8 @@
 ﻿using Algorithms;
 using Algorithms.BitStuff;
 using Algorithms.Infrastructure.BaseImplementations;
+using Algorithms.Infrastructure.Interfaces;
+using Algorithms.OnePlusOneEA;
 using Benchmarking;
 using System;
 using System.Collections.Generic;
@@ -138,8 +140,9 @@ namespace GeneticAlgorithms
 
             //this.test_btn.Text = "DONE!";
 
+            /*
             var result = await Benchmarker.Benchmark<BitStringIndividual>(
-                new Func<GenericAlgorithmBase<BitStringIndividual>>(() => 
+                new Func<GenericAlgorithmBase<BitStringIndividual>>(() =>
                     new GenericAlgorithmBase<BitStringIndividual>(
                         new RandomSelectionBitStringCrossover(),
                         new OneOverNBitStringMutation(),
@@ -155,6 +158,45 @@ namespace GeneticAlgorithms
                     }
                     return algorithm.Logger?.History?.Last()?.HighestFitness == 100;
                 }));
+            
+            OnePlusOneEaAlgorithm<BitStringIndividual> algo = new OnePlusOneEaAlgorithm<BitStringIndividual>(
+                new OneOverNBitStringMutation(), 
+                new OneMaxFitnessCalculator(), 
+                new LoggerBase<BitStringIndividual>(),
+                new BitStringIndividual(100));
+            algo.Optimize(new Predicate<IGeneticAlgorithm<BitStringIndividual>>((algorithm) =>
+            {
+                if (algorithm.Logger?.History.Count < 1)
+                {
+                    return false;
+                }
+                return algorithm.Logger?.History?.Last()?.HighestFitness == 100;
+            })).Wait();
+            */
+
+            var result = await Benchmarker.Benchmark<BitStringIndividual>(
+                new Func<OnePlusOneEaAlgorithm<BitStringIndividual>>(() =>
+                    new OnePlusOneEaAlgorithm<BitStringIndividual>(
+                        new OneOverNBitStringMutation(),
+                        new OneMaxFitnessCalculator(),
+                        new LoggerBase<BitStringIndividual>(),
+                        new BitStringIndividual(100)
+                    )
+                ),
+                new Predicate<IGeneticAlgorithm<BitStringIndividual>>((algorithm) =>
+                    {
+                        if (algorithm.Logger?.History.Count < 1)
+                        {
+                            return false;
+                        }
+                        return algorithm.Logger?.History?.Last()?.HighestFitness == 100;
+                    }
+                ),
+                100,
+                100000
+                );
+
+
         }
 
         private void prevGen_btn_Click(object sender, EventArgs e)

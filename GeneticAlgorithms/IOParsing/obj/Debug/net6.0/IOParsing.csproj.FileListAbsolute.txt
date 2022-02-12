@@ -28,3 +28,18 @@ C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\I
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.dll
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\ref\IOParsing.dll
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.pdb
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\bin\Debug\net6.0\IOParsing.deps.json
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\bin\Debug\net6.0\IOParsing.dll
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\bin\Debug\net6.0\ref\IOParsing.dll
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\bin\Debug\net6.0\IOParsing.pdb
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\bin\Debug\net6.0\Common.dll
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\bin\Debug\net6.0\Common.pdb
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.csproj.AssemblyReference.cache
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.AssemblyInfoInputs.cache
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.AssemblyInfo.cs
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.csproj.CoreCompileInputs.cache
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.csproj.CopyComplete
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.dll
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\ref\IOParsing.dll
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.pdb

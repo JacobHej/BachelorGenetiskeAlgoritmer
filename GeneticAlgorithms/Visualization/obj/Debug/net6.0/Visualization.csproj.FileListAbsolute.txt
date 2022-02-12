@@ -25,3 +25,18 @@ C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\V
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Common.pdb
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.csproj.AssemblyReference.cache
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.csproj.CopyComplete
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Visualization.deps.json
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Visualization.dll
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\ref\Visualization.dll
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Visualization.pdb
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Common.dll
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Common.pdb
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.csproj.AssemblyReference.cache
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.AssemblyInfoInputs.cache
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.AssemblyInfo.cs
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.csproj.CoreCompileInputs.cache
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.csproj.CopyComplete
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.dll
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\ref\Visualization.dll
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.pdb
