@@ -162,7 +162,7 @@ namespace GeneticAlgorithms
 
         private void test_btn_Click(object sender, EventArgs e)
         {
-            modelAlgo.algorithm.Optimize(new Predicate<GenericAlgorithmBase<BitStringIndividual>>((algorithm) =>
+            modelAlgo.algorithm.Optimize(new Predicate<IGeneticAlgorithm<BitStringIndividual>>((algorithm) =>
             {
                 if (algorithm.Logger?.History.Count < 1)
                 {

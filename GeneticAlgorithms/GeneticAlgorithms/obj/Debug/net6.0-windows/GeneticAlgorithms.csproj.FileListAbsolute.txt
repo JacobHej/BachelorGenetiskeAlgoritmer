@@ -68,3 +68,32 @@ C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\G
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.BitManipulation.resources
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\Benchmarking.dll
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\Benchmarking.pdb
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\GeneticAlgorithms.exe
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\GeneticAlgorithms.deps.json
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\GeneticAlgorithms.runtimeconfig.json
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\GeneticAlgorithms.dll
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\ref\GeneticAlgorithms.dll
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\GeneticAlgorithms.pdb
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\Algorithms.dll
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\Benchmarking.dll
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\Common.dll
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\IOParsing.dll
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\Visualization.dll
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\Algorithms.pdb
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\Benchmarking.pdb
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\Common.pdb
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\IOParsing.pdb
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\Visualization.pdb
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.csproj.AssemblyReference.cache
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.BitManipulation.resources
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.MainForm.resources
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.csproj.GenerateResource.cache
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.AssemblyInfoInputs.cache
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.AssemblyInfo.cs
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.csproj.CoreCompileInputs.cache
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.csproj.CopyComplete
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.dll
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\ref\GeneticAlgorithms.dll
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.pdb
+C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.genruntimeconfig.cache

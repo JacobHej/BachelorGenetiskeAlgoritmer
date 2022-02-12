@@ -1,6 +1,7 @@
 ﻿using Algorithms;
 using Algorithms.BitStuff;
 using Algorithms.Infrastructure.BaseImplementations;
+using Algorithms.Infrastructure.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,7 +49,7 @@ namespace GeneticAlgorithms
 
         public async Task Optimize()
         {
-            await algorithm.Optimize(new Predicate<GenericAlgorithmBase<BitStringIndividual>>((algorithm) =>
+            await algorithm.Optimize(new Predicate<IGeneticAlgorithm<BitStringIndividual>>((algorithm) =>
             {
                 if (algorithm.Logger?.History.Count < 1)
                 {

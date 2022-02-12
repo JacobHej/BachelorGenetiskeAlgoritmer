@@ -9,5 +9,6 @@ namespace Algorithms.Infrastructure.BaseImplementations
 {
     public abstract class IndividualBase : IIndividual
     {
+        public abstract IIndividual Copy();
     }
 }

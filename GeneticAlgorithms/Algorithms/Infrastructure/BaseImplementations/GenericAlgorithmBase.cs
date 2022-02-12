@@ -9,15 +9,15 @@ namespace Algorithms.Infrastructure.BaseImplementations
 {
     public class GenericAlgorithmBase<TIndividual> : IGeneticAlgorithm<TIndividual> where TIndividual : IIndividual
     {
-        private ICrossover<TIndividual> crossover;
-        private IMutator<TIndividual> mutator;
-        private IFitnessCalculator<TIndividual> fitnessCalculator;
-        private IPopulation<TIndividual> population;
-        private ISelector<TIndividual> selector;
-        private int fitness = int.MinValue;
+        protected ICrossover<TIndividual> crossover;
+        protected IMutator<TIndividual> mutator;
+        protected IFitnessCalculator<TIndividual> fitnessCalculator;
+        protected IPopulation<TIndividual> population;
+        protected ISelector<TIndividual> selector;
+        protected int fitness = int.MinValue;
 
         public int maxAttempts = 1000;
-        public ILogger<TIndividual> Logger {get; private set;}
+        public ILogger<TIndividual> Logger {get; set;}
 
         public GenericAlgorithmBase(
             ICrossover<TIndividual> crossover, 
@@ -79,7 +79,7 @@ namespace Algorithms.Infrastructure.BaseImplementations
             }
         }
 
-        public virtual async Task Optimize(Predicate<GenericAlgorithmBase<TIndividual>> stoppingCriteria)
+        public virtual async Task Optimize(Predicate<IGeneticAlgorithm<TIndividual>> stoppingCriteria)
         {
             while (!stoppingCriteria.Invoke(this))
             {
