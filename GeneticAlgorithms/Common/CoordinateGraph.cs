@@ -19,7 +19,7 @@ namespace Common
             this.distances = new Dictionary<string, int>();
         }
 
-        public int GetLength(int p1, int p2)
+        public int GetDistance(int p1, int p2)
         {
             if(!distances.ContainsKey(p1.ToString() + p2.ToString()))
             {
