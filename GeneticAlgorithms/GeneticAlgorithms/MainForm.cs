@@ -139,13 +139,13 @@ namespace GeneticAlgorithms
             }
             else
             {
-                modelAlgo.algorithm = new GenericAlgorithmBase<BitStringIndividual>(
-                    new RandomSelectionBitStringCrossover(),
-                    new OneOverNBitStringMutation(),
-                    new OneMaxFitnessCalculator(),
-                    new BitStringPopulation(20, 100),
-                    new RandomBitStringSelector(),
-                    new LoggerBase<BitStringIndividual>());
+                //modelAlgo.algorithm = new GenericAlgorithmBase<BitStringIndividual>(
+                //    new RandomSelectionBitStringCrossover(),
+                //    new OneOverNBitStringMutation(),
+                //    new OneMaxFitnessCalculator(),
+                //    new BitStringPopulation(20, 100),
+                //    new RandomBitStringSelector(),
+                //    new LoggerBase<BitStringIndividual>());
             }
 
             this.graph_pb.Invalidate();

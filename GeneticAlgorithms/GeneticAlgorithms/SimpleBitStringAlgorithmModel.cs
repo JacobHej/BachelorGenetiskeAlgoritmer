@@ -2,6 +2,7 @@
 using Algorithms.BitStuff;
 using Algorithms.Infrastructure.BaseImplementations;
 using Algorithms.Infrastructure.Interfaces;
+using Algorithms.OnePlusOneEA;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,13 +14,7 @@ namespace GeneticAlgorithms
 {
     public class SimpleBitStringAlgorithmModel
     {
-        public GenericAlgorithmBase<BitStringIndividual> algorithm = new GenericAlgorithmBase<BitStringIndividual>(
-            new RandomSelectionBitStringCrossover(),
-            new OneOverNBitStringMutation(),
-            new OneMaxFitnessCalculator(),
-            new BitStringPopulation(10, 100),
-            new RandomBitStringSelector(),
-            new LoggerBase<BitStringIndividual>());
+       
 
         public TimedEvent EvolutionSimulation;
 
@@ -30,15 +25,20 @@ namespace GeneticAlgorithms
         public int bitLength = 100;
         public bool UseProbabilitySelector = false;
 
+        public OnePlusOneEaAlgorithm<BitStringIndividual> algorithm = new OnePlusOneEaAlgorithm<BitStringIndividual>(
+                       new OneOverNBitStringMutation(),
+                       new OneMaxFitnessCalculator(),
+                       new LoggerBase<BitStringIndividual>(),
+                       new BitStringIndividual(100)
+                   );
         public void CreateAlgorithm()
         {
-            algorithm = new GenericAlgorithmBase<BitStringIndividual>(
-                new RandomSelectionBitStringCrossover(),
-                new OneOverNBitStringMutation(),
-                new OneMaxFitnessCalculator(),
-                new BitStringPopulation(population, bitLength),
-                UseProbabilitySelector ? new SelectOnlyTwoBestSelector(new OneMaxFitnessCalculator()) : new RandomBitStringSelector(),
-                new LoggerBase<BitStringIndividual>());
+            algorithm = new OnePlusOneEaAlgorithm<BitStringIndividual>(
+                       new OneOverNBitStringMutation(),
+                       new OneMaxFitnessCalculator(),
+                       new LoggerBase<BitStringIndividual>(),
+                       new BitStringIndividual(bitLength)
+                   );
         }
 
         public async Task Evolve()

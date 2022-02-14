@@ -18,8 +18,7 @@ namespace Algorithms.OnePlusOneEA
             IMutator<TIndividual> mutator,
             IFitnessCalculator<TIndividual> fitnessCalculator,
             ILogger<TIndividual> logger,
-            TIndividual individual
-            )
+            TIndividual individual)
         {
             this.mutator = mutator;
             this.fitnessCalculator = fitnessCalculator;

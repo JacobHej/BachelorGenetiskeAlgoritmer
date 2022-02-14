@@ -3,6 +3,7 @@ using Algorithms.BitStuff;
 using Algorithms.Infrastructure.BaseImplementations;
 using Algorithms.Infrastructure.Interfaces;
 using Algorithms.OnePlusOneEA;
+using Algorithms.TravelingSalesPerson;
 using Benchmarking;
 using System;
 using System.Collections.Generic;
@@ -174,28 +175,32 @@ namespace GeneticAlgorithms
             })).Wait();
             */
 
-            var result = await Benchmarker.Benchmark<BitStringIndividual>(
-                new Func<OnePlusOneEaAlgorithm<BitStringIndividual>>(() =>
-                    new OnePlusOneEaAlgorithm<BitStringIndividual>(
-                        new OneOverNBitStringMutation(),
-                        new OneMaxFitnessCalculator(),
-                        new LoggerBase<BitStringIndividual>(),
-                        new BitStringIndividual(100)
-                    )
-                ),
-                new Predicate<IGeneticAlgorithm<BitStringIndividual>>((algorithm) =>
-                    {
-                        if (algorithm.Logger?.History.Count < 1)
-                        {
-                            return false;
-                        }
-                        return algorithm.Logger?.History?.Last()?.HighestFitness == 100;
-                    }
-                ),
-                100,
-                100000
-                );
+            //int length = 32;
+            //var result = await Benchmarker.Benchmark<BitStringIndividual>(
+            //    new Func<OnePlusOneEaAlgorithm<BitStringIndividual>>(() =>
+            //        new OnePlusOneEaAlgorithm<BitStringIndividual>(
+            //            new OneOverNBitStringMutation(),
+            //            new BinValFitnessCalculator(),
+            //            new LoggerBase<BitStringIndividual>(),
+            //            new BitStringIndividual(length)
+            //        )
+            //    ),
+            //    new Predicate<IGeneticAlgorithm<BitStringIndividual>>((algorithm) =>
+            //        {
+            //            if (algorithm.Logger?.History.Count < 1)
+            //            {
+            //                return false;
+            //            }
+            //            return algorithm.Logger?.History?.Last()?.HighestFitness == int.MaxValue;
+            //        }
+            //    ),
+            //    100000,
+            //    5000
+            //    );
 
+            TravelingSalesPersonIndividual tsp = new TravelingSalesPersonIndividual(10);
+            TwoOptMutator mutator = new TwoOptMutator();
+            mutator.Mutate(tsp);
 
         }
 

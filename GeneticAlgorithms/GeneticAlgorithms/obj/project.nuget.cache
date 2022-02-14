@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "iq0v8UtSoLAgGHdno104ZZkIfTMmQte/+vA4Jf5pM8yBZ7GzUc8iVKeWMKjviwy79SKif6vPDQ9deZOvwKw+Dg==",
+  "dgSpecHash": "JrMOJc2Ei4fLX/b+jYg7l0mDlcUNcPNJhxQbi+FxcxHMjrXoFwJWR6ZpgPyrMuFo2VI/YSMKlWIsTx88gR5ViQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gamer\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\GeneticAlgorithms\\GeneticAlgorithms.csproj",
+  "projectFilePath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\GeneticAlgorithms\\GeneticAlgorithms.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Gamer\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
-    "C:\\Users\\Gamer\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
+    "C:\\Users\\Jacob Hejlsberg\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\Jacob Hejlsberg\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

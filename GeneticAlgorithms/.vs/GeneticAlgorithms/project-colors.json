@@ -5,7 +5,37 @@
       "ProjectGuid": "cfb7bfdc-2037-4ce0-afb0-943a480587ee",
       "DisplayName": "GeneticAlgorithms",
       "ColorIndex": 0
+    },
+    "a41c4f0e-44cf-481c-b425-4890bb64c75d": {
+      "ProjectGuid": "a41c4f0e-44cf-481c-b425-4890bb64c75d",
+      "DisplayName": "Common",
+      "ColorIndex": 1
+    },
+    "ce10f26f-32b3-4226-9b31-d8c5ae6c9965": {
+      "ProjectGuid": "ce10f26f-32b3-4226-9b31-d8c5ae6c9965",
+      "DisplayName": "IOParsing",
+      "ColorIndex": 2
+    },
+    "1ad3e182-5e2c-415a-a685-ea57f9f3e469": {
+      "ProjectGuid": "1ad3e182-5e2c-415a-a685-ea57f9f3e469",
+      "DisplayName": "Visualization",
+      "ColorIndex": 3
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "c49c8226-5cd5-4528-8b99-a7894a1778a9": {
+      "ProjectGuid": "c49c8226-5cd5-4528-8b99-a7894a1778a9",
+      "DisplayName": "Algorithms",
+      "ColorIndex": 4
+    },
+    "f29d1ece-aa82-44bb-9e80-ccc4ad54d9e6": {
+      "ProjectGuid": "f29d1ece-aa82-44bb-9e80-ccc4ad54d9e6",
+      "DisplayName": "Benchmarking",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 6
 }
