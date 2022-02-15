@@ -23,18 +23,12 @@ namespace Common
         {
             lock (this)
             {
-                if (p2 < p1)
-                {
-                    int holder = p2;
-                    p2 = p1;
-                    p1 = holder;
-                }
+                (p1, p2) = p2 < p1 ? (p2, p1) : (p1, p2);
 
-            
-            if(!distances.ContainsKey(p1.ToString() + p2.ToString()))
-            {
-                PointF point1 = Verticies[p1];
-                PointF point2 = Verticies[p2];
+                if (!distances.ContainsKey(p1.ToString() + p2.ToString()))
+                {
+                    PointF point1 = Verticies[p1];
+                    PointF point2 = Verticies[p2];
 
                     PointF relativePoint = new PointF(point1.X - point2.X, point1.Y - point2.Y);
 
@@ -46,5 +40,5 @@ namespace Common
                 return value;
             }
         }
-    }
+    } 
 }

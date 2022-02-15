@@ -249,10 +249,10 @@ namespace GeneticAlgorithms
                         return false;
                     }
 
-                    return algorithm?.Logger?.History?.Last()?.HighestFitness > int.MaxValue - 100000;
+                    return algorithm?.Logger?.History?.Last()?.HighestFitness > int.MaxValue - 9000;
                 }),
-                500,
-                5000
+                200,
+                20000
                 );
 
             //var t =
