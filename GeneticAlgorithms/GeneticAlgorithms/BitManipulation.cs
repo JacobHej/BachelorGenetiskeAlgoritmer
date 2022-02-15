@@ -1,10 +1,12 @@
 ﻿using Algorithms;
+using Algorithms.Benchmark;
 using Algorithms.BitStuff;
 using Algorithms.Infrastructure.BaseImplementations;
 using Algorithms.Infrastructure.Interfaces;
 using Algorithms.OnePlusOneEA;
 using Algorithms.TravelingSalesPerson;
 using Benchmarking;
+using Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -173,13 +175,13 @@ namespace GeneticAlgorithms
                 }
                 return algorithm.Logger?.History?.Last()?.HighestFitness == 100;
             })).Wait();
-            */
+            //*/
 
             //int length = 32;
             //var result = await Benchmarker.Benchmark<BitStringIndividual>(
             //    new Func<OnePlusOneEaAlgorithm<BitStringIndividual>>(() =>
             //        new OnePlusOneEaAlgorithm<BitStringIndividual>(
-            //            new OneOverNBitStringMutation(),
+            //            new OneOverNXBitStringMutation(),
             //            new BinValFitnessCalculator(),
             //            new LoggerBase<BitStringIndividual>(),
             //            new BitStringIndividual(length)
@@ -195,13 +197,37 @@ namespace GeneticAlgorithms
             //        }
             //    ),
             //    100000,
-            //    5000
+            //    500000000
             //    );
 
-            TravelingSalesPersonIndividual tsp = new TravelingSalesPersonIndividual(10);
-            TwoOptMutator mutator = new TwoOptMutator();
-            mutator.Mutate(tsp);
 
+            //CoordinateGraph g = new CoordinateGraph(new PointF[]
+            //{
+            //    new PointF(0,0),
+            //    new PointF(5,0),
+            //    new PointF(10,0),
+            //    new PointF(10,5),
+            //    new PointF(10,10),
+            //    new PointF(5,10),
+            //    new PointF(0,10)
+            //});
+
+            //var t =
+            //    new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
+            //        new TwoOptMutator(),
+            //        new TravelingSalesPersonFitnessCalculator(),
+            //        new LoggerBase<TravelingSalesPersonIndividual>(),
+            //        new TravelingSalesPersonIndividual(7, g));
+
+            //await t.Optimize(new Predicate<IGeneticAlgorithm<TravelingSalesPersonIndividual>>((algorithm) =>
+            //{
+            //    if (algorithm.Logger?.History.Count < 1)
+            //    {
+            //        return false;
+            //    }
+
+            //    return algorithm?.Logger?.History?.Last()?.HighestFitness == int.MaxValue - 40;
+            //}));
         }
 
         private void prevGen_btn_Click(object sender, EventArgs e)

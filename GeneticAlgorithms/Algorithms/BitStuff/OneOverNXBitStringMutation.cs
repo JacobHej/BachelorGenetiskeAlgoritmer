@@ -8,8 +8,15 @@ using System.Threading.Tasks;
 
 namespace Algorithms.BitStuff
 {
-    public class OneOverNBitStringMutation : MutatorBase<BitStringIndividual>
+    public class OneOverNXBitStringMutation : MutatorBase<BitStringIndividual>
     {
+        private int factor;
+
+        public OneOverNXBitStringMutation(int factor = 1)
+        {
+            this.factor = factor;
+        }
+
         public override void Mutate(BitStringIndividual individual)
         {
             Random random = new Random();
@@ -17,7 +24,7 @@ namespace Algorithms.BitStuff
 
             for (int i = 0; i < N; i++)
             {
-                if(random.Next(N) == 0)
+                if(random.Next(factor * N) == 0)
                 {
                     individual.Solution.FlipBitAt(i);
                 }

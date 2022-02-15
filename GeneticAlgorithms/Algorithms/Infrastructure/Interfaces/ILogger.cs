@@ -12,5 +12,6 @@ namespace Algorithms.Infrastructure.Interfaces
         public void LogGeneration(IPopulation<TIndividual> population, IFitnessCalculator<TIndividual> fitnessCalculator) ;
 
         public List<Generation<TIndividual>> History { get; }
+        public int AmountOfGenerations { get; }
     }
 }

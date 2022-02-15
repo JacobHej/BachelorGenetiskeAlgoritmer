@@ -26,7 +26,7 @@ namespace GeneticAlgorithms
         public bool UseProbabilitySelector = false;
 
         public OnePlusOneEaAlgorithm<BitStringIndividual> algorithm = new OnePlusOneEaAlgorithm<BitStringIndividual>(
-                       new OneOverNBitStringMutation(),
+                       new OneOverNXBitStringMutation(),
                        new OneMaxFitnessCalculator(),
                        new LoggerBase<BitStringIndividual>(),
                        new BitStringIndividual(100)
@@ -34,7 +34,7 @@ namespace GeneticAlgorithms
         public void CreateAlgorithm()
         {
             algorithm = new OnePlusOneEaAlgorithm<BitStringIndividual>(
-                       new OneOverNBitStringMutation(),
+                       new OneOverNXBitStringMutation(),
                        new OneMaxFitnessCalculator(),
                        new LoggerBase<BitStringIndividual>(),
                        new BitStringIndividual(bitLength)

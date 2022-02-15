@@ -2,11 +2,7 @@
 {
     public interface IIndividual
     {
-
         public IIndividual Copy();
 
     }
-
-    
-
 }
