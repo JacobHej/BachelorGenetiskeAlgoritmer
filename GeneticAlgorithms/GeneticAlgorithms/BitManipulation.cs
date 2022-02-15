@@ -5,6 +5,7 @@ using Algorithms.Infrastructure.Interfaces;
 using Algorithms.OnePlusOneEA;
 using Algorithms.TravelingSalesPerson;
 using Benchmarking;
+using IOParsing;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -197,10 +198,8 @@ namespace GeneticAlgorithms
             //    100000,
             //    5000
             //    );
-
-            TravelingSalesPersonIndividual tsp = new TravelingSalesPersonIndividual(10);
-            TwoOptMutator mutator = new TwoOptMutator();
-            mutator.Mutate(tsp);
+            ResourceManager.Resources.TryGetValue("brd14051.tsp", out String path);
+            Parser.LoadTSPGraph(path);
 
         }
 

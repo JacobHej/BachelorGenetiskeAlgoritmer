@@ -12,7 +12,7 @@ namespace GeneticAlgorithms
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            RescourceManager.ScanRescources();
+            ResourceManager.ScanRescources();
 
             Application.Run(new BitManipulation());
         }

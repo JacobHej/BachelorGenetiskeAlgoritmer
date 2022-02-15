@@ -11,7 +11,6 @@ namespace GeneticAlgorithms
 {
     public class MainFormModel
     {
-        private Parser parser = new Parser();
         private RandomWalk algorithm;
 
         public int TimesEvaluated { get; private set; } = 0;
@@ -20,13 +19,13 @@ namespace GeneticAlgorithms
 
         public MainFormModel()
         {
-            Files = RescourceManager.Resources;
+            Files = ResourceManager.Resources;
         }
 
         public void LoadGraph(string path)
         {
             Files.TryGetValue(path, out string fullPath);
-            algorithm = new RandomWalk(parser.LoadGraph(fullPath ?? path));
+            algorithm = new RandomWalk(Parser.LoadXmlGraph(fullPath ?? path));
         }
 
         public void EvaluateGraph()
