@@ -14,12 +14,12 @@ namespace Algorithms.TravelingSalesPerson
         public CoordinateGraph Problem;
         public int[] Solution;
 
-        public TravelingSalesPersonIndividual(int length, CoordinateGraph problem, bool random = true)
+        public TravelingSalesPersonIndividual(CoordinateGraph problem, bool random = true)
         {
             this.Solution = 
                 random 
-                ? Enumerable.Range(0, length).OrderBy(item => new Random().Next()).ToArray() 
-                : Enumerable.Range(0, length).ToArray();
+                ? Enumerable.Range(0, problem.Verticies.Length).OrderBy(item => new Random().Next()).ToArray() 
+                : Enumerable.Range(0, problem.Verticies.Length).ToArray();
 
             this.Problem = problem;
         }
