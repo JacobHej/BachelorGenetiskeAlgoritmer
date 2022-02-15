@@ -1,5 +1,6 @@
 ﻿using Common;
 using System.Drawing;
+using System.Globalization;
 using System.Xml;
 
 namespace IOParsing
@@ -91,9 +92,9 @@ namespace IOParsing
                             line = line.TrimStart();
                             String[] numberStrings = line.Split(' ', StringSplitOptions.RemoveEmptyEntries);
                             float[] values = null;
-                            try
+                            try 
                             {
-                                values = numberStrings.ToList().Select(v => float.Parse(v)).ToArray();
+                                values = numberStrings.ToList().Select(v => float.Parse(v, CultureInfo.InvariantCulture)).ToArray();
                             }catch (FormatException e)
                             {
                                 if (e.Message == "Input string was not in a correct format.")

@@ -200,6 +200,38 @@ namespace GeneticAlgorithms
             //    100000,
             //    500000000
             //    );
+
+
+
+            //ResourceManager.Resources.TryGetValue("brd14051.tsp", out String path);
+            //CoordinateGraph g = Parser.LoadTSPGraph(path);
+
+            //var t =
+            //    new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
+            //        new TwoOptMutator(),
+            //        new TravelingSalesPersonFitnessCalculator(),
+            //        new LoggerBase<TravelingSalesPersonIndividual>(),
+            //        new TravelingSalesPersonIndividual(g));
+
+            //Task task = Task.Delay(5000);
+            //int x = 0;
+            //await t.Optimize(new Predicate<IGeneticAlgorithm<TravelingSalesPersonIndividual>>((algorithm) =>
+            //{
+            //    if (task.IsCompleted)
+            //    {
+            //        int length = int.MaxValue - algorithm?.Logger?.History?.Last()?.HighestFitness ?? 0;
+            //        int lengthnt = algorithm?.Logger?.History?.Last()?.HighestFitness ?? 0;
+            //        task = Task.Delay(300000);
+            //    }
+            //    if (algorithm.Logger?.History.Count < 1)
+            //    {
+            //        return false;
+            //    }
+
+            //    return algorithm?.Logger?.History?.Last()?.HighestFitness == int.MaxValue - 7542;
+            //}));
+            //x = 0;
+
             ResourceManager.Resources.TryGetValue("berlin52.tsp", out String path);
             CoordinateGraph g = Parser.LoadTSPGraph(path);
 
