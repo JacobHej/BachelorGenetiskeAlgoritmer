@@ -21,6 +21,12 @@ namespace Common
 
         public int GetDistance(int p1, int p2)
         {
+            if (p2<p1)
+            {
+                int holder = p2;
+                p2 = p1;
+                p1 = holder;
+            }
             if(!distances.ContainsKey(p1.ToString() + p2.ToString()))
             {
                 PointF point1 = Verticies[p1];

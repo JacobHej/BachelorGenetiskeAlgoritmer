@@ -36,7 +36,7 @@ namespace Algorithms.OnePlusOneEA
             {
                 TIndividual nextIndividual = (TIndividual)individual.Copy();
                 mutator.Mutate(nextIndividual);
-                if (fitnessCalculator.CalculateFitness(nextIndividual) > fitnessCalculator.CalculateFitness(individual))
+                if (fitnessCalculator.CalculateFitness(nextIndividual) >= fitnessCalculator.CalculateFitness(individual))
                 {
                     individual = nextIndividual;
                     PopulationBase<TIndividual> population = new PopulationBase<TIndividual>(1);
