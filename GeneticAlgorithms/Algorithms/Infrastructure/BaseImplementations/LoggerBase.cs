@@ -9,14 +9,16 @@ namespace Algorithms.Infrastructure.BaseImplementations
 {
     public class LoggerBase<TIndividual> : ILogger<TIndividual> where TIndividual : IIndividual
     {
-        public List<Generation<TIndividual>> History { get; private set; }
+        public virtual List<Generation<TIndividual>> History { get; private set; }
+
+        public virtual int AmountOfGenerations { get { return History.Count; } protected set { } }
 
         public LoggerBase()
         {
             History = new List<Generation<TIndividual>>();
         }
 
-        public void LogGeneration(IPopulation<TIndividual> population, IFitnessCalculator<TIndividual> fitnessCalculator)
+        public virtual void LogGeneration(IPopulation<TIndividual> population, IFitnessCalculator<TIndividual> fitnessCalculator)
         {
             History.Add(new Generation<TIndividual>(population, fitnessCalculator));
         }

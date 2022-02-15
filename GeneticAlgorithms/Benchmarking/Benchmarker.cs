@@ -27,7 +27,7 @@ namespace Benchmarking
                         stopWatch.Stop();
 
                         var iteration = new IterationSummary<TIndividual>();
-                        iteration.Generations = algorithm.Logger.History.Count;
+                        iteration.Generations = algorithm.Logger.AmountOfGenerations;
                         iteration.OptimizationTime = stopWatch.ElapsedMilliseconds;
                         iteration.Algorithm = algorithm;
 
