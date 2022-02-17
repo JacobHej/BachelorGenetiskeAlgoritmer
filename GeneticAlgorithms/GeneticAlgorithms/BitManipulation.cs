@@ -239,7 +239,7 @@ namespace GeneticAlgorithms
             var result = await Benchmarker.Benchmark<TravelingSalesPersonIndividual>(
                 new Func<OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>>(() =>
                     new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
-                        new TwoOptMutator(),
+                        new PoissonTwoOptMutator(1),
                         new TravelingSalesPersonFitnessCalculator(),
                         new BenchmarkLogger<TravelingSalesPersonIndividual>(),
                         new TravelingSalesPersonIndividual(g))),
@@ -251,7 +251,7 @@ namespace GeneticAlgorithms
 
                     return algorithm?.Logger?.History?.Last()?.HighestFitness > int.MaxValue - 7542;
                 }),
-                40
+                100
                 );
             
             int amountOver9K = result.Algorithms.Where(algorithm => algorithm.Logger.History.Last().HighestFitness > int.MaxValue - 9000).Count();

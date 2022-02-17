@@ -21,7 +21,7 @@ namespace Algorithms.TravelingSalesPerson
             int twoOptCount = Poisson.Sample(lambda);
             Random random = new Random();
 
-            for (int i = 0; i < twoOptCount; i++)
+            for (int j = 0; j < twoOptCount; j++)
             {
                 int r1 = 0;
                 int r2 = 0;
