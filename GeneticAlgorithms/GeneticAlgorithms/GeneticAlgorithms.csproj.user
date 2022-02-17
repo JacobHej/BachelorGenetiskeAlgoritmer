@@ -4,7 +4,7 @@
     <Compile Update="BitManipulation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form1.cs">
+    <Compile Update="BitManipV2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="MainForm.cs">
