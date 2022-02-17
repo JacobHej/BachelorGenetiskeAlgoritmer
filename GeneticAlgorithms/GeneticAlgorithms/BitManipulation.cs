@@ -234,74 +234,51 @@ namespace GeneticAlgorithms
             //ResourceManager.Resources.TryGetValue("berlin52.tsp", out String path);
             //CoordinateGraph g = Parser.LoadTSPGraph(path);
 
-            //int[] bestSol = {
-            //    1,
-            //    49,
-            //    32,
-            //    45,
-            //    19,
-            //    41,
-            //    8,
-            //    9,
-            //    10,
-            //    43,
-            //    33,
-            //    51,
-            //    11,
-            //    52,
-            //    14,
-            //    13,
-            //    47,
-            //    26,
-            //    27,
-            //    28,
-            //    12,
-            //    25,
-            //    4,
-            //    6,
-            //    15,
-            //    5,
-            //    24,
-            //    48,
-            //    38,
-            //    37,
-            //    40,
-            //    39,
-            //    36,
-            //    35,
-            //    34,
-            //    44,
-            //    46,
-            //    16,
-            //    29,
-            //    50,
-            //    20,
-            //    23,
-            //    30,
-            //    2,
-            //    7,
-            //    42,
-            //    21,
-            //    17,
-            //    3,
-            //    18,
-            //    31,
-            //    22
-            //};
+            var result = await Benchmarker.Benchmark<TravelingSalesPersonIndividual>(
+                new Func<OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>>(() =>
+                    new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
+                        new TwoOptMutator(),
+                        new TravelingSalesPersonFitnessCalculator(),
+                        new LoggerBase<TravelingSalesPersonIndividual>(),
+                        new TravelingSalesPersonIndividual(g))),
+                new Predicate<IGeneticAlgorithm<TravelingSalesPersonIndividual>>((algorithm) =>
+                {
+                    if (algorithm.Logger?.History.Count < 1)
+                    {
+                        return false;
+                    }
 
-            //for (int i = 0; i<bestSol.Length; i++)
+                    return algorithm?.Logger?.History?.Last()?.HighestFitness > int.MaxValue - 9000;
+                }),
+                200,
+                20000
+                );
+
+            //var t =
+            //    new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
+            //        new TwoOptMutator(),
+            //        new TravelingSalesPersonFitnessCalculator(),
+            //        new LoggerBase<TravelingSalesPersonIndividual>(),
+            //        new TravelingSalesPersonIndividual(g));
+
+            //Task task = Task.Delay(5000);
+            //int x = 0;
+            //await t.Optimize(new Predicate<IGeneticAlgorithm<TravelingSalesPersonIndividual>>((algorithm) =>
             //{
-            //    bestSol[i] = bestSol[i] - 1;
-            //}
+            //    if (task.IsCompleted)
+            //    {
+            //        int length = int.MaxValue - algorithm?.Logger?.History?.Last()?.HighestFitness ?? 0;
+            //        int lengthnt = algorithm?.Logger?.History?.Last()?.HighestFitness ?? 0;
+            //        task = Task.Delay(300000);
+            //    }
+            //    if (algorithm.Logger?.History.Count < 1)
+            //    {
+            //        return false;
+            //    }
 
-
-            //TravelingSalesPersonIndividual ind = new TravelingSalesPersonIndividual(bestSol, g);
-            //TravelingSalesPersonFitnessCalculator calc = new TravelingSalesPersonFitnessCalculator();
-            //int length = int.MaxValue - calc.CalculateFitness(ind);
-            int xaijgdnjasbnidb = 0;
-
-
-
+            //    return algorithm?.Logger?.History?.Last()?.HighestFitness == int.MaxValue - 7542;
+            //}));
+            //x = 0;
         }
 
         private void prevGen_btn_Click(object sender, EventArgs e)

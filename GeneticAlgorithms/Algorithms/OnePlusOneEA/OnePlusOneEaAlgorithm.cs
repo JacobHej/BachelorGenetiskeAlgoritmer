@@ -28,24 +28,26 @@ namespace Algorithms.OnePlusOneEA
 
         public override ILogger<TIndividual> Logger { get; set; }
 
-        public override async Task Evolve()
+        public override Task Evolve()
         {
-            int count = 0;
-            int maxAttempts = 100;
-            while (count++ < maxAttempts)
+            return Task.Run(() =>
             {
-                TIndividual nextIndividual = (TIndividual)individual.Copy();
-                mutator.Mutate(nextIndividual);
-                if (fitnessCalculator.CalculateFitness(nextIndividual) >= fitnessCalculator.CalculateFitness(individual))
+                int count = 0;
+                int maxAttempts = 100;
+                while (count++ < maxAttempts)
                 {
-                    individual = nextIndividual;
-                    PopulationBase<TIndividual> population = new PopulationBase<TIndividual>(1);
-                    population.Individuals.Add(individual);
-                    Logger.LogGeneration(population, fitnessCalculator);
-                    return;
+                    TIndividual nextIndividual = (TIndividual)individual.Copy();
+                    mutator.Mutate(nextIndividual);
+                    if (fitnessCalculator.CalculateFitness(nextIndividual) > fitnessCalculator.CalculateFitness(individual))
+                    {
+                        individual = nextIndividual;
+                        PopulationBase<TIndividual> population = new PopulationBase<TIndividual>(1);
+                        population.Individuals.Add(individual);
+                        Logger.LogGeneration(population, fitnessCalculator);
+                        return;
+                    }
                 }
-            }
+            });
         }
-
     }
 }

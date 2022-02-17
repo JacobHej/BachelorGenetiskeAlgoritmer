@@ -16,16 +16,19 @@ namespace Benchmarking
 #pragma warning disable CS8619 // Nullability of reference types in value doesn't match target type.
                 tasks[i] = Task<IterationSummary<TIndividual>>.Run(async () =>
                 {
+
                     IGeneticAlgorithm<TIndividual> algorithm = algorithmFactory();
 
                     Stopwatch stopWatch = new Stopwatch();
                     stopWatch.Start();
 
                     Task task = algorithm.Optimize(stoppingCriteria);
-                    if (await Task.WhenAny(task, Task.Delay(timeout)) == task)
-                    {
-                        stopWatch.Stop();
+                    await Task.WhenAny(task, Task.Delay(timeout));
 
+                    stopWatch.Stop();
+
+                    if (task.IsCompleted)
+                    {
                         var iteration = new IterationSummary<TIndividual>();
                         iteration.Generations = algorithm.Logger.AmountOfGenerations;
                         iteration.OptimizationTime = stopWatch.ElapsedMilliseconds;
@@ -35,7 +38,6 @@ namespace Benchmarking
                     }
                     else
                     {
-                        stopWatch.Stop();
                         return null;
                     }
 
