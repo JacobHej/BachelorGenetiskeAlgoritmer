@@ -19,6 +19,9 @@ namespace Algorithms.Infrastructure.BaseImplementations
         public int maxAttempts = 1000;
         public ILogger<TIndividual> Logger {get; set;}
 
+        private int iterations;
+        public int Iterations { get => iterations; set => iterations = value; }
+
         public GenericAlgorithmBase(
             ICrossover<TIndividual> crossover, 
             IMutator<TIndividual> mutator, 

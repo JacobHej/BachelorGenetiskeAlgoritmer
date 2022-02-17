@@ -20,6 +20,7 @@ using System.Windows.Forms;
 using Visualization;
 using Visualization.Components;
 
+
 namespace GeneticAlgorithms
 {
     public partial class BitManipulation : Form
@@ -240,46 +241,22 @@ namespace GeneticAlgorithms
                     new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
                         new TwoOptMutator(),
                         new TravelingSalesPersonFitnessCalculator(),
-                        new LoggerBase<TravelingSalesPersonIndividual>(),
+                        new BenchmarkLogger<TravelingSalesPersonIndividual>(),
                         new TravelingSalesPersonIndividual(g))),
                 new Predicate<IGeneticAlgorithm<TravelingSalesPersonIndividual>>((algorithm) =>
                 {
-                    if (algorithm.Logger?.History.Count < 1)
-                    {
-                        return false;
-                    }
+                    if (algorithm.Iterations > 50000) return true;
 
-                    return algorithm?.Logger?.History?.Last()?.HighestFitness > int.MaxValue - 9000;
+                    if (algorithm.Logger?.History.Count < 1) return false;
+
+                    return algorithm?.Logger?.History?.Last()?.HighestFitness > int.MaxValue - 7542;
                 }),
-                200,
-                20000
+                40
                 );
-
-            //var t =
-            //    new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
-            //        new TwoOptMutator(),
-            //        new TravelingSalesPersonFitnessCalculator(),
-            //        new LoggerBase<TravelingSalesPersonIndividual>(),
-            //        new TravelingSalesPersonIndividual(g));
-
-            //Task task = Task.Delay(5000);
-            //int x = 0;
-            //await t.Optimize(new Predicate<IGeneticAlgorithm<TravelingSalesPersonIndividual>>((algorithm) =>
-            //{
-            //    if (task.IsCompleted)
-            //    {
-            //        int length = int.MaxValue - algorithm?.Logger?.History?.Last()?.HighestFitness ?? 0;
-            //        int lengthnt = algorithm?.Logger?.History?.Last()?.HighestFitness ?? 0;
-            //        task = Task.Delay(300000);
-            //    }
-            //    if (algorithm.Logger?.History.Count < 1)
-            //    {
-            //        return false;
-            //    }
-
-            //    return algorithm?.Logger?.History?.Last()?.HighestFitness == int.MaxValue - 7542;
-            //}));
-            //x = 0;
+            
+            int amountOver9K = result.Algorithms.Where(algorithm => algorithm.Logger.History.Last().HighestFitness > int.MaxValue - 9000).Count();
+            int amountOver8K = result.Algorithms.Where(algorithm => algorithm.Logger.History.Last().HighestFitness > int.MaxValue - 8000).Count();
+            int amountOver7K = result.Algorithms.Where(algorithm => algorithm.Logger.History.Last().HighestFitness > int.MaxValue - 7542).Count();
         }
 
         private void prevGen_btn_Click(object sender, EventArgs e)
