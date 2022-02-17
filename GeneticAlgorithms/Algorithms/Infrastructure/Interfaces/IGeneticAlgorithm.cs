@@ -13,5 +13,6 @@ namespace Algorithms.Infrastructure.Interfaces
         public Task Optimize(Predicate<IGeneticAlgorithm<TIndividual>> p);
 
         public ILogger<TIndividual> Logger { get; protected set; }
+        public int Iterations { get; protected set; }
     }
 }

@@ -1,11 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "P3erSTpKG/ovTRPrHlNuru7sopjzgRLFkVNLa4UAZypSb0fx83bets86soCEvslTAzjxsUCZLv1EZiHGp8WfRQ==",
+  "dgSpecHash": "jRHpkyMiu89YS7F5qpyjGtXPOR6qoBCSJthwxvU1q/8gAz1APjw8wcyYb4/4EWGTNAsvpzX2gNcQpaCuNFDIag==",
   "success": true,
   "projectFilePath": "C:\\Users\\KafferAffer\\source\\repos\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Benchmarking\\Benchmarking.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\KafferAffer\\.nuget\\packages\\mathnet.numerics\\4.15.0\\mathnet.numerics.4.15.0.nupkg.sha512",
     "C:\\Users\\KafferAffer\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\KafferAffer\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\KafferAffer\\source\\repos\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Benchmarking\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
