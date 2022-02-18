@@ -71,6 +71,7 @@
             this.test_btn.TabIndex = 40;
             this.test_btn.Text = "Test";
             this.test_btn.UseVisualStyleBackColor = true;
+            this.test_btn.Click += new System.EventHandler(this.test_btn_Click);
             // 
             // interval_lbl
             // 
@@ -94,46 +95,50 @@
             // pause_btn
             // 
             this.pause_btn.BackColor = System.Drawing.Color.White;
-            this.pause_btn.Location = new System.Drawing.Point(761, 653);
+            this.pause_btn.Location = new System.Drawing.Point(742, 653);
             this.pause_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pause_btn.Name = "pause_btn";
             this.pause_btn.Size = new System.Drawing.Size(242, 59);
-            this.pause_btn.TabIndex = 33;
+            this.pause_btn.TabIndex = 12;
             this.pause_btn.Text = "Pause";
             this.pause_btn.UseVisualStyleBackColor = false;
+            this.pause_btn.Click += new System.EventHandler(this.pause_btn_Click);
             // 
             // play_btn
             // 
             this.play_btn.BackColor = System.Drawing.Color.White;
-            this.play_btn.Location = new System.Drawing.Point(761, 587);
+            this.play_btn.Location = new System.Drawing.Point(742, 587);
             this.play_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.play_btn.Name = "play_btn";
             this.play_btn.Size = new System.Drawing.Size(242, 59);
-            this.play_btn.TabIndex = 32;
+            this.play_btn.TabIndex = 11;
             this.play_btn.Text = "Play";
             this.play_btn.UseVisualStyleBackColor = false;
+            this.play_btn.Click += new System.EventHandler(this.play_btn_Click);
             // 
             // optimize_btn
             // 
             this.optimize_btn.BackColor = System.Drawing.Color.White;
-            this.optimize_btn.Location = new System.Drawing.Point(894, 443);
+            this.optimize_btn.Location = new System.Drawing.Point(875, 443);
             this.optimize_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.optimize_btn.Name = "optimize_btn";
             this.optimize_btn.Size = new System.Drawing.Size(242, 49);
-            this.optimize_btn.TabIndex = 31;
+            this.optimize_btn.TabIndex = 10;
             this.optimize_btn.Text = "Optimize";
             this.optimize_btn.UseVisualStyleBackColor = false;
+            this.optimize_btn.Click += new System.EventHandler(this.optimize_btn_Click);
             // 
             // evolve_btn
             // 
             this.evolve_btn.BackColor = System.Drawing.Color.White;
-            this.evolve_btn.Location = new System.Drawing.Point(635, 443);
+            this.evolve_btn.Location = new System.Drawing.Point(616, 443);
             this.evolve_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.evolve_btn.Name = "evolve_btn";
             this.evolve_btn.Size = new System.Drawing.Size(242, 49);
-            this.evolve_btn.TabIndex = 30;
+            this.evolve_btn.TabIndex = 9;
             this.evolve_btn.Text = "Evolve One Step";
             this.evolve_btn.UseVisualStyleBackColor = false;
+            this.evolve_btn.Click += new System.EventHandler(this.evolve_btn_Click);
             // 
             // createNewSimulation_btn
             // 
@@ -145,19 +150,20 @@
             this.createNewSimulation_btn.TabIndex = 29;
             this.createNewSimulation_btn.Text = "Create New Simulation\r\n";
             this.createNewSimulation_btn.UseVisualStyleBackColor = false;
-            this.createNewSimulation_btn.Click += new System.EventHandler(this.createAlgorithm_btn_Click);
+            this.createNewSimulation_btn.Click += new System.EventHandler(this.createNewSimulation_btn_Click);
             // 
             // data_pb
             // 
             this.data_pb.BackColor = System.Drawing.Color.White;
-            this.data_pb.Location = new System.Drawing.Point(33, 16);
+            this.data_pb.Location = new System.Drawing.Point(14, 16);
             this.data_pb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.data_pb.Name = "data_pb";
             this.data_pb.Size = new System.Drawing.Size(576, 873);
-            this.data_pb.TabIndex = 22;
+            this.data_pb.TabIndex = 0;
             this.data_pb.TabStop = false;
+            this.data_pb.Paint += new System.Windows.Forms.PaintEventHandler(this.data_pb_Paint);
             // 
-            // Form1
+            // BitManipV2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -174,9 +180,8 @@
             this.Controls.Add(this.evolve_btn);
             this.Controls.Add(this.createNewSimulation_btn);
             this.Controls.Add(this.data_pb);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Name = "BitManipV2";
+            this.Text = "BitManipV2";
             ((System.ComponentModel.ISupportInitialize)(this.data_pb)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

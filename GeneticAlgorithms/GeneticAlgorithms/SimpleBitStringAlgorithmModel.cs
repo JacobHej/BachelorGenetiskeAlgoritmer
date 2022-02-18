@@ -14,8 +14,6 @@ namespace GeneticAlgorithms
 {
     public class SimpleBitStringAlgorithmModel
     {
-       
-
         public TimedEvent EvolutionSimulation;
 
         public Generation<BitStringIndividual> SelectedGeneration;
@@ -25,20 +23,27 @@ namespace GeneticAlgorithms
         public int bitLength = 100;
         public bool UseProbabilitySelector = false;
 
-        public OnePlusOneEaAlgorithm<BitStringIndividual> algorithm = new OnePlusOneEaAlgorithm<BitStringIndividual>(
-                       new OneOverNXBitStringMutation(),
-                       new OneMaxFitnessCalculator(),
-                       new LoggerBase<BitStringIndividual>(),
-                       new BitStringIndividual(100)
-                   );
-        public void CreateAlgorithm()
+        public GeneticAlgorithmBase<BitStringIndividual> algorithm;
+
+        public void create_A_OnePlusOne_P_OneMax(int bitLengthIn)
         {
+            population = 1;
+            bitLength = bitLengthIn;
             algorithm = new OnePlusOneEaAlgorithm<BitStringIndividual>(
-                       new OneOverNXBitStringMutation(),
-                       new OneMaxFitnessCalculator(),
-                       new LoggerBase<BitStringIndividual>(),
-                       new BitStringIndividual(bitLength)
-                   );
+                new OneOverNXBitStringMutation(),
+                new OneMaxFitnessCalculator(),
+                new LoggerBase<BitStringIndividual>(),
+                new BitStringIndividual(bitLength)
+            );
+        }
+
+        public void createAlgorithm<TAlgorithm>(
+            int bitLength,
+            int Population = 1
+        ) where TAlgorithm : GeneticAlgorithmBase<BitStringIndividual>
+        {
+            String a = (typeof(OnePlusOneEaAlgorithm<BitStringIndividual>)).Name;
+            String b = (typeof(TAlgorithm)).Name;
         }
 
         public async Task Evolve()

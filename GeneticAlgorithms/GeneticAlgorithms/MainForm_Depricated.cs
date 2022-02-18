@@ -10,14 +10,14 @@ using Visualization.Components;
 
 namespace GeneticAlgorithms
 {
-    public partial class MainForm : Form
+    public partial class MainForm_Depricated : Form
     {
         private MainFormModel model;
         SimpleBitStringAlgorithmModel modelAlgo;
         private TimedEvent timedEvent;
         private bool GraphOrBit = false;
 
-        public MainForm()
+        public MainForm_Depricated()
         {
             InitializeComponent();
 

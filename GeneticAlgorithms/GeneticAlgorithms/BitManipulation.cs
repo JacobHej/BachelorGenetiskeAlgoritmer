@@ -48,8 +48,6 @@ namespace GeneticAlgorithms
                 model.UseProbabilitySelector = false;
             }
 
-            model.CreateAlgorithm();
-
             this.data_pb.Invalidate();
         }
 
@@ -268,6 +266,21 @@ namespace GeneticAlgorithms
         {
             model.SelectNextGeneration();
             this.data_pb.Invalidate();
+        }
+
+        private void BitManipulation_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void populationSize_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void data_pb_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
