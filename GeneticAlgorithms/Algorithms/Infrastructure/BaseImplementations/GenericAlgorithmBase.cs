@@ -76,7 +76,7 @@ namespace Algorithms.Infrastructure.BaseImplementations
                 {
                     population = newPopulation;
                     fitness = newFitness;
-                    Logger.LogGeneration(newPopulation, fitnessCalculator);
+                    Logger.LogGeneration(newPopulation, fitnessCalculator, iterations);
                     return;
                 }
             }

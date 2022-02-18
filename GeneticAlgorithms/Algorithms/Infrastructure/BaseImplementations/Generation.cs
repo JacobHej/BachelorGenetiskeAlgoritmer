@@ -14,9 +14,11 @@ namespace Algorithms.Infrastructure.BaseImplementations
         public readonly int HighestFitness;
         public readonly TIndividual HighestFitnessIndividual;
         public readonly int TotalFitness;
+        public readonly int Iteration;
 
-        public Generation(IPopulation<TIndividual> population, IFitnessCalculator<TIndividual> fitnessCalculator)
+        public Generation(IPopulation<TIndividual> population, IFitnessCalculator<TIndividual> fitnessCalculator, int iteration)
         {
+            this.Iteration = iteration;
             this.population = population;
             IndividualFitness = new Dictionary<IIndividual, int>();
             

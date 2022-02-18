@@ -10,9 +10,9 @@ namespace Algorithms.BitStuff
 {
     public class OneOverNXBitStringMutation : MutatorBase<BitStringIndividual>
     {
-        private int factor;
+        private double factor;
 
-        public OneOverNXBitStringMutation(int factor = 1)
+        public OneOverNXBitStringMutation(double factor = 1)
         {
             this.factor = factor;
         }
@@ -24,7 +24,7 @@ namespace Algorithms.BitStuff
 
             for (int i = 0; i < N; i++)
             {
-                if(random.Next(factor * N) == 0)
+                if(random.Next((int)Math.Round(factor * N)) == 0)
                 {
                     individual.Solution.FlipBitAt(i);
                 }

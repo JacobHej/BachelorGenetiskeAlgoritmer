@@ -9,7 +9,7 @@ namespace Algorithms.Infrastructure.Interfaces
 {
     public interface ILogger<TIndividual> where TIndividual : IIndividual
     {
-        public void LogGeneration(IPopulation<TIndividual> population, IFitnessCalculator<TIndividual> fitnessCalculator) ;
+        public void LogGeneration(IPopulation<TIndividual> population, IFitnessCalculator<TIndividual> fitnessCalculator, int iteration) ;
 
         public List<Generation<TIndividual>> History { get; }
         public int AmountOfGenerations { get; }

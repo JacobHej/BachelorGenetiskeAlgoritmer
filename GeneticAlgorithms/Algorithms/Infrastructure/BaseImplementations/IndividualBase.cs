@@ -9,6 +9,7 @@ namespace Algorithms.Infrastructure.BaseImplementations
 {
     public abstract class IndividualBase : IIndividual
     {
+        public override abstract string ToString();
         public abstract IIndividual Copy();
     }
 }
