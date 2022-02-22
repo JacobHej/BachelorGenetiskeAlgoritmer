@@ -233,8 +233,8 @@ namespace GeneticAlgorithms
             //}));
             //x = 0;
 
-            //ResourceManager.Resources.TryGetValue("berlin52.tsp", out String path);
-            //CoordinateGraph g = Parser.LoadTSPGraph(path);
+            ResourceManager.Resources.TryGetValue("berlin52.tsp", out String path);
+            CoordinateGraph g = Parser.LoadTSPGraph(path);
 
             //var result = await Benchmarker.Benchmark<TravelingSalesPersonIndividual>(
             //    new Func<OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>>(() =>
@@ -259,7 +259,7 @@ namespace GeneticAlgorithms
             //int amountOver7K = result.Algorithms.Where(algorithm => algorithm.Logger.History.Last().HighestFitness > int.MaxValue - 7542).Count();
 
             BenchmarkModel model = new BenchmarkModel(@"C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\BenchmarkOutPutFolder");
-            await model.Benchmark_OnePlusOneEA_OneMax_OneOverNX(new double[] { 0.3, 0.4, 0.5, 0.6, 0.7, 0.8}, 100, 10000, 100, 100);
+            await model.BenchmarkOnePLusOneEA(g);
         }
 
         private void prevGen_btn_Click(object sender, EventArgs e)

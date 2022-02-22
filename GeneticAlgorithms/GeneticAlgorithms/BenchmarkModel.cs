@@ -5,6 +5,7 @@ using Algorithms.Infrastructure.Interfaces;
 using Algorithms.OnePlusOneEA;
 using Algorithms.TravelingSalesPerson;
 using Benchmarking;
+using Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,14 +23,29 @@ namespace GeneticAlgorithms
             this.path = path;
         }
 
-        public async Task BenchmarkOnePLusOneEA(int range, double interval, int bitStringLength, int maxIterations, int maxFitnessValue, int tests)
+        public async Task BenchmarkOnePLusOneEA(CoordinateGraph g)
         {
+            var bitStringLength = 100;
+            var maxIterations = 10000;
+            var maxFitnessValue = 100;
+            var tests = 100;
+
             await Benchmark_OnePlusOneEA_OneMax_OneOverN(bitStringLength, maxIterations, maxFitnessValue, tests);
+            //await Benchmark_OnePlusOneEA_OneMax_OneOverNX(new double[] { 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 }, bitStringLength, maxIterations, maxFitnessValue, tests);
+
+            //await BenchMark_OnePlusOneEA_BinVal_OneOverN(bitStringLength, maxIterations, maxFitnessValue, tests);
+            //await Benchmark_OnePlusOneEA_BinVal_OneOverNX(new double[] { 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 }, bitStringLength, maxIterations, maxFitnessValue, tests);
+
+            //await BenchMark_OnePlusOneEA_LeadingOnes_OneOverN(bitStringLength, maxIterations, maxFitnessValue, tests);
+            //await Benchmark_OnePlusOneEA_LeadingOnes_OneOverNX(new double[] { 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 }, bitStringLength, maxIterations, maxFitnessValue, tests);
+
+            //await BenchMark_OnePlusOneEA_TSP_TwoOpt(g, 50000, 0, 10);
+            //await BenchMark_OnePlusOneEA_TSP_PoissonTwoOpt(new double[] { 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75}, g, 50000, 0, 10);
         }
 
         public async Task Benchmark_OnePlusOneEA_OneMax_OneOverN(int bitStringLength, int maxIterations, int minFitnessValue, int tests)
         {
-            BenchmarkSummary<BitStringIndividual> result = await Benchmarker.Benchmark<BitStringIndividual>(
+            BenchmarkSummary<BitStringIndividual> result = await Benchmarker.BenchmarkSynchronousAsync<BitStringIndividual>(
                 new Func<OnePlusOneEaAlgorithm<BitStringIndividual>>(() =>
                     new OnePlusOneEaAlgorithm<BitStringIndividual>(
                         new OneOverNXBitStringMutation(),
@@ -55,7 +71,7 @@ namespace GeneticAlgorithms
         {
             for (int i = 0; i < factors.Length; i++)
             {
-                BenchmarkSummary<BitStringIndividual> result = await Benchmarker.Benchmark<BitStringIndividual>(
+                BenchmarkSummary<BitStringIndividual> result = await Benchmarker.BenchmarkParallelAsync<BitStringIndividual>(
                 new Func<OnePlusOneEaAlgorithm<BitStringIndividual>>(() =>
                     new OnePlusOneEaAlgorithm<BitStringIndividual>(
                         new OneOverNXBitStringMutation(factors[i]),
@@ -78,34 +94,157 @@ namespace GeneticAlgorithms
             }
         }        
 
-        private void BenchMark_OnePlusOneEA_BinVal_OneOverN()
+        private async Task BenchMark_OnePlusOneEA_BinVal_OneOverN(int bitStringLength, int maxIterations, int minFitnessValue, int tests)
         {
+            BenchmarkSummary<BitStringIndividual> result = await Benchmarker.BenchmarkParallelAsync<BitStringIndividual>(
+                new Func<OnePlusOneEaAlgorithm<BitStringIndividual>>(() =>
+                    new OnePlusOneEaAlgorithm<BitStringIndividual>(
+                        new OneOverNXBitStringMutation(),
+                        new BinValFitnessCalculator(),
+                        new LoggerBase<BitStringIndividual>(),
+                        new BitStringIndividual(bitStringLength))),
+                new Predicate<IGeneticAlgorithm<BitStringIndividual>>((algorithm) =>
+                {
+                    if (algorithm.Iterations > maxIterations) return true;
+                    if (algorithm.Logger?.History.Count < 1) return false;
+                    return algorithm?.Logger?.History?.Last()?.HighestFitness >= minFitnessValue;
+                }),
+                tests
+                );
 
+            await ParseAndWriteBenchmark<BitStringIndividual>(
+                result,
+                $"(1+1)EA with one over n mutation and bitstring length {bitStringLength} on BinVal",
+                nameof(BenchMark_OnePlusOneEA_BinVal_OneOverN));
         }
 
-        private void BenchMark_OnePlusOneEA_BinVal_OneOverNX(int range, double interval)
+        public async Task Benchmark_OnePlusOneEA_BinVal_OneOverNX(double[] factors, int bitStringLength, int maxIterations, int minFitnessValue, int tests)
         {
+            for (int i = 0; i < factors.Length; i++)
+            {
+                BenchmarkSummary<BitStringIndividual> result = await Benchmarker.BenchmarkParallelAsync<BitStringIndividual>(
+                new Func<OnePlusOneEaAlgorithm<BitStringIndividual>>(() =>
+                    new OnePlusOneEaAlgorithm<BitStringIndividual>(
+                        new OneOverNXBitStringMutation(factors[i]),
+                        new BinValFitnessCalculator(),
+                        new LoggerBase<BitStringIndividual>(),
+                        new BitStringIndividual(bitStringLength))),
+                new Predicate<IGeneticAlgorithm<BitStringIndividual>>((algorithm) =>
+                {
+                    if (algorithm.Iterations > maxIterations) return true;
+                    if (algorithm.Logger?.History.Count < 1) return false;
+                    return algorithm?.Logger?.History?.Last()?.HighestFitness >= minFitnessValue;
+                }),
+                tests
+                );
 
+                await ParseAndWriteBenchmark<BitStringIndividual>(
+                    result,
+                    $"(1+1)EA with one over n*{factors[i]} mutation and bitstring length {bitStringLength} on BinVal",
+                    $"{nameof(Benchmark_OnePlusOneEA_BinVal_OneOverNX)}_Factor{factors[i]}");
+            }
         }
 
-        private void BenchMark_OnePlusOneEA_LeadingOnes_OneOverN()
+        private async Task BenchMark_OnePlusOneEA_LeadingOnes_OneOverN(int bitStringLength, int maxIterations, int minFitnessValue, int tests)
         {
+            BenchmarkSummary<BitStringIndividual> result = await Benchmarker.BenchmarkParallelAsync<BitStringIndividual>(
+                new Func<OnePlusOneEaAlgorithm<BitStringIndividual>>(() =>
+                    new OnePlusOneEaAlgorithm<BitStringIndividual>(
+                        new OneOverNXBitStringMutation(),
+                        new LeadingOnesFitnessCalculator(),
+                        new LoggerBase<BitStringIndividual>(),
+                        new BitStringIndividual(bitStringLength))),
+                new Predicate<IGeneticAlgorithm<BitStringIndividual>>((algorithm) =>
+                {
+                    if (algorithm.Iterations > maxIterations) return true;
+                    if (algorithm.Logger?.History.Count < 1) return false;
+                    return algorithm?.Logger?.History?.Last()?.HighestFitness >= minFitnessValue;
+                }),
+                tests
+                );
 
+            await ParseAndWriteBenchmark<BitStringIndividual>(
+                result,
+                $"(1+1)EA with one over n mutation and bitstring length {bitStringLength} on LeadingOnes",
+                nameof(BenchMark_OnePlusOneEA_LeadingOnes_OneOverN));
         }
 
-        private void BenchMark_OnePlusOneEA_LeadingOnes_OneOverNX(int range, double interval)
+        public async Task Benchmark_OnePlusOneEA_LeadingOnes_OneOverNX(double[] factors, int bitStringLength, int maxIterations, int minFitnessValue, int tests)
         {
+            for (int i = 0; i < factors.Length; i++)
+            {
+                BenchmarkSummary<BitStringIndividual> result = await Benchmarker.BenchmarkParallelAsync<BitStringIndividual>(
+                new Func<OnePlusOneEaAlgorithm<BitStringIndividual>>(() =>
+                    new OnePlusOneEaAlgorithm<BitStringIndividual>(
+                        new OneOverNXBitStringMutation(factors[i]),
+                        new LeadingOnesFitnessCalculator(),
+                        new LoggerBase<BitStringIndividual>(),
+                        new BitStringIndividual(bitStringLength))),
+                new Predicate<IGeneticAlgorithm<BitStringIndividual>>((algorithm) =>
+                {
+                    if (algorithm.Iterations > maxIterations) return true;
+                    if (algorithm.Logger?.History.Count < 1) return false;
+                    return algorithm?.Logger?.History?.Last()?.HighestFitness >= minFitnessValue;
+                }),
+                tests
+                );
 
+                await ParseAndWriteBenchmark<BitStringIndividual>(
+                    result,
+                    $"(1+1)EA with one over n*{factors[i]} mutation and bitstring length {bitStringLength} on LeadingOnes",
+                    $"{nameof(Benchmark_OnePlusOneEA_LeadingOnes_OneOverNX)}_Factor{factors[i]}");
+            }
         }
 
-        private void BenchMark_OnePlusOneEA_TSP_TwoOpt()
+        private async Task BenchMark_OnePlusOneEA_TSP_TwoOpt(CoordinateGraph graph, int maxIterations, int minFitnessValue, int tests)
         {
+            BenchmarkSummary<TravelingSalesPersonIndividual> result = await Benchmarker.BenchmarkParallelAsync<TravelingSalesPersonIndividual>(
+                new Func<OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>>(() =>
+                    new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
+                        new TwoOptMutator(),
+                        new TravelingSalesPersonFitnessCalculator(),
+                        new LoggerBase<TravelingSalesPersonIndividual>(),
+                        new TravelingSalesPersonIndividual(graph))),
+                new Predicate<IGeneticAlgorithm<TravelingSalesPersonIndividual>>((algorithm) =>
+                {
+                    if (algorithm.Iterations > maxIterations) return true;
+                    if (algorithm.Logger?.History.Count < 1) return false;
+                    return algorithm?.Logger?.History?.Last()?.HighestFitness >= int.MaxValue - minFitnessValue;
+                }),
+                tests
+                );
 
+            await ParseAndWriteBenchmark<TravelingSalesPersonIndividual>(
+                result,
+                $"(1+1)EA with two opt mutation on TSP",
+                nameof(BenchMark_OnePlusOneEA_TSP_TwoOpt));
         }
 
-        private void BenchMark_OnePlusOneEA_TSP_PoissonTwoOpt(int range, double interval)
+        private async Task BenchMark_OnePlusOneEA_TSP_PoissonTwoOpt(double[] lambda, CoordinateGraph graph, int maxIterations, int minFitnessValue, int tests)
         {
+            for (int i = 0; i < lambda.Length; i++)
+            {
+                BenchmarkSummary<TravelingSalesPersonIndividual> result = await Benchmarker.BenchmarkParallelAsync<TravelingSalesPersonIndividual>(
+                 new Func<OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>>(() =>
+                     new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
+                         new TwoOptMutator(),
+                         new TravelingSalesPersonFitnessCalculator(),
+                         new LoggerBase<TravelingSalesPersonIndividual>(),
+                         new TravelingSalesPersonIndividual(graph))),
+                 new Predicate<IGeneticAlgorithm<TravelingSalesPersonIndividual>>((algorithm) =>
+                 {
+                     if (algorithm.Iterations > maxIterations) return true;
+                     if (algorithm.Logger?.History.Count < 1) return false;
+                     return algorithm?.Logger?.History?.Last()?.HighestFitness >= int.MaxValue - minFitnessValue;
+                 }),
+                 tests
+                 );
 
+                await ParseAndWriteBenchmark<TravelingSalesPersonIndividual>(
+                    result,
+                    $"(1+1)EA with poisson two opt mutation on TSP",
+                    $"{nameof(BenchMark_OnePlusOneEA_TSP_PoissonTwoOpt)}_Lambda{lambda[i]}");
+            }
         }
 
 
