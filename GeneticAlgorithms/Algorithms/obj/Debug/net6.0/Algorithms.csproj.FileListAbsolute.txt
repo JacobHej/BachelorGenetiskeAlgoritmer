@@ -15,9 +15,6 @@ C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Algorithms\
 C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Algorithms\obj\Debug\net6.0\Algorithms.dll
 C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Algorithms\obj\Debug\net6.0\ref\Algorithms.dll
 C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Algorithms\obj\Debug\net6.0\Algorithms.pdb
-C:\Users\KafferAffer\Source\Repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Algorithms\obj\Debug\net6.0\Algorithms.dll
-C:\Users\KafferAffer\Source\Repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Algorithms\obj\Debug\net6.0\ref\Algorithms.dll
-C:\Users\KafferAffer\Source\Repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Algorithms\obj\Debug\net6.0\Algorithms.pdb
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Algorithms\bin\Debug\net6.0\Algorithms.deps.json
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Algorithms\bin\Debug\net6.0\Algorithms.dll
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Algorithms\bin\Debug\net6.0\ref\Algorithms.dll
@@ -32,6 +29,7 @@ C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Algorithms\obj\Debug\net6.0\Algorithms.AssemblyInfo.cs
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Algorithms\obj\Debug\net6.0\Algorithms.csproj.CoreCompileInputs.cache
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Algorithms\obj\Debug\net6.0\Algorithms.csproj.CopyComplete
+<<<<<<< HEAD
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Algorithms\obj\Debug\net6.0\Algorithms.csproj.AssemblyReference.cache
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Algorithms\obj\Debug\net6.0\Algorithms.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Algorithms\obj\Debug\net6.0\Algorithms.AssemblyInfoInputs.cache
@@ -49,3 +47,8 @@ C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\A
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Algorithms\obj\Debug\net6.0\Algorithms.dll
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Algorithms\obj\Debug\net6.0\ref\Algorithms.dll
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Algorithms\obj\Debug\net6.0\Algorithms.pdb
+=======
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Algorithms\obj\Debug\net6.0\Algorithms.dll
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Algorithms\obj\Debug\net6.0\ref\Algorithms.dll
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Algorithms\obj\Debug\net6.0\Algorithms.pdb
+>>>>>>> 6f3ec492408a06c5cc98eae3e3b82b4f8ff9b1e6

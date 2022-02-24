@@ -1,6 +1,6 @@
 ﻿namespace GeneticAlgorithms
 {
-    partial class MainForm
+    partial class MainForm_Depricated
     {
         /// <summary>
         ///  Required designer variable.

@@ -48,8 +48,6 @@ namespace GeneticAlgorithms
                 model.UseProbabilitySelector = false;
             }
 
-            model.CreateAlgorithm();
-
             this.data_pb.Invalidate();
         }
 
@@ -204,37 +202,36 @@ namespace GeneticAlgorithms
 
 
 
-            //ResourceManager.Resources.TryGetValue("brd14051.tsp", out String path);
-            //CoordinateGraph g = Parser.LoadTSPGraph(path);
-
-            //var t =
-            //    new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
-            //        new TwoOptMutator(),
-            //        new TravelingSalesPersonFitnessCalculator(),
-            //        new LoggerBase<TravelingSalesPersonIndividual>(),
-            //        new TravelingSalesPersonIndividual(g));
-
-            //Task task = Task.Delay(5000);
-            //int x = 0;
-            //await t.Optimize(new Predicate<IGeneticAlgorithm<TravelingSalesPersonIndividual>>((algorithm) =>
-            //{
-            //    if (task.IsCompleted)
-            //    {
-            //        int length = int.MaxValue - algorithm?.Logger?.History?.Last()?.HighestFitness ?? 0;
-            //        int lengthnt = algorithm?.Logger?.History?.Last()?.HighestFitness ?? 0;
-            //        task = Task.Delay(300000);
-            //    }
-            //    if (algorithm.Logger?.History.Count < 1)
-            //    {
-            //        return false;
-            //    }
-
-            //    return algorithm?.Logger?.History?.Last()?.HighestFitness == int.MaxValue - 7542;
-            //}));
-            //x = 0;
-
             ResourceManager.Resources.TryGetValue("berlin52.tsp", out String path);
             CoordinateGraph g = Parser.LoadTSPGraph(path);
+
+            var t =
+                new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
+                    new TwoOptMutator(),
+                    new TravelingSalesPersonFitnessCalculator(),
+                    new LoggerBase<TravelingSalesPersonIndividual>(),
+                    new TravelingSalesPersonIndividual(g));
+
+            Task task = Task.Delay(5000);
+            int x = 0;
+            await t.Optimize(new Predicate<IGeneticAlgorithm<TravelingSalesPersonIndividual>>((algorithm) =>
+            {
+                if (task.IsCompleted)
+                {
+                    int length = int.MaxValue - algorithm?.Logger?.History?.Last()?.HighestFitness ?? 0;
+                    int lengthnt = algorithm?.Logger?.History?.Last()?.HighestFitness ?? 0;
+                    task = Task.Delay(5000);
+                }
+                if (algorithm.Logger?.History.Count < 1)
+                {
+                    return false;
+                }
+
+                return algorithm?.Logger?.History?.Last()?.HighestFitness > int.MaxValue - 9000;
+            }));
+
+            //ResourceManager.Resources.TryGetValue("berlin52.tsp", out String path);
+            //CoordinateGraph g = Parser.LoadTSPGraph(path);
 
             //var result = await Benchmarker.Benchmark<TravelingSalesPersonIndividual>(
             //    new Func<OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>>(() =>
@@ -272,6 +269,21 @@ namespace GeneticAlgorithms
         {
             model.SelectNextGeneration();
             this.data_pb.Invalidate();
+        }
+
+        private void BitManipulation_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void populationSize_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void data_pb_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
