@@ -130,4 +130,6 @@ C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.MainForm_Depricated.resources
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.StartupForm.resources
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulation.resources
-C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulationForms.OneMaxOnePlusOneEA.resources
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulationForms.LeadingOnesOnePlusOneEA.LeadingOnesOnePlusOneEA.resources
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulationForms.OneMaxOnePlusOneEA.OneMaxOnePlusOneEA.resources
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulationForms.BinValOnePlusOneEA.BinValOnePlusOneEA.resources

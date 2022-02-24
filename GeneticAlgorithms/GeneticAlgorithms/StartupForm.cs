@@ -34,7 +34,6 @@ namespace GeneticAlgorithms
         private void test_btn_Click(object sender, EventArgs e)
         {
             SimpleBitStringAlgorithmModel a = new SimpleBitStringAlgorithmModel();
-            a.createAlgorithm<OnePlusOneEaAlgorithm<BitStringIndividual>>(1,2);
         }
     }
 }

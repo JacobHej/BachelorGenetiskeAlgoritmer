@@ -8,27 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GeneticAlgorithms.CreateSimulationForms
+namespace GeneticAlgorithms.CreateSimulationForms.LeadingOnesOnePlusOneEA
 {
-    public partial class OneMaxOnePlusOneEA : Form
+    public partial class LeadingOnesOnePlusOneEA : Form
     {
-
         int bitLength = 20;
-        public OneMaxOnePlusOneEA()
+        public LeadingOnesOnePlusOneEA()
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
-        }
-
-        private void OneMaxOnePlusOneEA_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void generate_btn_Click(object sender, EventArgs e)
         {
-            SimpleBitStringAlgorithmModel model = new SimpleBitStringAlgorithmModel();
-            model.create_A_OnePlusOne_P_OneMax(bitLength);
+            LeadingOnesOnePlusOneEAModel model = new LeadingOnesOnePlusOneEAModel();
+            model.createAlgorithm(bitLength);
 
             BitManipV2 A_Form = new BitManipV2(model);
             A_Form.Show();
@@ -48,6 +41,11 @@ namespace GeneticAlgorithms.CreateSimulationForms
             {
                 bitLength = int.Parse(bitLength_tb.Text);
             }
+        }
+
+        private void bitLength_label_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

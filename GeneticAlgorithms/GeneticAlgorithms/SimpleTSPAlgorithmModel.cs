@@ -1,5 +1,5 @@
 ﻿using Algorithms;
-using Algorithms.BitStuff;
+using Algorithms.TravelingSalesPerson;
 using Algorithms.Infrastructure.BaseImplementations;
 using Algorithms.Infrastructure.Interfaces;
 using Algorithms.OnePlusOneEA;
@@ -9,21 +9,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Visualization;
+using Common;
 
 namespace GeneticAlgorithms
 {
-    public class SimpleBitStringAlgorithmModel
+    public class SimpleTSPAlgorithmModel
     {
         public TimedEvent EvolutionSimulation;
 
-        public Generation<BitStringIndividual> SelectedGeneration;
+        public Generation<TravelingSalesPersonIndividual> SelectedGeneration;
         public int SelectedgenerationNumber => algorithm.Logger.History.IndexOf(SelectedGeneration);
-
-        public int population = 10;
-        public int bitLength = 100;
         public bool UseProbabilitySelector = false;
 
-        public GeneticAlgorithmBase<BitStringIndividual> algorithm;
+        public GeneticAlgorithmBase<TravelingSalesPersonIndividual> algorithm;
 
 
         public async Task Evolve()
@@ -34,23 +32,11 @@ namespace GeneticAlgorithms
 
         public async Task Optimize()
         {
-            await algorithm.Optimize(new Predicate<IGeneticAlgorithm<BitStringIndividual>>((algorithm) =>
+            await algorithm.Optimize(new Predicate<IGeneticAlgorithm<TravelingSalesPersonIndividual>>((algorithm) =>
             {
-                
                 if (algorithm.Logger?.History.Count < 1)
                 {
                     return false;
-                }
-                int? highestFitnessSoFar = null;
-                if (highestFitnessSoFar == null)
-                {
-                    highestFitnessSoFar = algorithm.Logger?.History?.Last()?.HighestFitness;
-                    return false;
-                }
-                int i = 0;
-                if (algorithm.Logger?.History?.Last()?.HighestFitness> highestFitnessSoFar)
-                {
-                    i = 0;
                 }
                 return algorithm.Logger?.History?.Last()?.HighestFitness == bitLength;
             }));
