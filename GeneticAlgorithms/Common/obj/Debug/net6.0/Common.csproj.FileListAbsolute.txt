@@ -38,7 +38,6 @@ C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\C
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\bin\Debug\net6.0\Common.dll
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\bin\Debug\net6.0\ref\Common.dll
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\bin\Debug\net6.0\Common.pdb
-C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\obj\Debug\net6.0\Common.csproj.AssemblyReference.cache
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\obj\Debug\net6.0\Common.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\obj\Debug\net6.0\Common.AssemblyInfoInputs.cache
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\obj\Debug\net6.0\Common.AssemblyInfo.cs

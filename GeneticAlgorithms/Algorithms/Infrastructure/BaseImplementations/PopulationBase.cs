@@ -17,5 +17,7 @@ namespace Algorithms.Infrastructure.BaseImplementations
             Individuals = new List<TIndividual>();
             this.PopulationSize = populationSize;
         }
+
+        public virtual IPopulation<TIndividual> Copy() { throw new NotImplementedException(); }
     }
 }
