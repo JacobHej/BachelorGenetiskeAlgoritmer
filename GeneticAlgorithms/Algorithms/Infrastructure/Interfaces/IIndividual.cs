@@ -3,6 +3,6 @@
     public interface IIndividual
     {
         public IIndividual Copy();
-
+        public string ToString();
     }
 }

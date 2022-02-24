@@ -18,9 +18,9 @@ namespace Algorithms.Infrastructure.BaseImplementations
             History = new List<Generation<TIndividual>>();
         }
 
-        public virtual void LogGeneration(IPopulation<TIndividual> population, IFitnessCalculator<TIndividual> fitnessCalculator)
+        public virtual void LogGeneration(IPopulation<TIndividual> population, IFitnessCalculator<TIndividual> fitnessCalculator, int iteration)
         {
-            History.Add(new Generation<TIndividual>(population, fitnessCalculator));
+            History.Add(new Generation<TIndividual>(population, fitnessCalculator, iteration));
         }
     }
 }

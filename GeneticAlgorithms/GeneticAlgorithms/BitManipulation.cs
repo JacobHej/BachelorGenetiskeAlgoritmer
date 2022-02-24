@@ -233,27 +233,30 @@ namespace GeneticAlgorithms
             //ResourceManager.Resources.TryGetValue("berlin52.tsp", out String path);
             //CoordinateGraph g = Parser.LoadTSPGraph(path);
 
-            var result = await Benchmarker.Benchmark<TravelingSalesPersonIndividual>(
-                new Func<OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>>(() =>
-                    new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
-                        new PoissonTwoOptMutator(1),
-                        new TravelingSalesPersonFitnessCalculator(),
-                        new BenchmarkLogger<TravelingSalesPersonIndividual>(),
-                        new TravelingSalesPersonIndividual(g))),
-                new Predicate<IGeneticAlgorithm<TravelingSalesPersonIndividual>>((algorithm) =>
-                {
-                    if (algorithm.Iterations > 50000) return true;
+            //var result = await Benchmarker.Benchmark<TravelingSalesPersonIndividual>(
+            //    new Func<OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>>(() =>
+            //        new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
+            //            new PoissonTwoOptMutator(2),
+            //            new TravelingSalesPersonFitnessCalculator(),
+            //            new LoggerBase<TravelingSalesPersonIndividual>(),
+            //            new TravelingSalesPersonIndividual(g))),
+            //    new Predicate<IGeneticAlgorithm<TravelingSalesPersonIndividual>>((algorithm) =>
+            //    {
+            //        if (algorithm.Iterations > 20000) return true;
 
-                    if (algorithm.Logger?.History.Count < 1) return false;
+            //        if (algorithm.Logger?.History.Count < 1) return false;
 
-                    return algorithm?.Logger?.History?.Last()?.HighestFitness > int.MaxValue - 7542;
-                }),
-                100
-                );
-            
-            int amountOver9K = result.Algorithms.Where(algorithm => algorithm.Logger.History.Last().HighestFitness > int.MaxValue - 9000).Count();
-            int amountOver8K = result.Algorithms.Where(algorithm => algorithm.Logger.History.Last().HighestFitness > int.MaxValue - 8000).Count();
-            int amountOver7K = result.Algorithms.Where(algorithm => algorithm.Logger.History.Last().HighestFitness > int.MaxValue - 7542).Count();
+            //        return algorithm?.Logger?.History?.Last()?.HighestFitness > int.MaxValue - 7542;
+            //    }),
+            //    100
+            //    );
+
+            //int amountOver9K = result.Algorithms.Where(algorithm => algorithm.Logger.History.Last().HighestFitness > int.MaxValue - 9000).Count();
+            //int amountOver8K = result.Algorithms.Where(algorithm => algorithm.Logger.History.Last().HighestFitness > int.MaxValue - 8000).Count();
+            //int amountOver7K = result.Algorithms.Where(algorithm => algorithm.Logger.History.Last().HighestFitness > int.MaxValue - 7542).Count();
+
+            BenchmarkModel model = new BenchmarkModel(@"C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\BenchmarkOutPutFolder");
+            await model.BenchmarkOnePLusOneEA(g);
         }
 
         private void prevGen_btn_Click(object sender, EventArgs e)

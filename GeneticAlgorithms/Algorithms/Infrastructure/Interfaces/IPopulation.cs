@@ -4,5 +4,6 @@
     {
         public int PopulationSize { get; }
         public List<TIndividual> Individuals { get; set; }
+        public IPopulation<TIndividual> Copy();
     }
 }

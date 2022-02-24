@@ -19,10 +19,10 @@ namespace Algorithms.Benchmark
             History.Add(null);
         }
 
-        public override void LogGeneration(IPopulation<TIndividual> population, IFitnessCalculator<TIndividual> fitnessCalculator) 
+        public override void LogGeneration(IPopulation<TIndividual> population, IFitnessCalculator<TIndividual> fitnessCalculator, int iteration) 
         {
             AmountOfGenerations++;
-            History[0] = new Generation<TIndividual>(population, fitnessCalculator);
+            History[0] = new Generation<TIndividual>(population, fitnessCalculator, iteration);
         }
     }
 }

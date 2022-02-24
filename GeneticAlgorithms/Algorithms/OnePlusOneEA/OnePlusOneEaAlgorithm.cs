@@ -48,7 +48,7 @@ namespace Algorithms.OnePlusOneEA
 
                         PopulationBase<TIndividual> population = new PopulationBase<TIndividual>(1);
                         population.Individuals.Add(individual);
-                        Logger.LogGeneration(population, fitnessCalculator);
+                        Logger.LogGeneration(population, fitnessCalculator, Iterations);
 
                         return;
                     }

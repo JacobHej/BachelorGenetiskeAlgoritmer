@@ -13,7 +13,6 @@ namespace Algorithms.Infrastructure.BaseImplementations
         protected IMutator<TIndividual> mutator;
         protected IFitnessCalculator<TIndividual> fitnessCalculator;
         protected IPopulation<TIndividual> population;
-        protected ISelector<TIndividual> selector;
         protected int fitness = int.MinValue;
 
         public int maxAttempts = 1000;
@@ -27,59 +26,57 @@ namespace Algorithms.Infrastructure.BaseImplementations
             IMutator<TIndividual> mutator, 
             IFitnessCalculator<TIndividual> fitnessCalculator, 
             IPopulation<TIndividual> population, 
-            ISelector<TIndividual> selector, 
             ILogger<TIndividual> logger)
         {
             this.crossover = crossover;
             this.mutator = mutator;
             this.fitnessCalculator = fitnessCalculator;
             this.population = population;
-            this.selector = selector;
             this.Logger = logger;
         }
 
 
         public virtual async Task Evolve()
         {
-            int count = 0;
-            object lockobj = new object();
+            //int count = 0;
+            //object lockobj = new object();
 
-            while (count++ < maxAttempts)
-            {
-                IPopulation<TIndividual> newPopulation = new PopulationBase<TIndividual>(population.PopulationSize);
+            //while (count++ < maxAttempts)
+            //{
+            //    IPopulation<TIndividual> newPopulation = new PopulationBase<TIndividual>(population.PopulationSize);
 
-                for (int i = 0; i < newPopulation.PopulationSize; i++)
-                {
-                    TIndividual individual1 = selector.Select(population);
-                    TIndividual individual2 = selector.Select(population);
+            //    for (int i = 0; i < newPopulation.PopulationSize; i++)
+            //    {
+            //        TIndividual individual1 = selector.Select(population);
+            //        TIndividual individual2 = selector.Select(population);
 
-                    while (individual1.Equals(individual2))
-                    {
-                        individual1 = selector.Select(population);
-                        individual2 = selector.Select(population);
-                    }
+            //        while (individual1.Equals(individual2))
+            //        {
+            //            individual1 = selector.Select(population);
+            //            individual2 = selector.Select(population);
+            //        }
 
-                    TIndividual newIndividual = crossover.Crossover(individual1, individual2);
+            //        TIndividual newIndividual = crossover.Crossover(individual1, individual2);
 
-                    mutator.Mutate(newIndividual);
+            //        mutator.Mutate(newIndividual);
 
-                    lock (lockobj)
-                    {
-                        newPopulation.Individuals.Add(newIndividual);
-                    }
-                }
+            //        lock (lockobj)
+            //        {
+            //            newPopulation.Individuals.Add(newIndividual);
+            //        }
+            //    }
 
-                int newFitness = 0;
-                newPopulation.Individuals.ForEach(i => newFitness += fitnessCalculator.CalculateFitness(i));
+            //    int newFitness = 0;
+            //    newPopulation.Individuals.ForEach(i => newFitness += fitnessCalculator.CalculateFitness(i));
 
-                if (newFitness > fitness)
-                {
-                    population = newPopulation;
-                    fitness = newFitness;
-                    Logger.LogGeneration(newPopulation, fitnessCalculator);
-                    return;
-                }
-            }
+            //    if (newFitness > fitness)
+            //    {
+            //        population = newPopulation;
+            //        fitness = newFitness;
+            //        Logger.LogGeneration(newPopulation, fitnessCalculator, iterations);
+            //        return;
+            //    }
+            //}
         }
 
         public virtual async Task Optimize(Predicate<IGeneticAlgorithm<TIndividual>> stoppingCriteria)
