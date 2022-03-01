@@ -10,7 +10,7 @@ namespace Algorithms.BitStuff
 {
     public class RandomSelector<TPopulation, TIndividual> : 
         SelectorBase<TPopulation, TIndividual> 
-        where TPopulation : IPopulation<TIndividual>, new()
+        where TPopulation : IPopulation<TIndividual>
         where TIndividual : IIndividual
     {
         public override TIndividual Select(TPopulation population)

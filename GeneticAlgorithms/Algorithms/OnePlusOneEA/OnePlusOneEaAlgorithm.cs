@@ -38,9 +38,7 @@ namespace Algorithms.OnePlusOneEA
                 {
                     Iterations++;
 
-                    TIndividual nextIndividual = (TIndividual)individual.Copy();
-
-                    mutator.Mutate(nextIndividual);
+                    TIndividual nextIndividual = mutator.Mutate(individual);
 
                     if (fitnessCalculator.CalculateFitness(nextIndividual) > fitnessCalculator.CalculateFitness(individual))
                     {
