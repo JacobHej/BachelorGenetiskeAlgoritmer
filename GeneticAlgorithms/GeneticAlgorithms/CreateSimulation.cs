@@ -1,4 +1,8 @@
 ﻿using GeneticAlgorithms.CreateSimulationForms;
+using GeneticAlgorithms.CreateSimulationForms.BinValOnePlusOneEA;
+using GeneticAlgorithms.CreateSimulationForms.LeadingOnesOnePlusOneEA;
+using GeneticAlgorithms.CreateSimulationForms.OneMaxOnePlusOneEA;
+using GeneticAlgorithms.CreateSimulationForms.TSPOnePlusOneEA;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,12 +43,36 @@ namespace GeneticAlgorithms
 
         private void ChangePanel()
         {
-            
+            Form frm;
             switch (problem_box.SelectedIndex, solution_box.SelectedIndex)
             {
-                
+
                 case (0, 0)://
-                    OneMaxOnePlusOneEA frm = new OneMaxOnePlusOneEA();
+                    frm = new OneMaxOnePlusOneEA();
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                    frm.TopLevel = false;
+                    panel1.Controls.Clear();
+                    panel1.Controls.Add(frm);
+                    frm.Show();
+                    break;
+                case (1, 0)://
+                    frm = new LeadingOnesOnePlusOneEA();
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                    frm.TopLevel = false;
+                    panel1.Controls.Clear();
+                    panel1.Controls.Add(frm);
+                    frm.Show();
+                    break;
+                case (2, 0)://
+                    frm = new BinValOnePlusOneEA();
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                    frm.TopLevel = false;
+                    panel1.Controls.Clear();
+                    panel1.Controls.Add(frm);
+                    frm.Show();
+                    break;
+                case (3, 0)://
+                    frm = new TSPOnePlusOneEA();
                     frm.FormBorderStyle = FormBorderStyle.None;
                     frm.TopLevel = false;
                     panel1.Controls.Clear();
