@@ -16,23 +16,27 @@ namespace Algorithms.OnePlusOneEA
         protected ICrossover<TIndividual> crossover;
         protected IMutator<TIndividual> mutator;
         protected IFitnessCalculator<TIndividual> fitnessCalculator;
-        protected IPopulation<TIndividual> population;
         protected ISelector<TPopulation, TIndividual> selector;
-        protected int fitness = int.MinValue;
-        protected int mu;
-        protected int lambda;
+        protected IReplacer<TPopulation, TIndividual> replacer;
 
+        protected TPopulation population;
+
+        protected int fitness = int.MinValue;
+
+        public int Mu;
+        public int CrossoverProbability;
         public int maxAttempts = 1000;
 
         public MuPlusLambdaEaAlgorithm(
             ICrossover<TIndividual> crossover,
             IMutator<TIndividual> mutator,
             IFitnessCalculator<TIndividual> fitnessCalculator,
-            IPopulation<TIndividual> population,
             ISelector<TPopulation, TIndividual> selector,
             ILogger<TIndividual> logger,
+            IReplacer<TPopulation, TIndividual> replacer,
+            TPopulation population,
             int mu,
-            int lambda)
+            double crossoverProbability)
         {
             this.crossover = crossover;
             this.mutator = mutator;
@@ -40,8 +44,9 @@ namespace Algorithms.OnePlusOneEA
             this.population = population;
             this.selector = selector;
             this.Logger = logger;
-            this.mu = mu;
-            this.lambda = lambda;
+            this.replacer = replacer;
+            this.Mu = mu;
+            this.CrossoverProbability = (int) Math.Round((crossoverProbability * 100) % 100);
         }
 
         public override ILogger<TIndividual> Logger { get; set; }
@@ -55,9 +60,38 @@ namespace Algorithms.OnePlusOneEA
 
                 while (count++ < maxAttempts)
                 {
-                    IPopulation<TIndividual> newPopulation = new PopulationBase<TIndividual>(population.PopulationSize);
+                    Iterations++;
 
-                    
+                    List<TIndividual> newIndividuals = new List<TIndividual>();
+                    Random random = new Random();
+
+                    for (int i = 0; i < Mu; i++)
+                    {
+                        TIndividual newIndividual;
+
+                        if(random.Next(100) > CrossoverProbability)
+                        {
+                            TIndividual individual1 = selector.Select(population);
+                            TIndividual individual2 = selector.Select(population);
+
+                            while (individual1.Equals(individual2))
+                            {
+                                individual1 = selector.Select(population);
+                                individual2 = selector.Select(population);
+                            }
+
+                            newIndividual = crossover.Crossover(individual1, individual2);
+                        }
+                        else
+                        {
+                            newIndividual = selector.Select(population);
+                            newIndividual = mutator.Mutate(newIndividual);
+                        }                        
+
+                        newIndividuals.Add(newIndividual);
+                    }
+
+                    TPopulation newPopulation = replacer.Replace(population, newIndividuals, fitnessCalculator);
 
                     int newFitness = 0;
                     newPopulation.Individuals.ForEach(i => newFitness += fitnessCalculator.CalculateFitness(i));

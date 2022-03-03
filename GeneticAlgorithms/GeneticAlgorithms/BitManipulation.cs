@@ -112,18 +112,18 @@ namespace GeneticAlgorithms
         #region PaintEvents
         private void data_pb_Paint(object sender, PaintEventArgs e)
         {
-            if (model.algorithm.Logger.History.Count > 0)
-            {
-                Chart chart = new Chart(200, 400, new Point(50, 25), "Latest Population");
-                chart.values.AddRange(model.SelectedGeneration.IndividualFitness.Values.Select(v => (double)v).ToList());
-                chart.Draw(e.Graphics);
+            //if (model.algorithm.Logger.History.Count > 0)
+            //{
+            //    Chart chart = new Chart(200, 400, new Point(50, 25), "Latest Population");
+            //    chart.values.AddRange(model.SelectedGeneration.IndividualFitness.Values.Select(v => (double)v).ToList());
+            //    chart.Draw(e.Graphics);
 
-                Chart chartBest = new Chart(200, 400, new Point(50, 350), "Best Of Each Population");
-                model.algorithm.Logger.History.ForEach(v => chartBest.values.Add(v.HighestFitness));
-                chartBest.Draw(e.Graphics);
+            //    Chart chartBest = new Chart(200, 400, new Point(50, 350), "Best Of Each Population");
+            //    model.algorithm.Logger.History.ForEach(v => chartBest.values.Add(v.HighestFitness));
+            //    chartBest.Draw(e.Graphics);
 
-                e.Graphics.DrawString("Generation: " + model.SelectedgenerationNumber, new Font("Arial", 16), new SolidBrush(Color.Black), new Point(50, 600));
-            }
+            //    e.Graphics.DrawString("Generation: " + model.SelectedgenerationNumber, new Font("Arial", 16), new SolidBrush(Color.Black), new Point(50, 600));
+            //}
         }
         #endregion
 
@@ -200,35 +200,33 @@ namespace GeneticAlgorithms
             //    500000000
             //    );
 
+            //ResourceManager.Resources.TryGetValue("berlin52.tsp", out String path);
+            //CoordinateGraph g = Parser.LoadTSPGraph(path);
 
+            //var t =
+            //    new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
+            //        new TwoOptMutator(),
+            //        new TravelingSalesPersonFitnessCalculator(),
+            //        new LoggerBase<TravelingSalesPersonIndividual>(),
+            //        new TravelingSalesPersonIndividual(g));
 
-            ResourceManager.Resources.TryGetValue("berlin52.tsp", out String path);
-            CoordinateGraph g = Parser.LoadTSPGraph(path);
+            //Task task = Task.Delay(5000);
+            //int x = 0;
+            //await t.Optimize(new Predicate<IGeneticAlgorithm<TravelingSalesPersonIndividual>>((algorithm) =>
+            //{
+            //    if (task.IsCompleted)
+            //    {
+            //        int length = int.MaxValue - algorithm?.Logger?.History?.Last()?.HighestFitness ?? 0;
+            //        int lengthnt = algorithm?.Logger?.History?.Last()?.HighestFitness ?? 0;
+            //        task = Task.Delay(5000);
+            //    }
+            //    if (algorithm.Logger?.History.Count < 1)
+            //    {
+            //        return false;
+            //    }
 
-            var t =
-                new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
-                    new TwoOptMutator(),
-                    new TravelingSalesPersonFitnessCalculator(),
-                    new LoggerBase<TravelingSalesPersonIndividual>(),
-                    new TravelingSalesPersonIndividual(g));
-
-            Task task = Task.Delay(5000);
-            int x = 0;
-            await t.Optimize(new Predicate<IGeneticAlgorithm<TravelingSalesPersonIndividual>>((algorithm) =>
-            {
-                if (task.IsCompleted)
-                {
-                    int length = int.MaxValue - algorithm?.Logger?.History?.Last()?.HighestFitness ?? 0;
-                    int lengthnt = algorithm?.Logger?.History?.Last()?.HighestFitness ?? 0;
-                    task = Task.Delay(5000);
-                }
-                if (algorithm.Logger?.History.Count < 1)
-                {
-                    return false;
-                }
-
-                return algorithm?.Logger?.History?.Last()?.HighestFitness > int.MaxValue - 9000;
-            }));
+            //    return algorithm?.Logger?.History?.Last()?.HighestFitness > int.MaxValue - 9000;
+            //}));
 
             //ResourceManager.Resources.TryGetValue("berlin52.tsp", out String path);
             //CoordinateGraph g = Parser.LoadTSPGraph(path);
@@ -256,7 +254,9 @@ namespace GeneticAlgorithms
             //int amountOver7K = result.Algorithms.Where(algorithm => algorithm.Logger.History.Last().HighestFitness > int.MaxValue - 7542).Count();
 
             BenchmarkModel model = new BenchmarkModel(@"C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\BenchmarkOutPutFolder");
-            await model.BenchmarkOnePLusOneEA(g);
+            await model.BenchmarkOnePLusOneEA(new CoordinateGraph(new PointF[0]));
+
+            
         }
 
         private void prevGen_btn_Click(object sender, EventArgs e)

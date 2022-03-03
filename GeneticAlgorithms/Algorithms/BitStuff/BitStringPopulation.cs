@@ -24,13 +24,13 @@ namespace Algorithms.BitStuff
             }
         }
 
-        public override IPopulation<BitStringIndividual> Copy()
+        public BitStringPopulation(List<BitStringIndividual> individuals, int bitStringLength) : base(individuals.Count)
         {
-            BitStringPopulation newPopulation = new BitStringPopulation(PopulationSize, bitStringLength);
-
-            this.Individuals.ForEach(i => newPopulation.Individuals.Add((BitStringIndividual)i.Copy()));
-
-            return newPopulation;
+            this.bitStringLength = bitStringLength;
+            Individuals = individuals;
         }
+
+        public override IPopulation<BitStringIndividual> Copy() 
+            => new BitStringPopulation(Individuals.Select(i => (BitStringIndividual) i.Copy()).ToList(), bitStringLength);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Algorithms;
+using Algorithms.Benchmark;
 using Algorithms.BitStuff;
 using Algorithms.Infrastructure.BaseImplementations;
 using Algorithms.Infrastructure.Interfaces;
@@ -25,12 +26,14 @@ namespace GeneticAlgorithms
 
         public async Task BenchmarkOnePLusOneEA(CoordinateGraph g)
         {
-            var bitStringLength = 100;
-            var maxIterations = 10000;
-            var maxFitnessValue = 100;
-            var tests = 100;
+            var bitStringLength = 40;
+            var maxIterations = 5000;
+            var maxFitnessValue = 40*40;
+            var tests = 10;
 
-            await Benchmark_OnePlusOneEA_OneMax_OneOverN(bitStringLength, maxIterations, maxFitnessValue, tests);
+
+
+            await Benchmark_MuPlusLambdaEA_OneMax_OneOverN(bitStringLength, maxIterations, maxFitnessValue, tests);
             //await Benchmark_OnePlusOneEA_OneMax_OneOverNX(new double[] { 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 }, bitStringLength, maxIterations, maxFitnessValue, tests);
 
             //await BenchMark_OnePlusOneEA_BinVal_OneOverN(bitStringLength, maxIterations, maxFitnessValue, tests);
@@ -41,6 +44,82 @@ namespace GeneticAlgorithms
 
             //await BenchMark_OnePlusOneEA_TSP_TwoOpt(g, 50000, 0, 10);
             //await BenchMark_OnePlusOneEA_TSP_PoissonTwoOpt(new double[] { 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75}, g, 50000, 0, 10);
+        }
+
+        public async Task Benchmark_MuPlusLambdaEA_OneMax_OneOverN(int bitStringLength, int maxIterations, int minFitnessValue, int tests)
+        {
+
+            var populations = new List<int> { 2, 10, 15, 17, 19, 21, 23, 25, 27, 30, 32, 34, 35};
+            var crossProbs = new List<double> {0.3, 0.4, 0.5, 0.6, 0.7, 0.8};
+            List<BenchmarkSummary<BitStringIndividual>> results = new List<BenchmarkSummary<BitStringIndividual>>();
+            foreach (int population in populations)
+            {
+                foreach (double cross in crossProbs)
+                {
+                    for (int mu = 1; mu < population; mu += 2)
+                    {
+                        BenchmarkSummary<BitStringIndividual> result = await Benchmarker.BenchmarkParallelAsync<BitStringIndividual>(
+                            new Func<MuPlusLambdaEaAlgorithm<BitStringPopulation, BitStringIndividual>>(() =>
+                                new MuPlusLambdaEaAlgorithm<BitStringPopulation, BitStringIndividual>(
+                                    new RandomSelectionBitStringCrossover(),
+                                    new OneOverNXBitStringMutation(),
+                                    new OneMaxSquaredFitnessCalculator(),
+                                    new RandomSelector<BitStringPopulation, BitStringIndividual>(),
+                                    new BenchmarkLogger<BitStringIndividual>(),
+                                    new ReplaceWorstReplacer<BitStringPopulation, BitStringIndividual>(),
+                                    new BitStringPopulation(population, bitStringLength),
+                                    mu,
+                                    cross)),
+                            new Predicate<IGeneticAlgorithm<BitStringIndividual>>((algorithm) =>
+                            {
+                                if (algorithm.Iterations > maxIterations) return true;
+                                if (algorithm.Logger?.History.Count < 1) return false;
+                                return algorithm?.Logger?.History?.Last()?.HighestFitness >= minFitnessValue;
+                            }),
+                            tests
+                            );
+
+                        results.Add(result);
+                    }
+                }
+            }
+
+            List<TestRes> testress = new List<TestRes>();
+
+            foreach (var result in results)
+            {
+                var algo = (MuPlusLambdaEaAlgorithm<BitStringPopulation, BitStringIndividual>)result.Algorithms.FirstOrDefault();
+                testress.Add(
+                    new TestRes
+                    {
+                        mu = algo.Mu,
+                        crossProb = algo.CrossoverProbability,
+                        meanOpTime = result.MeanOptimizationTime,
+                        iterations = (int) Math.Round((double)result.Algorithms.Select(a => a.Iterations).Sum() / (double)result.Algorithms.Count()),
+                        highestFit = algo.Logger?.History.Last()?.HighestFitness,
+                        populationSize = algo.Logger.History.Last()?.population.Individuals.Count()
+                    });
+            }
+
+            TestRes best = testress.FirstOrDefault();
+
+            testress.ForEach(t =>
+            {
+                if (t.iterations < best.iterations)
+                {
+                    best = t;
+                }
+            });
+        }
+
+        private sealed class TestRes
+        {
+            public int mu;
+            public double crossProb;
+            public double meanOpTime;
+            public int iterations;
+            public int? highestFit;
+            public int? populationSize;
         }
 
         public async Task Benchmark_OnePlusOneEA_OneMax_OneOverN(int bitStringLength, int maxIterations, int minFitnessValue, int tests)

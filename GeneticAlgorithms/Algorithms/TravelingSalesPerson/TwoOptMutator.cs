@@ -9,8 +9,9 @@ namespace Algorithms.TravelingSalesPerson
 {
     public class TwoOptMutator : MutatorBase<TravelingSalesPersonIndividual>
     {
-        public override void Mutate(TravelingSalesPersonIndividual individual)
+        public override TravelingSalesPersonIndividual Mutate(TravelingSalesPersonIndividual individual)
         {
+            TravelingSalesPersonIndividual newIndividual = (TravelingSalesPersonIndividual) individual.Copy();
             Random random = new Random();
 
             int r1 = 0;
@@ -18,8 +19,8 @@ namespace Algorithms.TravelingSalesPerson
 
             while (r1 == r2)
             {
-                r1 = random.Next(0, individual.Solution.Length);
-                r2 = random.Next(0, individual.Solution.Length);
+                r1 = random.Next(0, newIndividual.Solution.Length);
+                r2 = random.Next(0, newIndividual.Solution.Length);
             }
 
             int seqLength = Math.Abs(r1 - r2);
@@ -29,10 +30,12 @@ namespace Algorithms.TravelingSalesPerson
             {
                 int inverseIndex = startIndex + seqLength - (i - startIndex);
 
-                int temp = individual.Solution[i];
-                individual.Solution[i] = individual.Solution[inverseIndex];
-                individual.Solution[inverseIndex] = temp;
+                int temp = newIndividual.Solution[i];
+                newIndividual.Solution[i] = newIndividual.Solution[inverseIndex];
+                newIndividual.Solution[inverseIndex] = temp;
             }
+
+            return newIndividual;
         }
     }
 }
