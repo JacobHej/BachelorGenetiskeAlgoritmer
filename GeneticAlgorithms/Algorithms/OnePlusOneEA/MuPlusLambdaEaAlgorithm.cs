@@ -56,7 +56,6 @@ namespace Algorithms.OnePlusOneEA
             return Task.Run(() =>
             {
                 int count = 0;
-                object lockobj = new object();
 
                 while (count++ < maxAttempts)
                 {
