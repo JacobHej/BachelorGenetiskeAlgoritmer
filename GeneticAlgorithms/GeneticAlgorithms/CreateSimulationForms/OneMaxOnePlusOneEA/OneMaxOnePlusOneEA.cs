@@ -50,5 +50,10 @@ namespace GeneticAlgorithms.CreateSimulationForms.OneMaxOnePlusOneEA
                 bitLength = int.Parse(bitLength_tb.Text);
             }
         }
+
+        private void bitLength_label_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

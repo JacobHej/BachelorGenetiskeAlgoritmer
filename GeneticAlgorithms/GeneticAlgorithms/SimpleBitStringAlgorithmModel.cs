@@ -23,6 +23,7 @@ namespace GeneticAlgorithms
         public int bitLength = 100;
         public bool UseProbabilitySelector = false;
 
+        public Func<GeneticAlgorithmBase<BitStringIndividual>> algorithmFactory;
         public GeneticAlgorithmBase<BitStringIndividual> algorithm;
 
 
@@ -42,17 +43,25 @@ namespace GeneticAlgorithms
                     return false;
                 }
                 int? highestFitnessSoFar = null;
+                int prevIterations = 0;
+                int maxIterations = 1000;
                 if (highestFitnessSoFar == null)
                 {
                     highestFitnessSoFar = algorithm.Logger?.History?.Last()?.HighestFitness;
+                    prevIterations = algorithm.Iterations;
                     return false;
                 }
-                int i = 0;
-                if (algorithm.Logger?.History?.Last()?.HighestFitness> highestFitnessSoFar)
+                if (algorithm.Logger?.History?.Last()?.HighestFitness > highestFitnessSoFar)
                 {
-                    i = 0;
+                    prevIterations = algorithm.Iterations;
+                    highestFitnessSoFar = algorithm.Logger?.History?.Last()?.HighestFitness;
+                    return false;
                 }
-                return algorithm.Logger?.History?.Last()?.HighestFitness == bitLength;
+                if (algorithm.Iterations - prevIterations > maxIterations)
+                {
+                    return true;
+                }
+                return false;
             }));
 
             SelectedGeneration = algorithm.Logger.History.Last();
@@ -74,6 +83,11 @@ namespace GeneticAlgorithms
             if (index + 1 >= algorithm.Logger.History.Count) return;
 
             SelectedGeneration = algorithm.Logger.History[index + 1];
+        }
+
+        public void restartAlgorithm()
+        {
+            algorithm = algorithmFactory();
         }
     }
 }

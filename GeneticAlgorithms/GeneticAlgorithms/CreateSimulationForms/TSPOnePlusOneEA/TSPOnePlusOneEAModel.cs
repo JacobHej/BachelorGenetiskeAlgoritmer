@@ -14,19 +14,24 @@ namespace GeneticAlgorithms.CreateSimulationForms.TSPOnePlusOneEA
 {
     public class TSPOnePlusOneEAModel : SimpleTSPAlgorithmModel
     {
-        CoordinateGraph graph = null;
-        public void createAlgorithm(int bitLengthIn)
+
+        public void createAlgorithm(CoordinateGraph graph)
         {
             if (graph == null)
             {
                 return;
             }
-            algorithm = new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
-                new TwoOptMutator(),
-                new TravelingSalesPersonFitnessCalculator(),
-                new LoggerBase<TravelingSalesPersonIndividual>(),
-                new TravelingSalesPersonIndividual(graph)
-            );
+            algorithmFactory = new Func<GeneticAlgorithmBase<TravelingSalesPersonIndividual>>(() => {
+                return new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
+                    new TwoOptMutator(),
+                    new TravelingSalesPersonFitnessCalculator(),
+                    new LoggerBase<TravelingSalesPersonIndividual>(),
+                    new TravelingSalesPersonIndividual(graph)
+                );
+
+            });
+            this.graph = graph;
+            algorithm = algorithmFactory();
         }
     }
 }

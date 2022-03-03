@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Common;
+using IOParsing;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -29,7 +31,14 @@ namespace GeneticAlgorithms.CreateSimulationForms.TSPOnePlusOneEA
 
         private void generate_btn_Click(object sender, EventArgs e)
         {
+            String file = (String)comboBox1.SelectedItem;
+            ResourceManager.Resources.TryGetValue(file, out String path);
+            CoordinateGraph g = Parser.LoadTSPGraph(path);
+            TSPOnePlusOneEAModel model = new TSPOnePlusOneEAModel();
+            model.createAlgorithm(g);
 
+            TSPManipV2 A_Form = new TSPManipV2(model);
+            A_Form.Show();
         }
     }
 }

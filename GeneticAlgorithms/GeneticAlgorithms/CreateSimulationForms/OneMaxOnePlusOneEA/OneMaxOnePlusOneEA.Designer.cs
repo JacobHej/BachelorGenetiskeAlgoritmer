@@ -62,6 +62,7 @@
             this.bitLength_label.Size = new System.Drawing.Size(115, 20);
             this.bitLength_label.TabIndex = 16;
             this.bitLength_label.Text = "Size of BitString";
+            this.bitLength_label.Click += new System.EventHandler(this.bitLength_label_Click);
             // 
             // OneMaxOnePlusOneEA
             // 

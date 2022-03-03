@@ -187,5 +187,10 @@ namespace GeneticAlgorithms
             this.graph_btn.Enabled = false;
             GraphOrBit = true;
         }
+
+        private void graph_pb_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

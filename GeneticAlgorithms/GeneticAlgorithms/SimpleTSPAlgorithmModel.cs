@@ -21,7 +21,9 @@ namespace GeneticAlgorithms
         public int SelectedgenerationNumber => algorithm.Logger.History.IndexOf(SelectedGeneration);
         public bool UseProbabilitySelector = false;
 
+        public Func<GeneticAlgorithmBase<TravelingSalesPersonIndividual>> algorithmFactory;
         public GeneticAlgorithmBase<TravelingSalesPersonIndividual> algorithm;
+        public CoordinateGraph graph;
 
 
         public async Task Evolve()
@@ -38,7 +40,26 @@ namespace GeneticAlgorithms
                 {
                     return false;
                 }
-                return algorithm.Logger?.History?.Last()?.HighestFitness == bitLength;
+                int? highestFitnessSoFar = null;
+                int prevIterations = 0;
+                int maxIterations = 1000;
+                if (highestFitnessSoFar == null)
+                {
+                    highestFitnessSoFar = algorithm.Logger?.History?.Last()?.HighestFitness;
+                    prevIterations = algorithm.Iterations;
+                    return false;
+                }
+                if (algorithm.Logger?.History?.Last()?.HighestFitness > highestFitnessSoFar)
+                {
+                    prevIterations = algorithm.Iterations;
+                    highestFitnessSoFar = algorithm.Logger?.History?.Last()?.HighestFitness;
+                    return false;
+                }
+                if (algorithm.Iterations - prevIterations > maxIterations)
+                {
+                    return true;
+                }
+                return false;
             }));
 
             SelectedGeneration = algorithm.Logger.History.Last();
@@ -60,6 +81,11 @@ namespace GeneticAlgorithms
             if (index + 1 >= algorithm.Logger.History.Count) return;
 
             SelectedGeneration = algorithm.Logger.History[index + 1];
+        }
+
+        public void restartAlgorithm()
+        {
+            algorithm = algorithmFactory();
         }
     }
 }

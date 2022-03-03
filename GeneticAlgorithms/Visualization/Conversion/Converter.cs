@@ -62,21 +62,39 @@ namespace Visualization.Conversion
             {
                 p = g.Verticies[i];
                 minX = Math.Min(minX, p.X);
-                maxX = Math.Max(minX, p.X);
-                minY = Math.Min(minX, p.Y);
-                maxY = Math.Max(minX, p.Y);
+                maxX = Math.Max(maxX, p.X);
+                minY = Math.Min(minY, p.Y);
+                maxY = Math.Max(maxY, p.Y);
             }
 
             float width = maxX - minX;
             float height = maxY - minY;
 
             SimpleGraph graph = new SimpleGraph();
+            int x;
+            int y;
+
+            if (solution == null)
+            {
+                for (int i = 0; i < g.Verticies.Length; i++)
+                {
+                    p = g.Verticies[i];
+                    x = (int)Math.Round((p.X - minX) * scale / width);
+                    y = (int)Math.Round((p.Y - minY) * scale / height);
+                    FilledCircle node = new FilledCircle(
+                        new Point(x, y),
+                        new Size(20, 20),
+                        Color.Blue);
+                    graph.Nodes.Add(node);
+                }
+                return graph;
+            }
 
             //Calculate the first node on the solution tour
             int index = solution[0];
             p = g.Verticies[index];
-            int x = (int)Math.Round((p.X-minX) * scale / width);
-            int y = (int)Math.Round((p.Y-minY) * scale / width);
+            x = (int)Math.Round((p.X-minX) * scale / width);
+            y = (int)Math.Round((p.Y-minY) * scale / height);
             FilledCircle nodeFrom = new FilledCircle(
                 new Point(x, y),
                 new Size(20, 20),
@@ -84,13 +102,15 @@ namespace Visualization.Conversion
             graph.Nodes.Add(nodeFrom);
             FilledCircle startNode = nodeFrom;
 
+            
+
             //Go through calculating all other nodes on solution tour and add edges between new and previous
             for (int i = 1; i < solution.Length; i++)
             {
                 index = solution[i];
                 p = g.Verticies[index];
                 x = (int)Math.Round((p.X - minX) * scale / width);
-                y = (int)Math.Round((p.Y - minY) * scale / width);
+                y = (int)Math.Round((p.Y - minY) * scale / height);
 
                 FilledCircle nodeTo = new FilledCircle(
                     new Point(x, y),

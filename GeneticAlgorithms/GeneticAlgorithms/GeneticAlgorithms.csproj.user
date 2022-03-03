@@ -28,5 +28,8 @@
     <Compile Update="StartupForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="TSPManipV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

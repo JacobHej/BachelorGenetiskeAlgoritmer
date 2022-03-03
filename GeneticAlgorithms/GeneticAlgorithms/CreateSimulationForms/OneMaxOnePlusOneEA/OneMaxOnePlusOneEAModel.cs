@@ -16,12 +16,17 @@ namespace GeneticAlgorithms.CreateSimulationForms.OneMaxOnePlusOneEA
         {
             population = 1;
             bitLength = bitLengthIn;
-            algorithm = new OnePlusOneEaAlgorithm<BitStringIndividual>(
-                new OneOverNXBitStringMutation(),
-                new OneMaxFitnessCalculator(),
-                new LoggerBase<BitStringIndividual>(),
-                new BitStringIndividual(bitLength)
-            );
+            
+            algorithmFactory = new Func<GeneticAlgorithmBase<BitStringIndividual>>(() =>
+            {
+                return new OnePlusOneEaAlgorithm<BitStringIndividual>(
+                    new OneOverNXBitStringMutation(),
+                    new OneMaxFitnessCalculator(),
+                    new LoggerBase<BitStringIndividual>(),
+                    new BitStringIndividual(bitLength)
+                );
+            });
+            algorithm = algorithmFactory();
         }
     }
 }

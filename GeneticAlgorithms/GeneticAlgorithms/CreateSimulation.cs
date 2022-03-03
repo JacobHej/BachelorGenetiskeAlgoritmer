@@ -2,6 +2,7 @@
 using GeneticAlgorithms.CreateSimulationForms.BinValOnePlusOneEA;
 using GeneticAlgorithms.CreateSimulationForms.LeadingOnesOnePlusOneEA;
 using GeneticAlgorithms.CreateSimulationForms.OneMaxOnePlusOneEA;
+using GeneticAlgorithms.CreateSimulationForms.TSPOnePlusOneEA;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -64,6 +65,14 @@ namespace GeneticAlgorithms
                     break;
                 case (2, 0)://
                     frm = new BinValOnePlusOneEA();
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                    frm.TopLevel = false;
+                    panel1.Controls.Clear();
+                    panel1.Controls.Add(frm);
+                    frm.Show();
+                    break;
+                case (3, 0)://
+                    frm = new TSPOnePlusOneEA();
                     frm.FormBorderStyle = FormBorderStyle.None;
                     frm.TopLevel = false;
                     panel1.Controls.Clear();

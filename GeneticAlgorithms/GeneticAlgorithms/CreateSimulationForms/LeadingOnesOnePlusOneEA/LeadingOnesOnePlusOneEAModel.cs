@@ -16,12 +16,17 @@ namespace GeneticAlgorithms.CreateSimulationForms.LeadingOnesOnePlusOneEA
         {
             population = 1;
             bitLength = bitLengthIn;
-            algorithm = new OnePlusOneEaAlgorithm<BitStringIndividual>(
-                new OneOverNXBitStringMutation(),
-                new LeadingOnesFitnessCalculator(),
-                new LoggerBase<BitStringIndividual>(),
-                new BitStringIndividual(bitLength)
-            );
+
+            algorithmFactory = new Func<GeneticAlgorithmBase<BitStringIndividual>>(() =>
+            {
+                return new OnePlusOneEaAlgorithm<BitStringIndividual>(
+                    new OneOverNXBitStringMutation(),
+                    new LeadingOnesFitnessCalculator(),
+                    new LoggerBase<BitStringIndividual>(),
+                    new BitStringIndividual(bitLength)
+                );
+            });
+            algorithm = algorithmFactory();
         }
     }
 }
