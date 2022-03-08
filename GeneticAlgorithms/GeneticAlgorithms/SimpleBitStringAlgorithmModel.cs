@@ -3,6 +3,7 @@ using Algorithms.BitStuff;
 using Algorithms.Infrastructure.BaseImplementations;
 using Algorithms.Infrastructure.Interfaces;
 using Algorithms.OnePlusOneEA;
+using Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -42,6 +43,9 @@ namespace GeneticAlgorithms
                 {
                     return false;
                 }
+
+                return algorithm.Logger.History.Last().HighestFitness == 10;
+
                 int? highestFitnessSoFar = null;
                 int prevIterations = 0;
                 int maxIterations = 1000;
@@ -88,6 +92,44 @@ namespace GeneticAlgorithms
         public void restartAlgorithm()
         {
             algorithm = algorithmFactory();
+        }
+
+        public List<KeyValuePair<int, int>> GetWeights()
+        {
+            List<KeyValuePair<int, int>> weights = new List<KeyValuePair<int, int>>();
+
+            List<BitString> bitStrings = 
+                algorithm?.Logger?.History?.Select(x => x.HighestFitnessIndividual.Solution)?.ToList() ?? new List<BitString>();
+
+            bitStrings.ForEach(x => weights.Add(GetWeight(x.Bits)));
+
+            return weights;
+        }
+
+        private KeyValuePair<int, int> GetWeight(char[] bits)
+        {
+            int sum = 0;
+            int count = 0;
+
+            // count from middle and down
+            int startIndex = (bits.Length / 2) - 1;
+            for (int i = 0; i <= (bits.Length / 2) - 1; i++)
+            {
+                bool wasOne = bits[i].Equals('1');
+                sum -= wasOne ? startIndex - i  + 1: 0;
+                count += wasOne ? 1 : 0;
+            }
+
+            // count from middle and up
+            startIndex = (bits.Length / 2) + ((bits.Length % 2) == 0 ? 0 : 1);
+            for (int i = startIndex; i < bits.Length; i++)
+            {
+                bool wasOne = bits[i].Equals('1');
+                sum += wasOne ? i - startIndex + 1 : 0;
+                count += wasOne ? 1 : 0;
+            }
+
+            return new KeyValuePair<int, int>(sum, count);
         }
     }
 }

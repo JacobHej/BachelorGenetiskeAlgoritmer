@@ -254,7 +254,7 @@ namespace GeneticAlgorithms
             //int amountOver7K = result.Algorithms.Where(algorithm => algorithm.Logger.History.Last().HighestFitness > int.MaxValue - 7542).Count();
 
             BenchmarkModel model = new BenchmarkModel(@"C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\BenchmarkOutPutFolder");
-            await model.BenchmarkOnePLusOneEA(new CoordinateGraph(new PointF[0]));
+            await model.BenchmarkOnePLusOneEA(new CoordinateGraph(new PointF[0], null));
 
             
         }

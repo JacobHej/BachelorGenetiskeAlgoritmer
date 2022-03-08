@@ -13,9 +13,12 @@ namespace Common
 
         public PointF[] Verticies;
 
-        public CoordinateGraph(PointF[] verticies)
+        public int[] OptimalSolution;
+
+        public CoordinateGraph(PointF[] verticies, int[] optimalSolution)
         {
             this.Verticies = verticies;
+            this.OptimalSolution = optimalSolution;
             this.distances = new Dictionary<string, int>();
         }
 

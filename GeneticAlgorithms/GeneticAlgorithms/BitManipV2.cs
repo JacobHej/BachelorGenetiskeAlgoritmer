@@ -1,4 +1,9 @@
-﻿using System;
+﻿using Algorithms;
+using Algorithms.BitStuff;
+using Algorithms.Infrastructure.BaseImplementations;
+using Algorithms.Infrastructure.Interfaces;
+using Algorithms.OnePlusOneEA;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -87,26 +92,50 @@ namespace GeneticAlgorithms
             this.evolve_btn.Enabled = true;
         }
 
-        private void test_btn_Click(object sender, EventArgs e)
+        private async void test_btn_Click(object sender, EventArgs e)
         {
-
+            OnePlusOneEaAlgorithm<BitStringIndividual> algo = new OnePlusOneEaAlgorithm<BitStringIndividual>(
+                new OneOverNXBitStringMutation(),
+                new BinValFitnessCalculator(),
+                new LoggerBase<BitStringIndividual>(),
+                new BitStringIndividual(16));
+            await algo.Optimize(new Predicate<IGeneticAlgorithm<BitStringIndividual>>((algorithm) =>
+            {
+                if (algorithm.Logger?.History.Count < 1)
+                {
+                    return false;
+                }
+                return algorithm.Logger?.History?.Last()?.HighestFitness > (2 * Math.Pow(2, 15)) - 2;
+            }));
+            model.algorithm = algo;
+            this.data_pb.Invalidate();
         }
 
         #region PaintEvents
-        private void data_pb_Paint(object sender, PaintEventArgs e)
+        private async void data_pb_Paint(object sender, PaintEventArgs e)
         {
-            if (model.algorithm.Logger.History.Count > 0)
-            {
-                Chart chart = new Chart(200, 400, new Point(50, 25), "Latest Population");
-                chart.values.AddRange(model.SelectedGeneration.IndividualFitness.Values.Select(v => (double)v).ToList());
-                chart.Draw(e.Graphics);
+            OnionThing o = new OnionThing(new Point(0,0), new Size(400, 400));
 
-                Chart chartBest = new Chart(200, 400, new Point(50, 350), "Best Of Each Population");
-                model.algorithm.Logger.History.ForEach(v => chartBest.values.Add(v.HighestFitness));
-                chartBest.Draw(e.Graphics);
+            //fs.Draw(e.Graphics);
+            //if (model.algorithm.Logger.History.Count > 0)
+            //{
+            //OnionThing o = new OnionThing(new Point(100, 100), new Size(400, 400));
+            //o.Draw2(e.Graphics, model.bitLength, new List<int> { -1, -1, -3, 4, 13, 7, 4, 2, 1, 0 });
 
-                e.Graphics.DrawString("Generation: " + model.SelectedgenerationNumber, new Font("Arial", 16), new SolidBrush(Color.Black), new Point(50, 600));
-            }
+            
+            o.Draw2(e.Graphics, 16, model.GetWeights()); 
+
+
+                //Chart chart = new Chart(200, 400, new Point(50, 25), "Latest Population");
+                //chart.values.AddRange(model.SelectedGeneration.IndividualFitness.Values.Select(v => (double)v).ToList());
+                //chart.Draw(e.Graphics);
+
+                //Chart chartBest = new Chart(200, 400, new Point(50, 350), "Best Of Each Population");
+                //model.algorithm.Logger.History.ForEach(v => chartBest.values.Add(v.HighestFitness));
+                //chartBest.Draw(e.Graphics);
+
+                //e.Graphics.DrawString("Generation: " + model.SelectedgenerationNumber, new Font("Arial", 16), new SolidBrush(Color.Black), new Point(50, 600));
+            //}
         }
         #endregion
 

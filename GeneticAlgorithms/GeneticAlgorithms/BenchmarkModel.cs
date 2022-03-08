@@ -49,8 +49,8 @@ namespace GeneticAlgorithms
         public async Task Benchmark_MuPlusLambdaEA_OneMax_OneOverN(int bitStringLength, int maxIterations, int minFitnessValue, int tests)
         {
 
-            var populations = new List<int> { 2, 10, 15, 17, 19, 21, 23, 25, 27, 30, 32, 34, 35};
-            var crossProbs = new List<double> {0.3, 0.4, 0.5, 0.6, 0.7, 0.8};
+            var populations = new List<int> { 2};
+            var crossProbs = new List<double> {0.3};
             List<BenchmarkSummary<BitStringIndividual>> results = new List<BenchmarkSummary<BitStringIndividual>>();
             foreach (int population in populations)
             {

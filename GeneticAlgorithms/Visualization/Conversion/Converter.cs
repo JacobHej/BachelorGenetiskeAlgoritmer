@@ -52,7 +52,7 @@ namespace Visualization.Conversion
             return graph;
         }
 
-        public static SimpleGraph CoordinateGraphToSimpleGraph(CoordinateGraph g, int scale, int[] solution = null)
+        public static SimpleGraph CoordinateGraphToSimpleGraph(CoordinateGraph g, int scale, int[] solution = null, int[] optimalSolution = null)
         {
             float minX = g.Verticies[0].X, minY = g.Verticies[0].Y, maxX = g.Verticies[0].X, maxY = g.Verticies[0].Y;
             PointF p;
@@ -101,13 +101,25 @@ namespace Visualization.Conversion
                 Color.Blue);
             graph.Nodes.Add(nodeFrom);
             FilledCircle startNode = nodeFrom;
-
-            
+            int prevIndex = index;
 
             //Go through calculating all other nodes on solution tour and add edges between new and previous
             for (int i = 1; i < solution.Length; i++)
             {
                 index = solution[i];
+                Color color;
+
+                if(optimalSolution == null)
+                {
+                    color = Color.Red;
+                } else if(optimalSolution[i-1] == prevIndex && optimalSolution[i] == index)
+                {
+                    color = Color.Green;
+                } else
+                {
+                    color = Color.Red;
+                }
+
                 p = g.Verticies[index];
                 x = (int)Math.Round((p.X - minX) * scale / width);
                 y = (int)Math.Round((p.Y - minY) * scale / height);
@@ -118,8 +130,9 @@ namespace Visualization.Conversion
                     Color.Blue);
                 graph.Nodes.Add(nodeTo);
 
-                graph.Edges.Add(new Line(nodeFrom, nodeTo, Color.Red));
+                graph.Edges.Add(new Line(nodeFrom, nodeTo, color));
                 nodeFrom = nodeTo;
+                prevIndex = index;
             }
 
             //Add edge back to the beginning
