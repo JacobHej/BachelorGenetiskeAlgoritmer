@@ -169,7 +169,7 @@ namespace IOParsing
                             i++;
                             points.Add(new PointF(values[1], values[2]));
                         }
-                        graph = new CoordinateGraph(points.ToArray());
+                        graph = new CoordinateGraph(points.ToArray(), null);
                         break;
                     default:
 
