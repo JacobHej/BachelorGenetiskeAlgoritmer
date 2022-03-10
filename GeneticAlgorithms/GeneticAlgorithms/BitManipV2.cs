@@ -42,7 +42,10 @@ namespace GeneticAlgorithms
         {
             await Task.Run(async () =>
             {
-                await model.Optimize();
+                int MaxItr_i = string.IsNullOrEmpty(MaxItr_tb.Text) ? 0 : int.Parse(MaxItr_tb.Text);
+                int ItrWithoutImpr_i = string.IsNullOrEmpty(ItrWithoutImpr_tb.Text) ? 0 : int.Parse(ItrWithoutImpr_tb.Text);
+                int TargetFitness_i = string.IsNullOrEmpty(TargetFitness_tb.Text) ? 0 : int.Parse(TargetFitness_tb.Text);
+                await model.Optimize(MaxItr_i, ItrWithoutImpr_i, TargetFitness_i);
             });
 
             this.data_pb.Invalidate();
@@ -120,6 +123,23 @@ namespace GeneticAlgorithms
         {
             model.SelectNextGeneration();
             this.data_pb.Invalidate();
+        }
+
+        private void MaxItr_tb_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void OnlyInt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

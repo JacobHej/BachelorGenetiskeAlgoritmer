@@ -13,6 +13,7 @@ namespace Common
 
         public PointF[] Verticies;
 
+        public int[] optPath;
         public CoordinateGraph(PointF[] verticies)
         {
             this.Verticies = verticies;

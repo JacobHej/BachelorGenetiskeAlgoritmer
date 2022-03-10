@@ -56,7 +56,8 @@
             "OneMax",
             "LeadingOnes",
             "BinVal",
-            "TSP"});
+            "TSP"
+            });
             this.problem_box.Location = new System.Drawing.Point(419, 12);
             this.problem_box.Name = "problem_box";
             this.problem_box.Size = new System.Drawing.Size(154, 53);
@@ -69,7 +70,9 @@
             this.solution_box.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.solution_box.FormattingEnabled = true;
             this.solution_box.Items.AddRange(new object[] {
-            "1+1EA"});
+            "1+1EA",
+            "Mu+LambdaEA"
+            });
             this.solution_box.Location = new System.Drawing.Point(679, 12);
             this.solution_box.Name = "solution_box";
             this.solution_box.Size = new System.Drawing.Size(154, 53);

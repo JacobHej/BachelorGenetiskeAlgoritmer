@@ -42,10 +42,74 @@ namespace IOParsing
             return tsp;
         }
 
+        public static CoordinateGraph LoadTspGraphWithOpt(string tspPath, string optPath)
+        {
+            CoordinateGraph graph = LoadTSPGraph(tspPath);
+
+            String[] lines = File.ReadAllLines(optPath);
+            int i = 0;
+            while (i < lines.Length)
+            {
+                String line = lines[i];
+                i++;
+                String[] parts = line.Replace(" :", ":").Replace(": ", ":").Split(':');
+                String attribute = parts[0];
+                String value;
+                //NAME: berlin52.opt.tour
+                //TYPE : TOUR
+                //DIMENSION : 52
+                //TOUR_SECTION
+
+                String name;
+                String type;
+                String size;
+
+                switch (attribute)
+                {
+
+                    case "NAME":
+                        value = parts[1];
+                        name = value;
+                        break;
+                    case "TYPE":
+                        value = parts[1];
+                        type = value;
+                        break;
+                    case "DIMENSION":
+                        value = parts[1];
+                        size = value;
+                        break;
+                    case "TOUR_SECTION":
+                        List<int> optTour = new List<int>();
+                        while (i < lines.Length)
+                        {//Loop through points till end of file
+                            line = lines[i];
+                            int index;
+                            try
+                            {
+                                index = int.Parse(line);
+                                i++;
+                                optTour.Add(index);
+                            }
+                            catch (FormatException e)
+                            {
+                                if (e.Message == "Input string was not in a correct format.")
+                                {
+                                    break;
+                                }
+                            }
+                        }
+                        graph.optPath = optTour.ToArray();
+                        break;
+                }
+            }
+            return graph;
+        }
+
         public static CoordinateGraph LoadTSPGraph(string path)
         {
             String[] lines = File.ReadAllLines(path);
-            
+
             String name;
             String type;
             String comment;

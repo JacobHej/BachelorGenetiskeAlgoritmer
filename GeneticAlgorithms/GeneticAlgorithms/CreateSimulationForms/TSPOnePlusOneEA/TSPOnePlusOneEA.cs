@@ -32,8 +32,17 @@ namespace GeneticAlgorithms.CreateSimulationForms.TSPOnePlusOneEA
         private void generate_btn_Click(object sender, EventArgs e)
         {
             String file = (String)comboBox1.SelectedItem;
-            ResourceManager.Resources.TryGetValue(file, out String path);
-            CoordinateGraph g = Parser.LoadTSPGraph(path);
+            ResourceManager.tspFiles.TryGetValue(file, out String[] tspFilePaths);
+            CoordinateGraph g;
+            if (tspFilePaths.Length<=1)
+            {
+                g = Parser.LoadTSPGraph(tspFilePaths[0]);
+            }
+            else
+            {
+                g = Parser.LoadTspGraphWithOpt(tspFilePaths[0],tspFilePaths[1]);
+            }
+            
             TSPOnePlusOneEAModel model = new TSPOnePlusOneEAModel();
             model.createAlgorithm(g);
 

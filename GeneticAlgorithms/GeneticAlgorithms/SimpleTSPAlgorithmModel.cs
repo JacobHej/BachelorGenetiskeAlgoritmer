@@ -32,30 +32,45 @@ namespace GeneticAlgorithms
             SelectedGeneration = algorithm.Logger.History.Last();
         }
 
-        public async Task Optimize()
+        public async Task Optimize(int maxItrTotal, int maxItrNoImprovement, int maxLength)
         {
+            int startIterations = algorithm.Iterations;
             await algorithm.Optimize(new Predicate<IGeneticAlgorithm<TravelingSalesPersonIndividual>>((algorithm) =>
             {
+
                 if (algorithm.Logger?.History.Count < 1)
                 {
-                    return false;
+                    return false;//Just started nothing to stop
                 }
+
+                //Max fitness check
+                if (algorithm.Logger?.History?.Last()?.HighestFitness >= int.MaxValue- maxLength)
+                {
+                    return true;
+                }
+
+                //Max Total iterations check
+                if (algorithm.Iterations - startIterations >= maxItrTotal)
+                {
+                    return true;
+                }
+
                 int? highestFitnessSoFar = null;
-                int prevIterations = 0;
-                int maxIterations = 1000;
+                int prevIterations = startIterations;
                 if (highestFitnessSoFar == null)
                 {
                     highestFitnessSoFar = algorithm.Logger?.History?.Last()?.HighestFitness;
                     prevIterations = algorithm.Iterations;
-                    return false;
+                    return false;//Havent found a highest fitness
                 }
                 if (algorithm.Logger?.History?.Last()?.HighestFitness > highestFitnessSoFar)
                 {
+
                     prevIterations = algorithm.Iterations;
                     highestFitnessSoFar = algorithm.Logger?.History?.Last()?.HighestFitness;
                     return false;
                 }
-                if (algorithm.Iterations - prevIterations > maxIterations)
+                if (algorithm.Iterations - prevIterations > maxItrNoImprovement)
                 {
                     return true;
                 }

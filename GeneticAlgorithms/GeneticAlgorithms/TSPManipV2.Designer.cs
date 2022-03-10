@@ -35,9 +35,16 @@
             this.interval_tb = new System.Windows.Forms.TextBox();
             this.pause_btn = new System.Windows.Forms.Button();
             this.play_btn = new System.Windows.Forms.Button();
-            this.optimize_btn = new System.Windows.Forms.Button();
             this.evolve_btn = new System.Windows.Forms.Button();
-            this.createNewSimulation_btn = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TargetFitness_tb = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.MaxItr_tb = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.MaxTime_tb = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ItrWithoutImpr_tb = new System.Windows.Forms.TextBox();
+            this.optimize_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.graph_pb)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,18 +123,6 @@
             this.play_btn.UseVisualStyleBackColor = false;
             this.play_btn.Click += new System.EventHandler(this.play_btn_Click);
             // 
-            // optimize_btn
-            // 
-            this.optimize_btn.BackColor = System.Drawing.Color.White;
-            this.optimize_btn.Location = new System.Drawing.Point(1214, 331);
-            this.optimize_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.optimize_btn.Name = "optimize_btn";
-            this.optimize_btn.Size = new System.Drawing.Size(150, 50);
-            this.optimize_btn.TabIndex = 44;
-            this.optimize_btn.Text = "Optimize";
-            this.optimize_btn.UseVisualStyleBackColor = false;
-            this.optimize_btn.Click += new System.EventHandler(this.optimize_btn_Click);
-            // 
             // evolve_btn
             // 
             this.evolve_btn.BackColor = System.Drawing.Color.White;
@@ -140,16 +135,97 @@
             this.evolve_btn.UseVisualStyleBackColor = false;
             this.evolve_btn.Click += new System.EventHandler(this.evolve_btn_Click);
             // 
-            // createNewSimulation_btn
+            // label4
             // 
-            this.createNewSimulation_btn.BackColor = System.Drawing.Color.White;
-            this.createNewSimulation_btn.Location = new System.Drawing.Point(1014, 273);
-            this.createNewSimulation_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.createNewSimulation_btn.Name = "createNewSimulation_btn";
-            this.createNewSimulation_btn.Size = new System.Drawing.Size(350, 50);
-            this.createNewSimulation_btn.TabIndex = 47;
-            this.createNewSimulation_btn.Text = "Create New Simulation\r\n";
-            this.createNewSimulation_btn.UseVisualStyleBackColor = false;
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(1176, 78);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(99, 20);
+            this.label4.TabIndex = 61;
+            this.label4.Text = "Target Length";
+            // 
+            // TargetFitness_tb
+            // 
+            this.TargetFitness_tb.Location = new System.Drawing.Point(1176, 101);
+            this.TargetFitness_tb.MaxLength = 10;
+            this.TargetFitness_tb.Name = "TargetFitness_tb";
+            this.TargetFitness_tb.Size = new System.Drawing.Size(204, 27);
+            this.TargetFitness_tb.TabIndex = 60;
+            this.TargetFitness_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyInt_KeyPress);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(997, 78);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(173, 20);
+            this.label3.TabIndex = 59;
+            this.label3.Text = "Max nr of iterations total";
+            // 
+            // MaxItr_tb
+            // 
+            this.MaxItr_tb.Location = new System.Drawing.Point(997, 101);
+            this.MaxItr_tb.MaxLength = 10;
+            this.MaxItr_tb.Name = "MaxItr_tb";
+            this.MaxItr_tb.Size = new System.Drawing.Size(173, 27);
+            this.MaxItr_tb.TabIndex = 58;
+            this.MaxItr_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyInt_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(1259, 131);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 20);
+            this.label2.TabIndex = 57;
+            this.label2.Text = "Deprecated";
+            // 
+            // MaxTime_tb
+            // 
+            this.MaxTime_tb.Location = new System.Drawing.Point(1259, 154);
+            this.MaxTime_tb.MaxLength = 10;
+            this.MaxTime_tb.Name = "MaxTime_tb";
+            this.MaxTime_tb.Size = new System.Drawing.Size(121, 27);
+            this.MaxTime_tb.TabIndex = 56;
+            this.MaxTime_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyInt_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(997, 131);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(256, 20);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "Nr of iterations without improvement";
+            // 
+            // ItrWithoutImpr_tb
+            // 
+            this.ItrWithoutImpr_tb.Location = new System.Drawing.Point(997, 154);
+            this.ItrWithoutImpr_tb.MaxLength = 10;
+            this.ItrWithoutImpr_tb.Name = "ItrWithoutImpr_tb";
+            this.ItrWithoutImpr_tb.Size = new System.Drawing.Size(256, 27);
+            this.ItrWithoutImpr_tb.TabIndex = 54;
+            this.ItrWithoutImpr_tb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OnlyInt_KeyPress);
+            // 
+            // optimize_btn
+            // 
+            this.optimize_btn.BackColor = System.Drawing.Color.White;
+            this.optimize_btn.Location = new System.Drawing.Point(997, 188);
+            this.optimize_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.optimize_btn.Name = "optimize_btn";
+            this.optimize_btn.Size = new System.Drawing.Size(373, 49);
+            this.optimize_btn.TabIndex = 53;
+            this.optimize_btn.Text = "Optimize";
+            this.optimize_btn.UseVisualStyleBackColor = false;
+            this.optimize_btn.Click += new System.EventHandler(this.optimize_btn_Click);
             // 
             // TSPManipV2
             // 
@@ -157,15 +233,22 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(1382, 953);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.TargetFitness_tb);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.MaxItr_tb);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.MaxTime_tb);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.ItrWithoutImpr_tb);
+            this.Controls.Add(this.optimize_btn);
             this.Controls.Add(this.nextGen_btn);
             this.Controls.Add(this.prevGen_btn);
             this.Controls.Add(this.interval_lbl);
             this.Controls.Add(this.interval_tb);
             this.Controls.Add(this.pause_btn);
             this.Controls.Add(this.play_btn);
-            this.Controls.Add(this.optimize_btn);
             this.Controls.Add(this.evolve_btn);
-            this.Controls.Add(this.createNewSimulation_btn);
             this.Controls.Add(this.graph_pb);
             this.Name = "TSPManipV2";
             this.Text = "TSPManipV2";
@@ -183,8 +266,15 @@
         private TextBox interval_tb;
         private Button pause_btn;
         private Button play_btn;
-        private Button optimize_btn;
         private Button evolve_btn;
-        private Button createNewSimulation_btn;
+        private Label label4;
+        private TextBox TargetFitness_tb;
+        private Label label3;
+        private TextBox MaxItr_tb;
+        private Label label2;
+        private TextBox MaxTime_tb;
+        private Label label1;
+        private TextBox ItrWithoutImpr_tb;
+        private Button optimize_btn;
     }
 }

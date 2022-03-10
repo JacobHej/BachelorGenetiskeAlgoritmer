@@ -47,5 +47,36 @@ C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\
 >>>>>>> 80b6859053b96e633d5ccc9def23122ded3ee08f
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulationForms.TSPOnePlusOneEA.TSPOnePlusOneEA.resources
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.TSPManipV2.resources
-=======
 >>>>>>> 414709583367066ce282c51c9757843b4e9be6e2
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\GeneticAlgorithms.exe
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\GeneticAlgorithms.deps.json
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\GeneticAlgorithms.runtimeconfig.json
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\GeneticAlgorithms.dll
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\ref\GeneticAlgorithms.dll
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\GeneticAlgorithms.pdb
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\Algorithms.dll
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\Benchmarking.dll
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\Common.dll
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\IOParsing.dll
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\Visualization.dll
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\Algorithms.pdb
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\Benchmarking.pdb
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\Common.pdb
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\IOParsing.pdb
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\Visualization.pdb
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.csproj.AssemblyReference.cache
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.BitManipulation.resources
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.csproj.GenerateResource.cache
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.AssemblyInfoInputs.cache
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.AssemblyInfo.cs
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.csproj.CoreCompileInputs.cache
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.csproj.CopyComplete
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.dll
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\ref\GeneticAlgorithms.dll
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.pdb
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.genruntimeconfig.cache
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulationForms.BinValMuPlusLambdaEA.BinValMuPlusLambdaEA.resources
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulationForms.LeadingOnesMuPlusLambdaEA.LeadingOnesMuPlusLambdaEA.resources
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulationForms.OneMaxMuPlusLambdaEA.OneMaxMuPlusLambdaEA.resources
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulationForms.TSPMuPlusLambdaEA.TSPMuPlusLambdaEA.resources

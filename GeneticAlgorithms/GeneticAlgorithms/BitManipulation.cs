@@ -62,12 +62,12 @@ namespace GeneticAlgorithms
 
         private async void optimize_btn_Click(object sender, EventArgs e)
         {
-            await Task.Run(async () =>
-            {
-                await model.Optimize();
-            });
+           // await Task.Run(async () =>
+           // {
+           //     await model.Optimize();
+           // });
 
-           this.data_pb.Invalidate();
+           //this.data_pb.Invalidate();
         }
 
         private void play_btn_Click(object sender, EventArgs e)
