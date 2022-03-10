@@ -21,30 +21,19 @@ namespace GeneticAlgorithms.CreateSimulationForms.TSPMuPlusLambdaEA
             {
                 return;
             }
-            algorithmFactory = new Func<GeneticAlgorithmBase<TravelingSalesPersonIndividual>>(() => {
-                return new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
-                    new TwoOptMutator(),
-                    new TravelingSalesPersonFitnessCalculator(),
-                    new LoggerBase<TravelingSalesPersonIndividual>(),
-                    new TravelingSalesPersonIndividual(graph)
-                );
-
-            });
-            /*
             algorithmFactory = new Func<GeneticAlgorithmBase<TravelingSalesPersonIndividual>>(() =>
             {
                 return new MuPlusLambdaEaAlgorithm<TravelingSalesPersonPopulation, TravelingSalesPersonIndividual>(
-                    new RandomSelectionTravelingSalespersonCrossover(),
-                    new OneOverNXBitStringMutation(),
-                    new LeadingOnesFitnessCalculator(),
-                    new RandomSelector<TravelingSalesPersonPopulation, TravelingSalesPersonIndividual>(),
-                    new LoggerBase<TravelingSalesPersonIndividual>(),
-                    new ReplaceWorstReplacer<TravelingSalesPersonPopulation, TravelingSalesPersonIndividual>(),
-                    new TravelingSalesPersonPopulation(population, graph),
-                    mu,
-                crossChance);
+                                        new PartiallyMatchedCrossover(),
+                                        new PoissonTwoOptMutator(2),
+                                        new TravelingSalesPersonFitnessCalculator(),
+                                        new RandomSelector<TravelingSalesPersonPopulation, TravelingSalesPersonIndividual>(),
+                                        new LoggerBase<TravelingSalesPersonIndividual>(),
+                                        new ReplaceWorstReplacer<TravelingSalesPersonPopulation, TravelingSalesPersonIndividual>(),
+                                        new TravelingSalesPersonPopulation(25, graph),
+                                        50,
+                                    0.2);
             });
-            */
 
             this.graph = graph;
             algorithm = algorithmFactory();

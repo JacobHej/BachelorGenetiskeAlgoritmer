@@ -38,7 +38,9 @@ namespace GeneticAlgorithms
                                     new ReplaceWorstReplacer<TravelingSalesPersonPopulation, TravelingSalesPersonIndividual>(),
                                     new TravelingSalesPersonPopulation(1, g),
                                     1,
-                                    0)),
+                                    0
+                                )
+                                ),
                             new Predicate<IGeneticAlgorithm<TravelingSalesPersonIndividual>>((algorithm) =>
                             {
                                 return algorithm.Iterations > 50000;
