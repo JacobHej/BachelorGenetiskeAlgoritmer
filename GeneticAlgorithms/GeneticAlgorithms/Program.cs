@@ -14,7 +14,7 @@ namespace GeneticAlgorithms
 
             ResourceManager.ScanRescources();
 
-            Application.Run(new BitManipV2(new SimpleBitStringAlgorithmModel()));
+            Application.Run(new StartupForm());
         }
     }
 }

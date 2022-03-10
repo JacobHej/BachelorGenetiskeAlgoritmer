@@ -68,7 +68,7 @@ namespace Algorithms.OnePlusOneEA
                     {
                         TIndividual newIndividual;
 
-                        if(random.Next(100) > CrossoverProbability)
+                        if(random.Next(100) < CrossoverProbability)
                         {
                             TIndividual individual1 = selector.Select(population);
                             TIndividual individual2 = selector.Select(population);

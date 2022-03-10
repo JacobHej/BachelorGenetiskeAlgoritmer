@@ -31,7 +31,7 @@ namespace GeneticAlgorithms
                 SimpleGraph graph = Converter.CoordinateGraphToSimpleGraph(
                     model.graph,
                     Math.Min(graph_pb.Width, graph_pb.Height)-padding,
-                    model.algorithm.Logger.History.Last().HighestFitnessIndividual.Solution
+                    model.algorithm.Logger.History.Last().HighestFitnessIndividual?.Solution
                     );
 
                 graph.Draw(e.Graphics);

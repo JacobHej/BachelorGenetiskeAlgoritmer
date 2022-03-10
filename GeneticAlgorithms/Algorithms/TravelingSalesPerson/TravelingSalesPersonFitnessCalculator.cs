@@ -25,7 +25,7 @@ namespace Algorithms.TravelingSalesPerson
             //Add path back
             fitness += individual.Problem.GetDistance(prevVertex,individual.Solution[0]);
 
-            return int.MaxValue - fitness;
+            return - fitness;
         }
     }
 }

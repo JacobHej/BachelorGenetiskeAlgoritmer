@@ -24,33 +24,57 @@ namespace GeneticAlgorithms
             this.path = path;
         }
 
-        public async Task BenchmarkOnePLusOneEA(CoordinateGraph g)
+        #region MuPlusLambda
+        public async Task MuPlusLambdaRegressionToOnePLusOneEATSP(CoordinateGraph g)
         {
-            var bitStringLength = 40;
-            var maxIterations = 5000;
-            var maxFitnessValue = 40*40;
-            var tests = 10;
+            BenchmarkSummary<TravelingSalesPersonIndividual> result = await Benchmarker.BenchmarkSynchronousAsync<TravelingSalesPersonIndividual>(
+                            new Func<MuPlusLambdaEaAlgorithm<TravelingSalesPersonPopulation, TravelingSalesPersonIndividual>>(() =>
+                                new MuPlusLambdaEaAlgorithm<TravelingSalesPersonPopulation, TravelingSalesPersonIndividual>(
+                                    new PartiallyMatchedCrossover(),
+                                    new PoissonTwoOptMutator(2),
+                                    new TravelingSalesPersonFitnessCalculator(),
+                                    new RandomSelector<TravelingSalesPersonPopulation, TravelingSalesPersonIndividual>(),
+                                    new BenchmarkLogger<TravelingSalesPersonIndividual>(),
+                                    new ReplaceWorstReplacer<TravelingSalesPersonPopulation, TravelingSalesPersonIndividual>(),
+                                    new TravelingSalesPersonPopulation(1, g),
+                                    1,
+                                    0)),
+                            new Predicate<IGeneticAlgorithm<TravelingSalesPersonIndividual>>((algorithm) =>
+                            {
+                                return algorithm.Iterations > 50000;
+                            }),
+                            10
+                            );
+        }
 
-
-
-            await Benchmark_MuPlusLambdaEA_OneMax_OneOverN(bitStringLength, maxIterations, maxFitnessValue, tests);
-            //await Benchmark_OnePlusOneEA_OneMax_OneOverNX(new double[] { 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 }, bitStringLength, maxIterations, maxFitnessValue, tests);
-
-            //await BenchMark_OnePlusOneEA_BinVal_OneOverN(bitStringLength, maxIterations, maxFitnessValue, tests);
-            //await Benchmark_OnePlusOneEA_BinVal_OneOverNX(new double[] { 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 }, bitStringLength, maxIterations, maxFitnessValue, tests);
-
-            //await BenchMark_OnePlusOneEA_LeadingOnes_OneOverN(bitStringLength, maxIterations, maxFitnessValue, tests);
-            //await Benchmark_OnePlusOneEA_LeadingOnes_OneOverNX(new double[] { 0.3, 0.4, 0.5, 0.6, 0.7, 0.8 }, bitStringLength, maxIterations, maxFitnessValue, tests);
-
-            //await BenchMark_OnePlusOneEA_TSP_TwoOpt(g, 50000, 0, 10);
-            //await BenchMark_OnePlusOneEA_TSP_PoissonTwoOpt(new double[] { 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75}, g, 50000, 0, 10);
+        public async Task MuPlusLambdaRegressionToOnePLusOneEAOneMax(int length)
+        {
+            BenchmarkSummary<BitStringIndividual> result = await Benchmarker.BenchmarkParallelAsync<BitStringIndividual>(
+                            new Func<MuPlusLambdaEaAlgorithm<BitStringPopulation, BitStringIndividual>>(() =>
+                                new MuPlusLambdaEaAlgorithm<BitStringPopulation, BitStringIndividual>(
+                                    new RandomSelectionBitStringCrossover(),
+                                    new OneOverNXBitStringMutation(),
+                                    new OneMaxFitnessCalculator(),
+                                    new RandomSelector<BitStringPopulation, BitStringIndividual>(),
+                                    new BenchmarkLogger<BitStringIndividual>(),
+                                    new ReplaceWorstReplacer<BitStringPopulation, BitStringIndividual>(),
+                                    new BitStringPopulation(1, length),
+                                    1,
+                                    0)),
+                            new Predicate<IGeneticAlgorithm<BitStringIndividual>>((algorithm) =>
+                            {
+                                if (algorithm.Logger?.History.Count < 1) return false;
+                                return algorithm?.Logger?.History?.Last()?.HighestFitness >= length;
+                            }),
+                            10
+                            );
         }
 
         public async Task Benchmark_MuPlusLambdaEA_OneMax_OneOverN(int bitStringLength, int maxIterations, int minFitnessValue, int tests)
         {
 
-            var populations = new List<int> { 2};
-            var crossProbs = new List<double> {0.3};
+            var populations = new List<int> { 2 };
+            var crossProbs = new List<double> { 0.3 };
             List<BenchmarkSummary<BitStringIndividual>> results = new List<BenchmarkSummary<BitStringIndividual>>();
             foreach (int population in populations)
             {
@@ -95,7 +119,7 @@ namespace GeneticAlgorithms
                         mu = algo.Mu,
                         crossProb = algo.CrossoverProbability,
                         meanOpTime = result.MeanOptimizationTime,
-                        iterations = (int) Math.Round((double)result.Algorithms.Select(a => a.Iterations).Sum() / (double)result.Algorithms.Count()),
+                        iterations = (int)Math.Round((double)result.Algorithms.Select(a => a.Iterations).Sum() / (double)result.Algorithms.Count()),
                         highestFit = algo.Logger?.History.Last()?.HighestFitness,
                         populationSize = algo.Logger.History.Last()?.population.Individuals.Count()
                     });
@@ -121,6 +145,10 @@ namespace GeneticAlgorithms
             public int? highestFit;
             public int? populationSize;
         }
+
+        #endregion
+
+        #region OnePlusOneEA
 
         public async Task Benchmark_OnePlusOneEA_OneMax_OneOverN(int bitStringLength, int maxIterations, int minFitnessValue, int tests)
         {
@@ -314,7 +342,7 @@ namespace GeneticAlgorithms
                  {
                      if (algorithm.Iterations > maxIterations) return true;
                      if (algorithm.Logger?.History.Count < 1) return false;
-                     return algorithm?.Logger?.History?.Last()?.HighestFitness >= int.MaxValue - minFitnessValue;
+                     return algorithm?.Logger?.History?.Last()?.HighestFitness >= minFitnessValue;
                  }),
                  tests
                  );
@@ -326,7 +354,7 @@ namespace GeneticAlgorithms
             }
         }
 
-
+        #endregion
 
         private async Task ParseAndWriteBenchmark<TIndividual>(BenchmarkSummary<TIndividual> result, string benchmarkInformation, string name) where TIndividual : IIndividual
         {
