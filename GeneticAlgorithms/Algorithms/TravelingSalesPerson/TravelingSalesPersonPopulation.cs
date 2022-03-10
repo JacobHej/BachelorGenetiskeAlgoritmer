@@ -11,27 +11,27 @@ namespace Algorithms.TravelingSalesPerson
 {
     public class TravelingSalesPersonPopulation : PopulationBase<TravelingSalesPersonIndividual>
     {
-
-        CoordinateGraph problem;
-
-        public TravelingSalesPersonPopulation(int populationSize, CoordinateGraph problem) : base(populationSize)
+        private CoordinateGraph problem;
+        private int populationSize;
+        public TravelingSalesPersonPopulation(int populationSize, CoordinateGraph g, bool random = true) : base(populationSize)
         {
-            problem = problem;
             Individuals = new List<TravelingSalesPersonIndividual>();
+            this.problem = g;
+            this.populationSize = populationSize;
 
             for (int i = 0; i < populationSize; i++)
             {
-                Individuals.Add(new TravelingSalesPersonIndividual(problem));
+                Individuals.Add(new TravelingSalesPersonIndividual(g, random));
             }
         }
-
-        public TravelingSalesPersonPopulation(List<TravelingSalesPersonIndividual> individuals) : base(individuals.Count)
+        public TravelingSalesPersonPopulation(CoordinateGraph g, List<TravelingSalesPersonIndividual> individuals) : base(individuals.Count)
         {
-            problem = individuals.First().Problem;
             Individuals = individuals;
+            this.problem = g;
+            this.populationSize = individuals.Count;
         }
 
-        public override IPopulation<TravelingSalesPersonIndividual> Copy() 
-            => new TravelingSalesPersonPopulation(Individuals.Select(i => (TravelingSalesPersonIndividual) i.Copy()).ToList());
+        public override IPopulation<TravelingSalesPersonIndividual> Copy()
+            => new TravelingSalesPersonPopulation(problem, Individuals.Select(i => (TravelingSalesPersonIndividual)i.Copy()).ToList());
     }
 }

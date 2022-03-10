@@ -228,8 +228,8 @@ namespace GeneticAlgorithms
             //    return algorithm?.Logger?.History?.Last()?.HighestFitness > int.MaxValue - 9000;
             //}));
 
-            //ResourceManager.Resources.TryGetValue("berlin52.tsp", out String path);
-            //CoordinateGraph g = Parser.LoadTSPGraph(path);
+            ResourceManager.Resources.TryGetValue("berlin52.tsp", out String path);
+            CoordinateGraph g = Parser.LoadTSPGraph(path);
 
             //var result = await Benchmarker.Benchmark<TravelingSalesPersonIndividual>(
             //    new Func<OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>>(() =>
@@ -254,7 +254,7 @@ namespace GeneticAlgorithms
             //int amountOver7K = result.Algorithms.Where(algorithm => algorithm.Logger.History.Last().HighestFitness > int.MaxValue - 7542).Count();
 
             BenchmarkModel model = new BenchmarkModel(@"C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\BenchmarkOutPutFolder");
-            await model.BenchmarkOnePLusOneEA(new CoordinateGraph(new PointF[0], null));
+            //await model.BenchmarkMuPlusLambdaEA(g);
 
             
         }

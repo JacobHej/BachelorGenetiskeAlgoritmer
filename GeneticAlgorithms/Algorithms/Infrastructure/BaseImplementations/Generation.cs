@@ -11,7 +11,7 @@ namespace Algorithms.Infrastructure.BaseImplementations
     {
         public readonly IPopulation<TIndividual> population;
         public readonly Dictionary<Guid, int> IndividualFitness;
-        public readonly int HighestFitness;
+        public readonly int HighestFitness = int.MinValue;
         public readonly TIndividual HighestFitnessIndividual;
         public readonly int TotalFitness;
         public readonly int Iteration;

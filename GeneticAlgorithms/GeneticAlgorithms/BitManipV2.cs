@@ -124,10 +124,8 @@ namespace GeneticAlgorithms
             //{
             //OnionThing o = new OnionThing(new Point(100, 100), new Size(400, 400));
             //o.Draw2(e.Graphics, model.bitLength, new List<int> { -1, -1, -3, 4, 13, 7, 4, 2, 1, 0 });
-
-            
+                        
             o.Draw2(e.Graphics, 16, model.GetWeights()); 
-
 
                 //Chart chart = new Chart(200, 400, new Point(50, 25), "Latest Population");
                 //chart.values.AddRange(model.SelectedGeneration.IndividualFitness.Values.Select(v => (double)v).ToList());
