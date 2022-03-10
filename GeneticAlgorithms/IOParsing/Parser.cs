@@ -89,7 +89,12 @@ namespace IOParsing
                             {
                                 index = int.Parse(line);
                                 i++;
-                                optTour.Add(index);
+                                if (index == -1)
+                                {
+                                    break;
+                                }
+                                
+                                optTour.Add(index - 1);
                             }
                             catch (FormatException e)
                             {
@@ -99,7 +104,18 @@ namespace IOParsing
                                 }
                             }
                         }
-                        graph.optPath = optTour.ToArray();
+
+                        int[] optimalTour = optTour.ToArray();
+                        int[] optimalTourLookUp = new int[optimalTour.Length];
+
+                        for (int j = 0; j<optimalTour.Length; j++)
+                        {
+                            int val = optimalTour[j];
+                            optimalTourLookUp[val] = j;
+                        }
+
+                        graph.OptimalSolution = optimalTour;
+                        graph.OptimalSolutionLookUp = optimalTourLookUp;
                         break;
                 }
             }
@@ -169,7 +185,7 @@ namespace IOParsing
                             i++;
                             points.Add(new PointF(values[1], values[2]));
                         }
-                        graph = new CoordinateGraph(points.ToArray(), null);
+                        graph = new CoordinateGraph(points.ToArray());
                         break;
                     default:
 

@@ -52,11 +52,10 @@ namespace Visualization.Conversion
             return graph;
         }
 
-        public static SimpleGraph CoordinateGraphToSimpleGraph(CoordinateGraph g, int scale, int[] solution = null, int[] optimalSolution = null)
+        public static SimpleGraph CoordinateGraphToSimpleGraph(CoordinateGraph g, int scale, int[] solution = null)
         {
             float minX = g.Verticies[0].X, minY = g.Verticies[0].Y, maxX = g.Verticies[0].X, maxY = g.Verticies[0].Y;
             PointF p;
-
             //Calculate width and height of Coordinate graph;
             for (int i = 1; i<g.Verticies.Length; i++)
             {
@@ -102,22 +101,32 @@ namespace Visualization.Conversion
             graph.Nodes.Add(nodeFrom);
             FilledCircle startNode = nodeFrom;
             int prevIndex = index;
+            Color color;
 
             //Go through calculating all other nodes on solution tour and add edges between new and previous
             for (int i = 1; i < solution.Length; i++)
             {
                 index = solution[i];
-                Color color;
 
-                if(optimalSolution == null)
+                if(g.OptimalSolution == null)
                 {
-                    color = Color.Red;
-                } else if(optimalSolution[i-1] == prevIndex && optimalSolution[i] == index)
+                    color = Color.FromArgb(100, Color.Gray);
+                    //
+                } else if(
+                    g.OptimalSolution[g.OptimalSolutionLookUp[prevIndex]+1<g.OptimalSolution.Length ? 
+                        g.OptimalSolutionLookUp[prevIndex] + 1 
+                        : 0
+                    ]  == index ||
+                    g.OptimalSolution[g.OptimalSolutionLookUp[prevIndex] - 1 >= 0 ?
+                        g.OptimalSolutionLookUp[prevIndex] - 1
+                        : g.OptimalSolution.Length - 1
+                    ] == index
+                    )
                 {
                     color = Color.Green;
                 } else
                 {
-                    color = Color.Red;
+                    color = Color.FromArgb(100, Color.Gray);
                 }
 
                 p = g.Verticies[index];
@@ -135,8 +144,31 @@ namespace Visualization.Conversion
                 prevIndex = index;
             }
 
+            if (g.OptimalSolution == null)
+            {
+                color = Color.FromArgb(100, Color.Gray);
+                //
+            }
+            else if (
+              g.OptimalSolution[g.OptimalSolutionLookUp[prevIndex] + 1 < g.OptimalSolution.Length ?
+                  g.OptimalSolutionLookUp[prevIndex] + 1
+                  : 0
+              ] == solution[0] ||
+              g.OptimalSolution[g.OptimalSolutionLookUp[prevIndex] - 1 >= 0 ?
+                  g.OptimalSolutionLookUp[prevIndex] - 1
+                  : g.OptimalSolution.Length - 1
+              ] == solution[0]
+              )
+            {
+                color = Color.Green;
+            }
+            else
+            {
+                color = Color.FromArgb(100, Color.Gray);
+            }
+
             //Add edge back to the beginning
-            graph.Edges.Add(new Line(nodeFrom, startNode, Color.Red));
+            graph.Edges.Add(new Line(nodeFrom, startNode, color));
             return graph;
         }
     }

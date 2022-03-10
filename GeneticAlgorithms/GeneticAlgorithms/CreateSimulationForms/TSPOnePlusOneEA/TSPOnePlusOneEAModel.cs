@@ -23,7 +23,7 @@ namespace GeneticAlgorithms.CreateSimulationForms.TSPOnePlusOneEA
             }
             algorithmFactory = new Func<GeneticAlgorithmBase<TravelingSalesPersonIndividual>>(() => {
                 return new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
-                    new TwoOptMutator(),
+                    new PoissonTwoOptMutator(2),
                     new TravelingSalesPersonFitnessCalculator(),
                     new LoggerBase<TravelingSalesPersonIndividual>(),
                     new TravelingSalesPersonIndividual(graph)

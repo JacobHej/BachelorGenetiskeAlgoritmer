@@ -27,15 +27,16 @@ namespace GeneticAlgorithms
                 {
 
                     string name = UsableFileName.Split(".").First();
+                    string optTour = null;
                     if (usableFileNames.Contains(name+".opt.tour"))
                     {
-                        string optTour = files.Where(x => !x.Equals(file) && x.Split('\\').Last().StartsWith(name)).First();
+                        optTour = files.Where(x => x.Split('\\').Last().Equals(name+".opt.tour")).First();
                     }
                     
 
                     List<String> tsp = new List<String>();
 
-                    tsp.Add(name);
+                    tsp.Add(file);
 
                     if (optTour!=null)
                     {

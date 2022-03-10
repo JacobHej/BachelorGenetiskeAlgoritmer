@@ -14,8 +14,9 @@ namespace Common
         public PointF[] Verticies;
 
         public int[] OptimalSolution;
+        public int[] OptimalSolutionLookUp;
 
-        public CoordinateGraph(PointF[] verticies, int[] optimalSolution)
+        public CoordinateGraph(PointF[] verticies, int[] optimalSolution = null)
         {
             this.Verticies = verticies;
             this.OptimalSolution = optimalSolution;
