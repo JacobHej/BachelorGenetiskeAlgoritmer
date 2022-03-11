@@ -9,6 +9,6 @@ namespace Algorithms.Infrastructure.BaseImplementations
 {
     public abstract class MutatorBase<TIndividual> : IMutator<TIndividual> where TIndividual : IIndividual
     {
-        public abstract void Mutate(TIndividual individual);
+        public abstract TIndividual Mutate(TIndividual individual);
     }
 }

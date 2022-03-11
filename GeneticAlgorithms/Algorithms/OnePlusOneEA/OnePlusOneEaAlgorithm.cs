@@ -36,14 +36,18 @@ namespace Algorithms.OnePlusOneEA
                 int maxAttempts = 100;
                 while (count++ < maxAttempts)
                 {
-                    TIndividual nextIndividual = (TIndividual)individual.Copy();
-                    mutator.Mutate(nextIndividual);
+                    Iterations++;
+
+                    TIndividual nextIndividual = mutator.Mutate(individual);
+
                     if (fitnessCalculator.CalculateFitness(nextIndividual) > fitnessCalculator.CalculateFitness(individual))
                     {
                         individual = nextIndividual;
+
                         PopulationBase<TIndividual> population = new PopulationBase<TIndividual>(1);
                         population.Individuals.Add(individual);
-                        Logger.LogGeneration(population, fitnessCalculator);
+                        Logger.LogGeneration(population, fitnessCalculator, Iterations);
+
                         return;
                     }
                 }

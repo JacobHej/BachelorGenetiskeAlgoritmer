@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Algorithms.Infrastructure.Interfaces
 {
-    public interface ISelector<TIndividual> where TIndividual : IIndividual
+    public interface ISelector<TPopulation, TIndividual> where TPopulation : IPopulation<TIndividual> where TIndividual : IIndividual
     {
-        public TIndividual Select(IPopulation<TIndividual> population);
+        public TIndividual Select(TPopulation population);
+
+        public (TPopulation, List<TIndividual>) SelectMultiple(TPopulation population, int selectionSize);
     }
 }

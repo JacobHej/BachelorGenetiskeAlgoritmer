@@ -11,6 +11,9 @@ namespace Algorithms.Infrastructure.BaseImplementations
     {
         public virtual ILogger<TIndividual> Logger { get { throw new NotImplementedException();} set { throw new NotImplementedException();} }
 
+        protected int iterations;
+        public virtual int Iterations { get => iterations; set => iterations = value; }
+
         public virtual Task Evolve()
         {
             throw new NotImplementedException();

@@ -20,6 +20,7 @@ using System.Windows.Forms;
 using Visualization;
 using Visualization.Components;
 
+
 namespace GeneticAlgorithms
 {
     public partial class BitManipulation : Form
@@ -47,8 +48,6 @@ namespace GeneticAlgorithms
                 model.UseProbabilitySelector = false;
             }
 
-            model.CreateAlgorithm();
-
             this.data_pb.Invalidate();
         }
 
@@ -63,12 +62,12 @@ namespace GeneticAlgorithms
 
         private async void optimize_btn_Click(object sender, EventArgs e)
         {
-            await Task.Run(async () =>
-            {
-                await model.Optimize();
-            });
+           // await Task.Run(async () =>
+           // {
+           //     await model.Optimize();
+           // });
 
-           this.data_pb.Invalidate();
+           //this.data_pb.Invalidate();
         }
 
         private void play_btn_Click(object sender, EventArgs e)
@@ -113,18 +112,18 @@ namespace GeneticAlgorithms
         #region PaintEvents
         private void data_pb_Paint(object sender, PaintEventArgs e)
         {
-            if (model.algorithm.Logger.History.Count > 0)
-            {
-                Chart chart = new Chart(200, 400, new Point(50, 25), "Latest Population");
-                chart.values.AddRange(model.SelectedGeneration.IndividualFitness.Values.Select(v => (double)v).ToList());
-                chart.Draw(e.Graphics);
+            //if (model.algorithm.Logger.History.Count > 0)
+            //{
+            //    Chart chart = new Chart(200, 400, new Point(50, 25), "Latest Population");
+            //    chart.values.AddRange(model.SelectedGeneration.IndividualFitness.Values.Select(v => (double)v).ToList());
+            //    chart.Draw(e.Graphics);
 
-                Chart chartBest = new Chart(200, 400, new Point(50, 350), "Best Of Each Population");
-                model.algorithm.Logger.History.ForEach(v => chartBest.values.Add(v.HighestFitness));
-                chartBest.Draw(e.Graphics);
+            //    Chart chartBest = new Chart(200, 400, new Point(50, 350), "Best Of Each Population");
+            //    model.algorithm.Logger.History.ForEach(v => chartBest.values.Add(v.HighestFitness));
+            //    chartBest.Draw(e.Graphics);
 
-                e.Graphics.DrawString("Generation: " + model.SelectedgenerationNumber, new Font("Arial", 16), new SolidBrush(Color.Black), new Point(50, 600));
-            }
+            //    e.Graphics.DrawString("Generation: " + model.SelectedgenerationNumber, new Font("Arial", 16), new SolidBrush(Color.Black), new Point(50, 600));
+            //}
         }
         #endregion
 
@@ -201,9 +200,7 @@ namespace GeneticAlgorithms
             //    500000000
             //    );
 
-
-
-            //ResourceManager.Resources.TryGetValue("brd14051.tsp", out String path);
+            //ResourceManager.Resources.TryGetValue("berlin52.tsp", out String path);
             //CoordinateGraph g = Parser.LoadTSPGraph(path);
 
             //var t =
@@ -221,65 +218,45 @@ namespace GeneticAlgorithms
             //    {
             //        int length = int.MaxValue - algorithm?.Logger?.History?.Last()?.HighestFitness ?? 0;
             //        int lengthnt = algorithm?.Logger?.History?.Last()?.HighestFitness ?? 0;
-            //        task = Task.Delay(300000);
+            //        task = Task.Delay(5000);
             //    }
             //    if (algorithm.Logger?.History.Count < 1)
             //    {
             //        return false;
             //    }
 
-            //    return algorithm?.Logger?.History?.Last()?.HighestFitness == int.MaxValue - 7542;
+            //    return algorithm?.Logger?.History?.Last()?.HighestFitness > int.MaxValue - 9000;
             //}));
-            //x = 0;
 
             ResourceManager.Resources.TryGetValue("berlin52.tsp", out String path);
             CoordinateGraph g = Parser.LoadTSPGraph(path);
 
-            var result = await Benchmarker.Benchmark<TravelingSalesPersonIndividual>(
-                new Func<OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>>(() =>
-                    new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
-                        new TwoOptMutator(),
-                        new TravelingSalesPersonFitnessCalculator(),
-                        new LoggerBase<TravelingSalesPersonIndividual>(),
-                        new TravelingSalesPersonIndividual(g))),
-                new Predicate<IGeneticAlgorithm<TravelingSalesPersonIndividual>>((algorithm) =>
-                {
-                    if (algorithm.Logger?.History.Count < 1)
-                    {
-                        return false;
-                    }
-
-                    return algorithm?.Logger?.History?.Last()?.HighestFitness > int.MaxValue - 9000;
-                }),
-                200,
-                20000
-                );
-
-            //var t =
-            //    new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
-            //        new TwoOptMutator(),
-            //        new TravelingSalesPersonFitnessCalculator(),
-            //        new LoggerBase<TravelingSalesPersonIndividual>(),
-            //        new TravelingSalesPersonIndividual(g));
-
-            //Task task = Task.Delay(5000);
-            //int x = 0;
-            //await t.Optimize(new Predicate<IGeneticAlgorithm<TravelingSalesPersonIndividual>>((algorithm) =>
-            //{
-            //    if (task.IsCompleted)
+            //var result = await Benchmarker.Benchmark<TravelingSalesPersonIndividual>(
+            //    new Func<OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>>(() =>
+            //        new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
+            //            new PoissonTwoOptMutator(2),
+            //            new TravelingSalesPersonFitnessCalculator(),
+            //            new LoggerBase<TravelingSalesPersonIndividual>(),
+            //            new TravelingSalesPersonIndividual(g))),
+            //    new Predicate<IGeneticAlgorithm<TravelingSalesPersonIndividual>>((algorithm) =>
             //    {
-            //        int length = int.MaxValue - algorithm?.Logger?.History?.Last()?.HighestFitness ?? 0;
-            //        int lengthnt = algorithm?.Logger?.History?.Last()?.HighestFitness ?? 0;
-            //        task = Task.Delay(300000);
-            //    }
-            //    if (algorithm.Logger?.History.Count < 1)
-            //    {
-            //        return false;
-            //    }
+            //        if (algorithm.Iterations > 20000) return true;
 
-            //    return algorithm?.Logger?.History?.Last()?.HighestFitness == int.MaxValue - 7542;
-            //}));
-            //x = 0;
+            //        if (algorithm.Logger?.History.Count < 1) return false;
+
+            //        return algorithm?.Logger?.History?.Last()?.HighestFitness > int.MaxValue - 7542;
+            //    }),
+            //    100
+            //    );
+
+            //int amountOver9K = result.Algorithms.Where(algorithm => algorithm.Logger.History.Last().HighestFitness > int.MaxValue - 9000).Count();
+            //int amountOver8K = result.Algorithms.Where(algorithm => algorithm.Logger.History.Last().HighestFitness > int.MaxValue - 8000).Count();
+            //int amountOver7K = result.Algorithms.Where(algorithm => algorithm.Logger.History.Last().HighestFitness > int.MaxValue - 7542).Count();
+
+            BenchmarkModel model = new BenchmarkModel(@"C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\BenchmarkOutPutFolder");
+            //await model.BenchmarkMuPlusLambdaEA(g);
+
+            
         }
 
         private void prevGen_btn_Click(object sender, EventArgs e)
@@ -292,6 +269,21 @@ namespace GeneticAlgorithms
         {
             model.SelectNextGeneration();
             this.data_pb.Invalidate();
+        }
+
+        private void BitManipulation_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void populationSize_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void data_pb_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

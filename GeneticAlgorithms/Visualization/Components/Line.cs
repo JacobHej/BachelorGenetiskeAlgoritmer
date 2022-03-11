@@ -24,7 +24,7 @@ namespace Visualization
         {
             Point point1 = new Point(node1.location.X + (node1.size.Height / 2), node1.location.Y + (node1.size.Width / 2));
             Point point2 = new Point(node2.location.X + (node2.size.Height / 2), node2.location.Y + (node2.size.Width / 2));
-            g.DrawLine(new Pen(new SolidBrush(color)), point1, point2);
+            g.DrawLine(new Pen(new SolidBrush(color),4), point1, point2);
         }
     }
 }

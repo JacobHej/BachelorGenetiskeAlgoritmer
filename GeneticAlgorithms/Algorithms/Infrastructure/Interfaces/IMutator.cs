@@ -8,6 +8,6 @@ namespace Algorithms.Infrastructure.Interfaces
 {
     public interface IMutator<TIndividual> where TIndividual : IIndividual
     {
-        public void Mutate(TIndividual individual);
+        public TIndividual Mutate(TIndividual individual);
     }
 }

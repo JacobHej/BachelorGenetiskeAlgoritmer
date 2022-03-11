@@ -9,6 +9,11 @@ namespace Algorithms.Infrastructure.BaseImplementations
 {
     public abstract class IndividualBase : IIndividual
     {
+        private Guid id = Guid.NewGuid();
+        public Guid ID => id;
+
+        public override abstract string ToString();
+
         public abstract IIndividual Copy();
     }
 }

@@ -27,5 +27,10 @@ namespace Algorithms
         {
             return new BitStringIndividual(Solution.Copy());
         }
+
+        public override string ToString()
+        {
+            return new string(Solution.Bits);
+        }
     }
 }

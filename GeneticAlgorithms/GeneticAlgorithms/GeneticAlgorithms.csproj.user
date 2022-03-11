@@ -4,7 +4,31 @@
     <Compile Update="BitManipulation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="MainForm.cs">
+    <Compile Update="BitManipV2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\BinValOnePlusOneEA\BinValOnePlusOneEA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\LeadingOnesOnePlusOneEA\LeadingOnesOnePlusOneEA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\OneMaxOnePlusOneEA\OneMaxOnePlusOneEA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\TSPOnePlusOneEA\TSPOnePlusOneEA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainForm_Depricated.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="StartupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TSPManipV2.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

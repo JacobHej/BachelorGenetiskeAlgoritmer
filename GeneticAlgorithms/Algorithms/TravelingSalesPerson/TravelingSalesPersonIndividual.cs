@@ -37,5 +37,10 @@ namespace Algorithms.TravelingSalesPerson
 
             return new TravelingSalesPersonIndividual(newArray, this.Problem);
         }
+
+        public override string ToString()
+        {
+            return string.Join("", Solution.Select(i => i.ToString()));
+        }
     }
 }

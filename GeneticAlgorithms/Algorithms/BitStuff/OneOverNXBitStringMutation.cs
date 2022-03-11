@@ -10,25 +10,28 @@ namespace Algorithms.BitStuff
 {
     public class OneOverNXBitStringMutation : MutatorBase<BitStringIndividual>
     {
-        private int factor;
+        private double factor;
 
-        public OneOverNXBitStringMutation(int factor = 1)
+        public OneOverNXBitStringMutation(double factor = 1)
         {
             this.factor = factor;
         }
 
-        public override void Mutate(BitStringIndividual individual)
+        public override BitStringIndividual Mutate(BitStringIndividual individual)
         {
+            BitStringIndividual newIndividual = (BitStringIndividual) individual.Copy();
             Random random = new Random();
-            int N = individual.Solution.Bits.Length;
+            int N = newIndividual.Solution.Bits.Length;
 
             for (int i = 0; i < N; i++)
             {
-                if(random.Next(factor * N) == 0)
+                if(random.Next((int)Math.Round(factor * N)) == 0)
                 {
-                    individual.Solution.FlipBitAt(i);
+                    newIndividual.Solution.FlipBitAt(i);
                 }
             }
+
+            return newIndividual;
         }
     }
 }

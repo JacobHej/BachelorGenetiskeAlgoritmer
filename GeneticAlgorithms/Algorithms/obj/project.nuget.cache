@@ -1,11 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "VxftAaMCsVGdnDowxHrCr6bz83sqLAbLbCFCFJdKt7vCWuO0C0TDVspf3s3IsqjAas5Eb3rFkCKb6zRs2oQWEA==",
+  "dgSpecHash": "P0EoJdXbCYd+ufm3Ew3lfuFjJJaKti5i03CCf2GoAw89AyIWDBjJIeJzID7+fXqzQoMbAd4y5+V9Fj28lYmNAw==",
   "success": true,
   "projectFilePath": "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Algorithms\\Algorithms.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\JAHE\\.nuget\\packages\\mathnet.numerics\\4.15.0\\mathnet.numerics.4.15.0.nupkg.sha512",
     "C:\\Users\\JAHE\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\JAHE\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Algorithms\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
