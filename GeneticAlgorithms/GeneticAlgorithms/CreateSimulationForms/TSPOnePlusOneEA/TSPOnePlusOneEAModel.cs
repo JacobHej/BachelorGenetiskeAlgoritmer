@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Algorithms.SimulatedAnnealing;
 using Common;
 
 namespace GeneticAlgorithms.CreateSimulationForms.TSPOnePlusOneEA
@@ -21,15 +22,28 @@ namespace GeneticAlgorithms.CreateSimulationForms.TSPOnePlusOneEA
             {
                 return;
             }
+            //algorithmFactory = new Func<GeneticAlgorithmBase<TravelingSalesPersonIndividual>>(() => {
+            //    return new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
+            //        new PoissonTwoOptMutator(2),
+            //        new TravelingSalesPersonFitnessCalculator(),
+            //        new LoggerBase<TravelingSalesPersonIndividual>(),
+            //        new TravelingSalesPersonIndividual(graph)
+            //    );
+
+            //});
+
             algorithmFactory = new Func<GeneticAlgorithmBase<TravelingSalesPersonIndividual>>(() => {
-                return new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
+                return new SimulatedAnnealingAlgorithm<TravelingSalesPersonIndividual>(
                     new PoissonTwoOptMutator(2),
                     new TravelingSalesPersonFitnessCalculator(),
+                    new ExpOneOverTCooldownFunction(),
+                    new AlphaTemperatureFunction(1, 0.9),
                     new LoggerBase<TravelingSalesPersonIndividual>(),
                     new TravelingSalesPersonIndividual(graph)
                 );
 
             });
+
             this.graph = graph;
             algorithm = algorithmFactory();
         }

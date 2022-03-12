@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "Ora0dEDYVHBmESs5/mHl37l18hCcCvA6lUQ8a8dCSKyimIbjcuLN3WxPodOy07isLfESltZfPQvQMWAT/WpXdw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj",
+=======
+  "dgSpecHash": "Q74MG0PG/6nNp3jLA4M4texpgq3z6fLjL+mKmZzEWjILTrxxtVwi+9Ub1qvhNHPO+2WCpGVGT3spvYQXmFnj9w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj",
+>>>>>>> 152e0aba2fa09fbed8c830ef47b4e4b415f3be30
   "expectedPackageFiles": [],
   "logs": []
 }

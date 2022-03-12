@@ -12,10 +12,15 @@
       }
     ],
     "additionalProbingPaths": [
+<<<<<<< HEAD
       "C:\\Users\\Jacob Hejlsberg\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\Jacob Hejlsberg\\.nuget\\packages",
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
       "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+=======
+      "C:\\Users\\JAHE\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\JAHE\\.nuget\\packages"
+>>>>>>> 152e0aba2fa09fbed8c830ef47b4e4b415f3be30
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

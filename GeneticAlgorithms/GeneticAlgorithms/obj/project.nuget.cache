@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "SCvsOZmO+FG9MmGAhhxaCZOPkEVKGosjFkGubwsELPZDulO1UQFTYa27XfbPc6wy9L45pY98uIz/UcqO2rL9/Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\GeneticAlgorithms\\GeneticAlgorithms.csproj",
@@ -7,6 +8,15 @@
     "C:\\Users\\Jacob Hejlsberg\\.nuget\\packages\\mathnet.numerics\\4.15.0\\mathnet.numerics.4.15.0.nupkg.sha512",
     "C:\\Users\\Jacob Hejlsberg\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Jacob Hejlsberg\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
+=======
+  "dgSpecHash": "UHVExMA7hXTX98LUo1oVE//ZyYnc44upMFjuRfS2jIbPvB0H88GBAu0CIzv2+zV1/RJMqlBJZ7wCzJ8vjXBxHg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\GeneticAlgorithms\\GeneticAlgorithms.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\JAHE\\.nuget\\packages\\mathnet.numerics\\4.15.0\\mathnet.numerics.4.15.0.nupkg.sha512",
+    "C:\\Users\\JAHE\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\JAHE\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
+>>>>>>> 152e0aba2fa09fbed8c830ef47b4e4b415f3be30
   ],
   "logs": []
 }
