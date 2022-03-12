@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\KafferAffer\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\KafferAffer\\.nuget\\packages"
+      "C:\\Users\\JAHE\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\JAHE\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
