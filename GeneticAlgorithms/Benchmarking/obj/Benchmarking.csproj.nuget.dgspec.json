@@ -1,7 +1,6 @@
 {
   "format": 1,
   "restore": {
-<<<<<<< HEAD
     "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Benchmarking\\Benchmarking.csproj": {}
   },
   "projects": {
@@ -13,31 +12,14 @@
         "projectPath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Algorithms\\Algorithms.csproj",
         "packagesPath": "C:\\Users\\Jacob Hejlsberg\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Algorithms\\obj\\",
-=======
-    "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Benchmarking\\Benchmarking.csproj": {}
-  },
-  "projects": {
-    "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Algorithms\\Algorithms.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Algorithms\\Algorithms.csproj",
-        "projectName": "Algorithms",
-        "projectPath": "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Algorithms\\Algorithms.csproj",
-        "packagesPath": "C:\\Users\\JAHE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Algorithms\\obj\\",
->>>>>>> 152e0aba2fa09fbed8c830ef47b4e4b415f3be30
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-<<<<<<< HEAD
           "C:\\Users\\Jacob Hejlsberg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-=======
-          "C:\\Users\\JAHE\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 152e0aba2fa09fbed8c830ef47b4e4b415f3be30
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -45,26 +27,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://proget.tools.scdom.net/nuget/simcorp/": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-<<<<<<< HEAD
               "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj": {
                 "projectPath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj"
               },
               "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Visualization\\Visualization.csproj": {
                 "projectPath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Visualization\\Visualization.csproj"
-=======
-              "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj": {
-                "projectPath": "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj"
-              },
-              "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Visualization\\Visualization.csproj": {
-                "projectPath": "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Visualization\\Visualization.csproj"
->>>>>>> 152e0aba2fa09fbed8c830ef47b4e4b415f3be30
               }
             }
           }
@@ -103,7 +76,6 @@
         }
       }
     },
-<<<<<<< HEAD
     "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Benchmarking\\Benchmarking.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -112,28 +84,14 @@
         "projectPath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Benchmarking\\Benchmarking.csproj",
         "packagesPath": "C:\\Users\\Jacob Hejlsberg\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Benchmarking\\obj\\",
-=======
-    "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Benchmarking\\Benchmarking.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Benchmarking\\Benchmarking.csproj",
-        "projectName": "Benchmarking",
-        "projectPath": "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Benchmarking\\Benchmarking.csproj",
-        "packagesPath": "C:\\Users\\JAHE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Benchmarking\\obj\\",
->>>>>>> 152e0aba2fa09fbed8c830ef47b4e4b415f3be30
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-<<<<<<< HEAD
           "C:\\Users\\Jacob Hejlsberg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-=======
-          "C:\\Users\\JAHE\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 152e0aba2fa09fbed8c830ef47b4e4b415f3be30
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -141,20 +99,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://proget.tools.scdom.net/nuget/simcorp/": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-<<<<<<< HEAD
               "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Algorithms\\Algorithms.csproj": {
                 "projectPath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Algorithms\\Algorithms.csproj"
-=======
-              "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Algorithms\\Algorithms.csproj": {
-                "projectPath": "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Algorithms\\Algorithms.csproj"
->>>>>>> 152e0aba2fa09fbed8c830ef47b4e4b415f3be30
               }
             }
           }
@@ -187,7 +139,6 @@
         }
       }
     },
-<<<<<<< HEAD
     "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -196,28 +147,14 @@
         "projectPath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj",
         "packagesPath": "C:\\Users\\Jacob Hejlsberg\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\obj\\",
-=======
-    "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj",
-        "projectName": "Common",
-        "projectPath": "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj",
-        "packagesPath": "C:\\Users\\JAHE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\obj\\",
->>>>>>> 152e0aba2fa09fbed8c830ef47b4e4b415f3be30
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-<<<<<<< HEAD
           "C:\\Users\\Jacob Hejlsberg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-=======
-          "C:\\Users\\JAHE\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 152e0aba2fa09fbed8c830ef47b4e4b415f3be30
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -225,7 +162,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://proget.tools.scdom.net/nuget/simcorp/": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -262,7 +198,6 @@
         }
       }
     },
-<<<<<<< HEAD
     "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Visualization\\Visualization.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -271,28 +206,14 @@
         "projectPath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Visualization\\Visualization.csproj",
         "packagesPath": "C:\\Users\\Jacob Hejlsberg\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Visualization\\obj\\",
-=======
-    "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Visualization\\Visualization.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Visualization\\Visualization.csproj",
-        "projectName": "Visualization",
-        "projectPath": "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Visualization\\Visualization.csproj",
-        "packagesPath": "C:\\Users\\JAHE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Visualization\\obj\\",
->>>>>>> 152e0aba2fa09fbed8c830ef47b4e4b415f3be30
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-<<<<<<< HEAD
           "C:\\Users\\Jacob Hejlsberg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-=======
-          "C:\\Users\\JAHE\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 152e0aba2fa09fbed8c830ef47b4e4b415f3be30
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -300,20 +221,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "http://proget.tools.scdom.net/nuget/simcorp/": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-<<<<<<< HEAD
               "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj": {
                 "projectPath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj"
-=======
-              "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj": {
-                "projectPath": "C:\\Users\\JAHE\\OneDrive - SimCorp\\Desktop\\New folder\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj"
->>>>>>> 152e0aba2fa09fbed8c830ef47b4e4b415f3be30
               }
             }
           }

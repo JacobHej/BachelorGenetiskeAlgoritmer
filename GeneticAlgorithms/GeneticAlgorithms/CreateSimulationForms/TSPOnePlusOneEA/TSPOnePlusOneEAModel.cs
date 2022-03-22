@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Algorithms.SimulatedAnnealing;
 using Common;
+using Algorithms.ACO;
 
 namespace GeneticAlgorithms.CreateSimulationForms.TSPOnePlusOneEA
 {
@@ -22,7 +23,8 @@ namespace GeneticAlgorithms.CreateSimulationForms.TSPOnePlusOneEA
             {
                 return;
             }
-            //algorithmFactory = new Func<GeneticAlgorithmBase<TravelingSalesPersonIndividual>>(() => {
+            //algorithmFactory = new Func<GeneticAlgorithmBase<TravelingSalesPersonIndividual>>(() =>
+            //{
             //    return new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
             //        new PoissonTwoOptMutator(2),
             //        new TravelingSalesPersonFitnessCalculator(),
@@ -32,15 +34,29 @@ namespace GeneticAlgorithms.CreateSimulationForms.TSPOnePlusOneEA
 
             //});
 
-            algorithmFactory = new Func<GeneticAlgorithmBase<TravelingSalesPersonIndividual>>(() => {
-                return new SimulatedAnnealingAlgorithm<TravelingSalesPersonIndividual>(
-                    new PoissonTwoOptMutator(2),
+            //algorithmFactory = new Func<GeneticAlgorithmBase<TravelingSalesPersonIndividual>>(() =>
+            //{
+            //    return new SimulatedAnnealingAlgorithm<TravelingSalesPersonIndividual>(
+            //        new PoissonTwoOptMutator(2),
+            //        new TravelingSalesPersonFitnessCalculator(),
+            //        new ExpOneOverTCooldownFunction(),
+            //        new AlphaTemperatureFunction(1, 0.9),
+            //        new LoggerBase<TravelingSalesPersonIndividual>(),
+            //        new TravelingSalesPersonIndividual(graph)
+            //    );
+
+            //});
+
+            algorithmFactory = new Func<GeneticAlgorithmBase<TravelingSalesPersonIndividual>>(() =>
+            {
+                return new RankBasedACOAlgorithm<TravelingSalesPersonPopulation, TravelingSalesPersonIndividual>(
                     new TravelingSalesPersonFitnessCalculator(),
-                    new ExpOneOverTCooldownFunction(),
-                    new AlphaTemperatureFunction(1, 0.9),
+                    new TSPPheramoneConstructor(),
+                    new SelectXBestSelector<TravelingSalesPersonPopulation, TravelingSalesPersonIndividual>(
+                        new TravelingSalesPersonFitnessCalculator()),
+                    new TSPAntConstructor(graph),
                     new LoggerBase<TravelingSalesPersonIndividual>(),
-                    new TravelingSalesPersonIndividual(graph)
-                );
+                    10, 5);
 
             });
 

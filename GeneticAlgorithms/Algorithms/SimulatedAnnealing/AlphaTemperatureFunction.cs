@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Algorithms.Infrastructure.BaseImplementations;
+using MathNet.Numerics;
 
 namespace Algorithms.SimulatedAnnealing
 {
@@ -19,5 +20,19 @@ namespace Algorithms.SimulatedAnnealing
         }
 
         public override double Measure(int t) => Math.Pow(alpha, t) * initialTemperature;
+
+        private double Pow(double val, double pow)
+        {
+            if (pow == 0) return 1;
+
+            double res = val;
+
+            for(int i = 1; i < pow; i++)
+            {
+                res *= val;
+            }
+
+            return res;
+        }
     }
 }
