@@ -15,7 +15,7 @@ namespace GeneticAlgorithms.CreateSimulationForms.TSPOnePlusOneEA
     public class TSPOnePlusOneEAModel : SimpleTSPAlgorithmModel
     {
 
-        public void createAlgorithm(CoordinateGraph graph)
+        public void createAlgorithm(CoordinateGraph graph, MutatorBase<TravelingSalesPersonIndividual> mutator)
         {
             if (graph == null)
             {
@@ -23,7 +23,7 @@ namespace GeneticAlgorithms.CreateSimulationForms.TSPOnePlusOneEA
             }
             algorithmFactory = new Func<GeneticAlgorithmBase<TravelingSalesPersonIndividual>>(() => {
                 return new OnePlusOneEaAlgorithm<TravelingSalesPersonIndividual>(
-                    new PoissonTwoOptMutator(2),
+                    mutator,
                     new TravelingSalesPersonFitnessCalculator(),
                     new LoggerBase<TravelingSalesPersonIndividual>(),
                     new TravelingSalesPersonIndividual(graph)

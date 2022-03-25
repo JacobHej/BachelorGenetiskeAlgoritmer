@@ -23,6 +23,9 @@ namespace GeneticAlgorithms
         public CreateSimulation()
         {
             InitializeComponent();
+
+            this.Width = 1600;
+            this.Height = 1000;
         }
 
         private void startOver_btn_Click(object sender, EventArgs e)
@@ -46,26 +49,26 @@ namespace GeneticAlgorithms
 
         private void ChangePanel()
         {
-            Form frm;
+            CreateSimulationForm frm;
             switch (problem_box.SelectedIndex, solution_box.SelectedIndex)
             {
 
-                case (0, 0)://
-                    frm = new OneMaxOnePlusOneEA();
-                    frm.FormBorderStyle = FormBorderStyle.None;
-                    frm.TopLevel = false;
-                    panel1.Controls.Clear();
-                    panel1.Controls.Add(frm);
-                    frm.Show();
-                    break;
-                case (1, 0)://
-                    frm = new LeadingOnesOnePlusOneEA();
-                    frm.FormBorderStyle = FormBorderStyle.None;
-                    frm.TopLevel = false;
-                    panel1.Controls.Clear();
-                    panel1.Controls.Add(frm);
-                    frm.Show();
-                    break;
+                //case (0, 0)://
+                //    frm = new OneMaxOnePlusOneEA();
+                //    frm.FormBorderStyle = FormBorderStyle.None;
+                //    frm.TopLevel = false;
+                //    panel1.Controls.Clear();
+                //    panel1.Controls.Add(frm);
+                //    frm.Show();
+                //    break;
+                //case (1, 0)://
+                //    frm = new LeadingOnesOnePlusOneEA();
+                //    frm.FormBorderStyle = FormBorderStyle.None;
+                //    frm.TopLevel = false;
+                //    panel1.Controls.Clear();
+                //    panel1.Controls.Add(frm);
+                //    frm.Show();
+                //    break;
                 case (2, 0)://
                     frm = new BinValOnePlusOneEA();
                     frm.FormBorderStyle = FormBorderStyle.None;
@@ -82,21 +85,21 @@ namespace GeneticAlgorithms
                     panel1.Controls.Add(frm);
                     frm.Show();
                     break;
-                case (1, 1)://
-                    frm = new LeadingOnesMuPlusLambdaEA();
-                    frm.FormBorderStyle = FormBorderStyle.None;
-                    frm.TopLevel = false;
-                    panel1.Controls.Clear();
-                    panel1.Controls.Add(frm);
-                    frm.Show();
-                    break;
-                case (2, 1)://Binval MuPlusLambda
-                    frm = new BinValMuPlusLambdaEA();
-                    frm.FormBorderStyle = FormBorderStyle.None;
-                    frm.TopLevel = false;
-                    panel1.Controls.Clear();
-                    panel1.Controls.Add(frm);
-                    frm.Show();
+                    //case (1, 1)://
+                    //    frm = new LeadingOnesMuPlusLambdaEA();
+                    //    frm.FormBorderStyle = FormBorderStyle.None;
+                    //    frm.TopLevel = false;
+                    //    panel1.Controls.Clear();
+                    //    panel1.Controls.Add(frm);
+                    //    frm.Show();
+                    //    break;
+                    //case (2, 1)://Binval MuPlusLambda
+                    //    frm = new BinValMuPlusLambdaEA();
+                    //    frm.FormBorderStyle = FormBorderStyle.None;
+                    //    frm.TopLevel = false;
+                    //    panel1.Controls.Clear();
+                    //    panel1.Controls.Add(frm);
+                    //    frm.Show();
                     break;
                 case (3, 1)://TSP MuPlusLambda
                     frm = new TSPMuPlusLambdaEA();

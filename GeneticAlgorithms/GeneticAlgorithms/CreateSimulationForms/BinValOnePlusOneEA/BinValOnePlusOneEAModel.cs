@@ -12,17 +12,17 @@ namespace GeneticAlgorithms.CreateSimulationForms.BinValOnePlusOneEA
 {
     public class BinValOnePlusOneEAModel : SimpleBitStringAlgorithmModel
     {
-        public void createAlgorithm(int bitLengthIn)
+        public void createAlgorithm(BitStringIndividual bitString)
         {
             population = 1;
-            bitLength = bitLengthIn;
+            bitLength = bitString.Solution.Bits.Length;
             algorithmFactory = new Func<GeneticAlgorithmBase<BitStringIndividual>>(() =>
             {
                 return new OnePlusOneEaAlgorithm<BitStringIndividual>(
                     new OneOverNXBitStringMutation(),
                     new BinValFitnessCalculator(),
                     new LoggerBase<BitStringIndividual>(),
-                    new BitStringIndividual(bitLength)
+                    bitString
                 );
             });
             algorithm = algorithmFactory();

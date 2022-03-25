@@ -1,5 +1,6 @@
-﻿using Common;
-using IOParsing;
+﻿using Algorithms.Infrastructure.BaseImplementations;
+using Algorithms.TravelingSalesPerson;
+using Common;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,41 +13,34 @@ using System.Windows.Forms;
 
 namespace GeneticAlgorithms.CreateSimulationForms.TSPMuPlusLambdaEA
 {
-    public partial class TSPMuPlusLambdaEA : Form
+    public partial class TSPMuPlusLambdaEA : CreateSimulationForm
     {
+
+
+        TSPSelector.TSPSelector TSPSel;
+        TSPMutator.TSPMutatorSelector mutSel;
+        MuPlusLambdaSelector.MuPlusLambdaSelector MPLSel;
+
         public TSPMuPlusLambdaEA()
         {
             InitializeComponent();
-        }
-
-        private void bitLength_label_Click(object sender, EventArgs e)
-        {
+            this.headline.Text = "TSP - Mu Plus Lambda";
 
         }
 
-        private void bitLength_tb_TextChanged(object sender, EventArgs e)
+        protected override void createAlgorithm_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void generate_btn_Click(object sender, EventArgs e)
-        {
-            String file = (String)comboBox1.SelectedItem;
-            ResourceManager.tspFiles.TryGetValue(file, out String[] tspFilePaths);
-            CoordinateGraph g;
-            if (tspFilePaths.Length <= 1)
-            {
-                g = Parser.LoadTSPGraph(tspFilePaths[0]);
-            }
-            else
-            {
-                g = Parser.LoadTspGraphWithOpt(tspFilePaths[0], tspFilePaths[1]);
-            }
             TSPMuPlusLambdaEAModel model = new TSPMuPlusLambdaEAModel();
-            model.createAlgorithm(g);
-
+            CoordinateGraph graph = TSPSel.getTSPProblem();
+            int mu = MPLSel.getMu();
+            int lambda = MPLSel.getLambda();
+            double crossover = MPLSel.getCrossover();
+            MutatorBase<TravelingSalesPersonIndividual> mutator = mutSel.getMutator();
+            model.createAlgorithm(graph, mutator, mu, lambda, crossover);
             TSPManipV2 A_Form = new TSPManipV2(model);
             A_Form.Show();
         }
+
+        
     }
 }

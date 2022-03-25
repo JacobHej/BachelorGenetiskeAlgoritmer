@@ -27,3 +27,4 @@ C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.dll
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\ref\IOParsing.dll
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.pdb
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.csproj.AssemblyReference.cache

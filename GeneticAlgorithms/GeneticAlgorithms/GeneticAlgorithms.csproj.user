@@ -13,13 +13,49 @@
     <Compile Update="CreateSimulationForms\BinValOnePlusOneEA\BinValOnePlusOneEA.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="CreateSimulationForms\BitStringSelector\BitStringSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\BitStringSelector\BitStringSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\BitStringSelector\CustomBitStringIndividual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\BitStringSelector\RandomBitStringIndividual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\CreateSimulationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="CreateSimulationForms\LeadingOnesOnePlusOneEA\LeadingOnesOnePlusOneEA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\MuPlusLambdaSelector\MuPlusLambdaSelector.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="CreateSimulationForms\OneMaxOnePlusOneEA\OneMaxOnePlusOneEA.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="CreateSimulationForms\TSPMuPlusLambdaEA\TSPMuPlusLambdaEA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\TSPMutator\PoissonTwoOptMutatorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\TSPMutator\TSPMutatorSelectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\TSPMutator\TSPMutatorSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\TSPMutator\TwoOptMutatorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="CreateSimulationForms\TSPOnePlusOneEA\TSPOnePlusOneEA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\TSPSelector\TSPSelector.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="MainForm_Depricated.cs">

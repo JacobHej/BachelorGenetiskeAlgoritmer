@@ -20,6 +20,23 @@ namespace Common
             }
         }
 
+        public BitString(String s)
+        {
+            List<char> list = new List<char>();
+            foreach(char c in s)
+            {
+                if (c=='0'||c=='1')
+                {
+                    list.Add(c);
+                }
+                else
+                {
+                    throw new ArgumentException("Input String had a non binary char");
+                }
+            }
+            Bits = list.ToArray();
+        }
+
         public void FlipBitAt(int index)
         {
             if(index < Bits.Length)

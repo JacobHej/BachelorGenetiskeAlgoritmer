@@ -54,3 +54,4 @@ C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\V
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.dll
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\ref\Visualization.dll
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.pdb
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.csproj.AssemblyReference.cache
