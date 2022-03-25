@@ -17,6 +17,7 @@ namespace Algorithms.ACO
         private Dictionary<string, double> Pheramones;
         private int populationSize;
         private int xBestForPheramones;
+        private int bestSoFar = int.MinValue;
 
         protected IAntConstructor<TPopulation, TIndividual> AntConstructor;
         protected ISelector<TPopulation, TIndividual> Selector;
@@ -30,7 +31,8 @@ namespace Algorithms.ACO
             IPheramoneConstructor<TIndividual> pheramoneConstructor,
             ISelector<TPopulation, TIndividual> selector,
             IAntConstructor<TPopulation, TIndividual> antConstructor, 
-            ILogger<TIndividual> logger, 
+            ILogger<TIndividual> logger,
+            Dictionary<string, double> initialPheromones,
             int populationSize, int xBestForPheramones)
         {
             this.Logger = logger;
@@ -38,7 +40,7 @@ namespace Algorithms.ACO
             this.AntConstructor = antConstructor;
             this.Selector = selector;
             this.PheramoneConstructor = pheramoneConstructor;
-            this.Pheramones = new Dictionary<string, double>();
+            this.Pheramones = initialPheromones;
             this.PheramoneHistory = new List<Dictionary<string, double>>();
             this.populationSize = populationSize;
             this.xBestForPheramones = xBestForPheramones;
@@ -50,16 +52,39 @@ namespace Algorithms.ACO
         {
             return Task.Run(() =>
             {
-                Iterations++;
+                lock (this)
+                {
+                    Iterations++;
 
-                TPopulation newPopulation = AntConstructor.ConstructAnst(Pheramones, populationSize);
+                    TPopulation newPopulation = AntConstructor.ConstructAnst(Pheramones, populationSize);
 
-                (TPopulation rest, List<TIndividual> selectedIndividuals) = Selector.SelectMultiple(newPopulation, xBestForPheramones);
+                    (TPopulation rest, List<TIndividual> selectedIndividuals) = Selector.SelectMultiple(newPopulation, xBestForPheramones);
 
-                PheramoneHistory.Add(Pheramones);
-                Pheramones = PheramoneConstructor.ConstructPheramones(Pheramones, selectedIndividuals);
+                    PheramoneHistory.Add(Pheramones);
+                    Pheramones = PheramoneConstructor.ConstructPheramones(Pheramones, selectedIndividuals);
 
-                Logger.LogGeneration(newPopulation, FitnessCalculator, Iterations);               
+
+                    TIndividual bestIndividual = default(TIndividual);
+                    bool flag = false;
+                    newPopulation.Individuals.ForEach(individual =>
+                    {
+                        int fitness = FitnessCalculator.CalculateFitness(individual);
+                        if (bestSoFar < fitness)
+                        { 
+                            bestIndividual = individual; 
+                            flag = true;
+                            bestSoFar = fitness; 
+                        }
+                    });
+
+                    if (flag)
+                    {
+                        PopulationBase<TIndividual> pop = new PopulationBase<TIndividual>(1);
+                        pop.Individuals.Add(bestIndividual);
+                        Logger.LogGeneration(pop, FitnessCalculator, Iterations);
+                    }
+                }
+                //Logger.LogGeneration(newPopulation, FitnessCalculator, Iterations);               
             });
         }
     }

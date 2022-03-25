@@ -14,10 +14,15 @@ namespace Algorithms.ACO
         private CoordinateGraph graph;
         private Random random;
 
-        public TSPAntConstructor(CoordinateGraph graph)
+        private double alpha;
+        private double beta;
+
+        public TSPAntConstructor(CoordinateGraph graph, double alpha, double beta)
         {
             this.graph = graph;
             this.random = new Random();
+            this.alpha = alpha;
+            this.beta = beta;
         }
 
         public override TravelingSalesPersonPopulation ConstructAnst(Dictionary<string, double> pheramones, int amount)
@@ -33,47 +38,59 @@ namespace Algorithms.ACO
 
         public override TravelingSalesPersonIndividual ConstructAnt(Dictionary<string, double> pheramones)
         {
-            int n = graph.Verticies.Length;
-            int[] solution = new int[n];
-            List<int> moves = Enumerable.Range(0, n).ToList();
-            moves.Remove(0);
-            int currentcity = 0;
-            solution[0] = 0;
+            int amountOfCities = graph.Verticies.Length;
+            int[] solution = new int[amountOfCities];
+            List<double> moves = Enumerable.Range(0, amountOfCities).Select(i => (double)i).ToList();
 
-            for (int i = 1; i < n; i++)
+            int randomStart = random.Next(moves.Count);
+            moves.Remove(randomStart);
+            int currentcity = randomStart;
+            solution[0] = randomStart;
+
+            for (int i = 1; i < amountOfCities; i++)
             {
-                double[] weights = moves.Select(move =>
-                {
-                    int distance = graph.GetDistance(currentcity, move);
-                    double weight = 1d / distance;
-                    double pheramone;
+                double[] weights = new double[moves.Count];
 
-                    if (pheramones.TryGetValue(Math.Min(currentcity, move).ToString() + "," + Math.Max(currentcity, move).ToString(), out pheramone))
-                    {
-                        weight += pheramone;
-                    }
+                //double summedProbabilities = moves.Aggregate((sum, move) =>
+                //{
+                //    int distance = graph.GetDistance(currentcity, (int)move);
+                //    double visibility = 1d / distance;
 
-                    return weight;
-                }).ToArray();
+                //    double pheramoneIntensity;
+                //    pheramones.TryGetValue(Math.Min(currentcity, move).ToString() + "," + Math.Max(currentcity, move).ToString(), out pheramoneIntensity);
 
-                double sum = weights.Sum();
+                //    return sum + Math.Pow(visibility, beta) * Math.Pow(pheramoneIntensity, alpha);
+                //});
 
-                double selectedint = random.NextDouble() * sum;
+                for (int j = 0; j < moves.Count; j++)
+                {                
+                    int movej = (int)moves[j];
+                    int distance = graph.GetDistance(currentcity, movej);
+                    double visibility = 1d / distance;
 
-                double count = 0;
-                int index = 0;
-                
-                while(count < selectedint)
-                {
-                    count += weights[index++];
+                    double pheramoneIntensity;
+                    pheramones.TryGetValue(Math.Min(currentcity, movej).ToString() + "," + Math.Max(currentcity, movej).ToString(), out pheramoneIntensity);
+
+                    double probability = Math.Pow(visibility, beta) * Math.Pow(pheramoneIntensity, alpha);
+
+                    weights[j] = probability; /// summedProbabilities;
                 }
 
-                int move = moves[--index];
+                double sum = weights.Sum();
+                double selectedDouble = random.NextDouble() * sum;
+                double count = 0;
+                int index = -1;
+
+                do
+                {
+                    index++;
+                    count+= weights[index];
+                }while (count < selectedDouble);
+
+                double move = moves[index];
                 moves.RemoveAt(index);
-
-                currentcity = move;
-
-                solution[i] = move;
+                currentcity = (int)move;
+                solution[i] = (int)move;
             }
 
             return new TravelingSalesPersonIndividual(solution,graph);

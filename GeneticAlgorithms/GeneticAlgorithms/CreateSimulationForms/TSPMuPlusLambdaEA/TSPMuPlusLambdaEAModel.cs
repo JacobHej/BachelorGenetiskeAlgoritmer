@@ -30,9 +30,9 @@ namespace GeneticAlgorithms.CreateSimulationForms.TSPMuPlusLambdaEA
                                         new RandomSelector<TravelingSalesPersonPopulation, TravelingSalesPersonIndividual>(),
                                         new LoggerBase<TravelingSalesPersonIndividual>(),
                                         new ReplaceWorstReplacer<TravelingSalesPersonPopulation, TravelingSalesPersonIndividual>(),
-                                        new TravelingSalesPersonPopulation(10, graph),
-                                        10,
-                                    0);
+                                        new TravelingSalesPersonPopulation(52, graph),
+                                        52,
+                                    0.3d);
             });
 
             this.graph = graph;
