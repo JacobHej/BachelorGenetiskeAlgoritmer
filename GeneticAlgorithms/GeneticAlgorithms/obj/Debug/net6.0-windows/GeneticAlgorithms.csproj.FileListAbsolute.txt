@@ -15,20 +15,15 @@ C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\Common.pdb
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\IOParsing.pdb
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\bin\Debug\net6.0-windows\Visualization.pdb
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.csproj.AssemblyReference.cache
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.BitManipulation.resources
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.BitManipV2.resources
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulation.resources
-C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulationForms.BinValMuPlusLambdaEA.BinValMuPlusLambdaEA.resources
-C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulationForms.BinValOnePlusOneEA.BinValOnePlusOneEA.resources
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulationForms.BitStringSelector.BitStringSelector.resources
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulationForms.BitStringSelector.CustomBitStringIndividual.resources
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulationForms.BitStringSelector.RandomBitStringIndividual.resources
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulationForms.CreateSimulationForm.resources
-C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulationForms.LeadingOnesMuPlusLambdaEA.LeadingOnesMuPlusLambdaEA.resources
-C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulationForms.LeadingOnesOnePlusOneEA.LeadingOnesOnePlusOneEA.resources
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulationForms.MuPlusLambdaSelector.MuPlusLambdaSelector.resources
-C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulationForms.OneMaxMuPlusLambdaEA.OneMaxMuPlusLambdaEA.resources
-C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulationForms.OneMaxOnePlusOneEA.OneMaxOnePlusOneEA.resources
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulationForms.TSPMutator.PoissonTwoOptMutatorForm.resources
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulationForms.TSPMutator.TSPMutatorSelector.resources
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulationForms.TSPOnePlusOneEA.TSPOnePlusOneEA.resources
@@ -46,3 +41,4 @@ C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\ref\GeneticAlgorithms.dll
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.pdb
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.genruntimeconfig.cache
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\GeneticAlgorithms\obj\Debug\net6.0-windows\GeneticAlgorithms.CreateSimulationForms.BitStringOnePlusOneEA.BitStringOnePlusOneEA.resources

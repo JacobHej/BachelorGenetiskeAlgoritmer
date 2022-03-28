@@ -10,9 +10,6 @@
     <Compile Update="CreateSimulation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="CreateSimulationForms\BinValOnePlusOneEA\BinValOnePlusOneEA.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="CreateSimulationForms\BitStringSelector\BitStringSelectForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -28,13 +25,7 @@
     <Compile Update="CreateSimulationForms\CreateSimulationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="CreateSimulationForms\LeadingOnesOnePlusOneEA\LeadingOnesOnePlusOneEA.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="CreateSimulationForms\MuPlusLambdaSelector\MuPlusLambdaSelector.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="CreateSimulationForms\OneMaxOnePlusOneEA\OneMaxOnePlusOneEA.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="CreateSimulationForms\TSPMuPlusLambdaEA\TSPMuPlusLambdaEA.cs">

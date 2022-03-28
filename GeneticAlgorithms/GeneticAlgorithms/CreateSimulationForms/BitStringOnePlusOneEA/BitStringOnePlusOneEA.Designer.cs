@@ -1,7 +1,7 @@
 ﻿
-namespace GeneticAlgorithms.CreateSimulationForms.BinValOnePlusOneEA
+namespace GeneticAlgorithms.CreateSimulationForms.BitStringOnePlusOneEA
 {
-    partial class BinValOnePlusOneEA
+    partial class BitStringOnePlusOneEA
     {
         /// <summary>
         /// Required designer variable.

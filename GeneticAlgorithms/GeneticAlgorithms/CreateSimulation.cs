@@ -1,9 +1,8 @@
-﻿using GeneticAlgorithms.CreateSimulationForms;
-using GeneticAlgorithms.CreateSimulationForms.BinValMuPlusLambdaEA;
-using GeneticAlgorithms.CreateSimulationForms.BinValOnePlusOneEA;
-using GeneticAlgorithms.CreateSimulationForms.LeadingOnesMuPlusLambdaEA;
-using GeneticAlgorithms.CreateSimulationForms.LeadingOnesOnePlusOneEA;
-using GeneticAlgorithms.CreateSimulationForms.OneMaxOnePlusOneEA;
+﻿using Algorithms;
+using Algorithms.BitStuff;
+using GeneticAlgorithms.CreateSimulationForms;
+using GeneticAlgorithms.CreateSimulationForms.BitStringMuPlusLambdaEA;
+using GeneticAlgorithms.CreateSimulationForms.BitStringOnePlusOneEA;
 using GeneticAlgorithms.CreateSimulationForms.TSPMuPlusLambdaEA;
 using GeneticAlgorithms.CreateSimulationForms.TSPOnePlusOneEA;
 using System;
@@ -53,24 +52,24 @@ namespace GeneticAlgorithms
             switch (problem_box.SelectedIndex, solution_box.SelectedIndex)
             {
 
-                //case (0, 0)://
-                //    frm = new OneMaxOnePlusOneEA();
-                //    frm.FormBorderStyle = FormBorderStyle.None;
-                //    frm.TopLevel = false;
-                //    panel1.Controls.Clear();
-                //    panel1.Controls.Add(frm);
-                //    frm.Show();
-                //    break;
-                //case (1, 0)://
-                //    frm = new LeadingOnesOnePlusOneEA();
-                //    frm.FormBorderStyle = FormBorderStyle.None;
-                //    frm.TopLevel = false;
-                //    panel1.Controls.Clear();
-                //    panel1.Controls.Add(frm);
-                //    frm.Show();
-                //    break;
+                case (0, 0)://
+                    frm = new BitStringOnePlusOneEA(new OneMaxFitnessCalculator(), "OneMax - One Plus One");
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                    frm.TopLevel = false;
+                    panel1.Controls.Clear();
+                    panel1.Controls.Add(frm);
+                    frm.Show();
+                    break;
+                case (1, 0)://
+                    frm = new BitStringOnePlusOneEA(new LeadingOnesFitnessCalculator(), "Leading Ones - One Plus One");
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                    frm.TopLevel = false;
+                    panel1.Controls.Clear();
+                    panel1.Controls.Add(frm);
+                    frm.Show();
+                    break;
                 case (2, 0)://
-                    frm = new BinValOnePlusOneEA();
+                    frm = new BitStringOnePlusOneEA(new BinValFitnessCalculator(), "Binary Value - One Plus One");
                     frm.FormBorderStyle = FormBorderStyle.None;
                     frm.TopLevel = false;
                     panel1.Controls.Clear();
@@ -85,21 +84,29 @@ namespace GeneticAlgorithms
                     panel1.Controls.Add(frm);
                     frm.Show();
                     break;
-                    //case (1, 1)://
-                    //    frm = new LeadingOnesMuPlusLambdaEA();
-                    //    frm.FormBorderStyle = FormBorderStyle.None;
-                    //    frm.TopLevel = false;
-                    //    panel1.Controls.Clear();
-                    //    panel1.Controls.Add(frm);
-                    //    frm.Show();
-                    //    break;
-                    //case (2, 1)://Binval MuPlusLambda
-                    //    frm = new BinValMuPlusLambdaEA();
-                    //    frm.FormBorderStyle = FormBorderStyle.None;
-                    //    frm.TopLevel = false;
-                    //    panel1.Controls.Clear();
-                    //    panel1.Controls.Add(frm);
-                    //    frm.Show();
+                case (0, 1)://OneMaxMuPlusLambda
+                    frm = new BitStringMuPlusLambdaEA(new OneMaxFitnessCalculator(), "OneMax - Mu Plus Lambda");
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                    frm.TopLevel = false;
+                    panel1.Controls.Clear();
+                    panel1.Controls.Add(frm);
+                    frm.Show();
+                    break;
+                case (1, 1)://LeadingOnesMuPlusLambda
+                    frm = new BitStringMuPlusLambdaEA(new LeadingOnesFitnessCalculator(), "Leading Ones - Mu Plus Lambda");
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                    frm.TopLevel = false;
+                    panel1.Controls.Clear();
+                    panel1.Controls.Add(frm);
+                    frm.Show();
+                    break;
+                case (2, 1)://Binval MuPlusLambda
+                    frm = new BitStringMuPlusLambdaEA(new BinValFitnessCalculator(), "Binary Value - Mu Plus Lambda");
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                    frm.TopLevel = false;
+                    panel1.Controls.Clear();
+                    panel1.Controls.Add(frm);
+                    frm.Show();
                     break;
                 case (3, 1)://TSP MuPlusLambda
                     frm = new TSPMuPlusLambdaEA();

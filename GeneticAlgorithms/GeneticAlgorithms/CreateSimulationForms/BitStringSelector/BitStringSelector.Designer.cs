@@ -39,7 +39,6 @@
             this.Headline.Location = new System.Drawing.Point(0, 0);
             this.Headline.Name = "Headline";
             this.Headline.Size = new System.Drawing.Size(50, 20);
-            this.Headline.TabIndex = 0;
             this.Headline.Text = "Select BitString";
             this.Headline.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             //

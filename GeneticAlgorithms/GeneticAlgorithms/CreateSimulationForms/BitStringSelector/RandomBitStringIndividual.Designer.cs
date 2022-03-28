@@ -62,8 +62,8 @@
             this.ResumeLayout(false);
         }
 
-        private Label BitStringLengthLabel;
-        private TextBox BitStringLengthInput;
+        protected Label BitStringLengthLabel;
+        protected TextBox BitStringLengthInput;
 
 
         #endregion

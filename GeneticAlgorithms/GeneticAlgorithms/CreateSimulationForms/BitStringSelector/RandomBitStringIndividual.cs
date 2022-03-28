@@ -54,14 +54,14 @@ namespace GeneticAlgorithms.CreateSimulationForms.BitStringSelector
             e.Handled = !isPositiveInt(newText);
         }
 
-        public override BitStringIndividual GetBitString()
+        public int GetBitStringLength()
         {
             try
             {
                 int x = int.Parse(BitStringLengthInput.Text);
                 if (x > 0)
                 {
-                    return new BitStringIndividual(x);
+                    return x;
                 }
                 throw new ArgumentException("bit string length was not positve");
             }
@@ -69,6 +69,11 @@ namespace GeneticAlgorithms.CreateSimulationForms.BitStringSelector
             {
                 throw new ArgumentException("bit string length was not integer");
             }
+        }
+
+        public override BitStringIndividual GetBitString()
+        {
+            return new BitStringIndividual(GetBitStringLength());
         }
     }
 }
