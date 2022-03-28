@@ -27,4 +27,22 @@ C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.dll
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\ref\IOParsing.dll
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.pdb
+<<<<<<< HEAD
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.csproj.AssemblyReference.cache
+=======
+C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\bin\Debug\net6.0\IOParsing.deps.json
+C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\bin\Debug\net6.0\IOParsing.dll
+C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\bin\Debug\net6.0\ref\IOParsing.dll
+C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\bin\Debug\net6.0\IOParsing.pdb
+C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\bin\Debug\net6.0\Common.dll
+C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\bin\Debug\net6.0\Common.pdb
+C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.csproj.AssemblyReference.cache
+C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.AssemblyInfoInputs.cache
+C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.AssemblyInfo.cs
+C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.csproj.CoreCompileInputs.cache
+C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.csproj.CopyComplete
+C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.dll
+C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\ref\IOParsing.dll
+C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\IOParsing\obj\Debug\net6.0\IOParsing.pdb
+>>>>>>> a7ea99683076bd32421b5b1f94d6b34f442e02e2

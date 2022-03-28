@@ -82,8 +82,8 @@ namespace Visualization.Conversion
                     y = (int)Math.Round((p.Y - minY) * scale / height);
                     FilledCircle node = new FilledCircle(
                         new Point(x, y),
-                        new Size(20, 20),
-                        Color.Blue);
+                        new Size(10, 10),
+                        Color.Gray);
                     graph.Nodes.Add(node);
                 }
                 return graph;
@@ -96,8 +96,8 @@ namespace Visualization.Conversion
             y = (int)Math.Round((p.Y-minY) * scale / height);
             FilledCircle nodeFrom = new FilledCircle(
                 new Point(x, y),
-                new Size(20, 20),
-                Color.Blue);
+                new Size(10, 10),
+                Color.Gray);
             graph.Nodes.Add(nodeFrom);
             FilledCircle startNode = nodeFrom;
             int prevIndex = index;
@@ -123,7 +123,7 @@ namespace Visualization.Conversion
                     ] == index
                     )
                 {
-                    color = Color.Green;
+                    color = Color.LawnGreen;
                 } else
                 {
                     color = Color.FromArgb(100, Color.Gray);
@@ -135,8 +135,8 @@ namespace Visualization.Conversion
 
                 FilledCircle nodeTo = new FilledCircle(
                     new Point(x, y),
-                    new Size(20, 20),
-                    Color.Blue);
+                    new Size(10, 10),
+                    Color.Gray);
                 graph.Nodes.Add(nodeTo);
 
                 graph.Edges.Add(new Line(nodeFrom, nodeTo, color));
@@ -160,7 +160,7 @@ namespace Visualization.Conversion
               ] == solution[0]
               )
             {
-                color = Color.Green;
+                color = Color.LawnGreen;
             }
             else
             {

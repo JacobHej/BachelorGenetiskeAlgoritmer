@@ -10,6 +10,7 @@
     <Compile Update="CreateSimulation.cs">
       <SubType>Form</SubType>
     </Compile>
+<<<<<<< HEAD
     <Compile Update="CreateSimulationForms\BitStringSelector\BitStringSelectForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -41,6 +42,27 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="CreateSimulationForms\TSPMutator\TwoOptMutatorForm.cs">
+=======
+    <Compile Update="CreateSimulationForms\BinValMuPlusLambdaEA\BinValMuPlusLambdaEA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\BinValOnePlusOneEA\BinValOnePlusOneEA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\LeadingOnesMuPlusLambdaEA\LeadingOnesMuPlusLambdaEA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\LeadingOnesOnePlusOneEA\LeadingOnesOnePlusOneEA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\OneMaxMuPlusLambdaEA\OneMaxMuPlusLambdaEA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\OneMaxOnePlusOneEA\OneMaxOnePlusOneEA.cs">
+>>>>>>> a7ea99683076bd32421b5b1f94d6b34f442e02e2
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\TSPMuPlusLambdaEA\TSPMuPlusLambdaEA.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="CreateSimulationForms\TSPOnePlusOneEA\TSPOnePlusOneEA.cs">

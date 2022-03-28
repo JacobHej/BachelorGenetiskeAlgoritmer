@@ -44,7 +44,7 @@ namespace Algorithms.BitStuff
             
             indexes.ForEach(i => { 
                 individuals.Add(population.Individuals[i]);
-                newPopulation.Individuals.RemoveAt(i);
+                newPopulation.Individuals.Remove(population.Individuals[i]);
             });
 
             return (population, individuals);

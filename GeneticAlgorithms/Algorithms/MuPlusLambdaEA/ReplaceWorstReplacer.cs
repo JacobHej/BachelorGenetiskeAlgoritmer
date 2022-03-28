@@ -1,4 +1,5 @@
-﻿using Algorithms.Infrastructure.BaseImplementations;
+﻿using Algorithms.Infrastructure;
+using Algorithms.Infrastructure.BaseImplementations;
 using Algorithms.Infrastructure.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace Algorithms.OnePlusOneEA
         {
             TPopulation newPopulation = (TPopulation) population.Copy();
 
-            IComparer<TIndividual> comparer = new FitnessComparer(fitnessCalculator);
+            IComparer<TIndividual> comparer = new FitnessComparer<TIndividual>(fitnessCalculator);
 
             newPopulation.Individuals.Sort(comparer);
             individuals.Sort(comparer);
