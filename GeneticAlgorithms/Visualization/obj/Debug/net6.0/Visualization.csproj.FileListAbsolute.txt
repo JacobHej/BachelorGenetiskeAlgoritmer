@@ -54,6 +54,9 @@ C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\V
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.dll
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\ref\Visualization.dll
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.pdb
+<<<<<<< HEAD
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.csproj.AssemblyReference.cache
+=======
 C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Visualization.deps.json
 C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Visualization.dll
 C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\ref\Visualization.dll
@@ -69,3 +72,4 @@ C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\
 C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.dll
 C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\ref\Visualization.dll
 C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.pdb
+>>>>>>> a7ea99683076bd32421b5b1f94d6b34f442e02e2

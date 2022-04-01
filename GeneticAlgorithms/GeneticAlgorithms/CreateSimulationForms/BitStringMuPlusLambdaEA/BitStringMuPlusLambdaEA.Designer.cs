@@ -1,8 +1,6 @@
-﻿using GeneticAlgorithms.CreateSimulationForms.TSPMutator;
-
-namespace GeneticAlgorithms.CreateSimulationForms.TSPOnePlusOneEA
+﻿namespace GeneticAlgorithms.CreateSimulationForms.BitStringMuPlusLambdaEA
 {
-    partial class TSPOnePlusOneEA
+    partial class BitStringMuPlusLambdaEA
     {
         /// <summary>
         /// Required designer variable.
@@ -37,18 +35,19 @@ namespace GeneticAlgorithms.CreateSimulationForms.TSPOnePlusOneEA
             this.selectables.ColumnCount = 2;
             this.selectables.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.selectables.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            //TSP SELECTOR
-            TSPSel = new TSPSelector.TSPSelector();
-            TSPSel.FormBorderStyle = FormBorderStyle.None;
-            TSPSel.TopLevel = false;
-            this.selectables.Controls.Add(TSPSel,0,0);
-            TSPSel.Show();
-            //TSP MUTATOR SELECTOR
-            mutSel = new TSPMutatorSelector();
-            mutSel.FormBorderStyle = FormBorderStyle.None;
-            mutSel.TopLevel = false;
-            this.selectables.Controls.Add(mutSel,1,0);
-            mutSel.Show();
+            //BitStringLength
+            BitLengthSel = new BitStringSelector.RandomBitStringIndividual();
+            BitLengthSel.FormBorderStyle = FormBorderStyle.None;
+            BitLengthSel.TopLevel = false;
+            this.selectables.Controls.Add(BitLengthSel, 0, 0);
+            BitLengthSel.Show();
+            //MuPlusLambda
+            MPLSel = new MuPlusLambdaSelector.MuPlusLambdaSelector();
+            MPLSel.FormBorderStyle = FormBorderStyle.None;
+            MPLSel.TopLevel = false;
+            this.selectables.Controls.Add(MPLSel, 1, 0);
+            MPLSel.Show();
+            
             this.selectables.Name = "selectables";
             this.selectables.RowCount = 1;
             this.selectables.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -60,7 +59,6 @@ namespace GeneticAlgorithms.CreateSimulationForms.TSPOnePlusOneEA
             this.Name = "TSPOnePlusOneEA";
             this.Text = "TSPOnePlusOneEA";
             this.ResumeLayout(false);
-
         }
 
         #endregion

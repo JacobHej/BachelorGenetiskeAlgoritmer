@@ -15,7 +15,7 @@ namespace GeneticAlgorithms.CreateSimulationForms.TSPMuPlusLambdaEA
     public class TSPMuPlusLambdaEAModel : SimpleTSPAlgorithmModel
     {
 
-        public void createAlgorithm(CoordinateGraph graph, int population = 10, int mu = 5, double crossChance = 50)
+        public void createAlgorithm(CoordinateGraph graph, MutatorBase<TravelingSalesPersonIndividual> mutator,  int mu = 10, int lambda = 5, double crossChance = 50)
         {
             if (graph == null)
             {
@@ -25,14 +25,14 @@ namespace GeneticAlgorithms.CreateSimulationForms.TSPMuPlusLambdaEA
             {
                 return new MuPlusLambdaEaAlgorithm<TravelingSalesPersonPopulation, TravelingSalesPersonIndividual>(
                                         new PartiallyMatchedCrossover(),
-                                        new PoissonTwoOptMutator(2),
+                                        mutator,
                                         new TravelingSalesPersonFitnessCalculator(),
                                         new RandomSelector<TravelingSalesPersonPopulation, TravelingSalesPersonIndividual>(),
                                         new LoggerBase<TravelingSalesPersonIndividual>(),
                                         new ReplaceWorstReplacer<TravelingSalesPersonPopulation, TravelingSalesPersonIndividual>(),
-                                        new TravelingSalesPersonPopulation(52, graph),
-                                        52,
-                                    0.3d);
+                                        new TravelingSalesPersonPopulation(mu, graph),
+                                        lambda,
+                                    crossChance);
             });
 
             this.graph = graph;

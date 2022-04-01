@@ -1,8 +1,7 @@
-﻿using GeneticAlgorithms.CreateSimulationForms.TSPMutator;
-
-namespace GeneticAlgorithms.CreateSimulationForms.TSPOnePlusOneEA
+﻿
+namespace GeneticAlgorithms.CreateSimulationForms.BitStringOnePlusOneEA
 {
-    partial class TSPOnePlusOneEA
+    partial class BitStringOnePlusOneEA
     {
         /// <summary>
         /// Required designer variable.
@@ -34,21 +33,14 @@ namespace GeneticAlgorithms.CreateSimulationForms.TSPOnePlusOneEA
             //
             // selectables
             //
-            this.selectables.ColumnCount = 2;
-            this.selectables.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.selectables.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            //TSP SELECTOR
-            TSPSel = new TSPSelector.TSPSelector();
-            TSPSel.FormBorderStyle = FormBorderStyle.None;
-            TSPSel.TopLevel = false;
-            this.selectables.Controls.Add(TSPSel,0,0);
-            TSPSel.Show();
-            //TSP MUTATOR SELECTOR
-            mutSel = new TSPMutatorSelector();
-            mutSel.FormBorderStyle = FormBorderStyle.None;
-            mutSel.TopLevel = false;
-            this.selectables.Controls.Add(mutSel,1,0);
-            mutSel.Show();
+            this.selectables.ColumnCount = 1;
+            this.selectables.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            //BitStringSelector
+            BitStringSel = new BitStringSelector.BitStringSelector();
+            BitStringSel.FormBorderStyle = FormBorderStyle.None;
+            BitStringSel.TopLevel = false;
+            this.selectables.Controls.Add(BitStringSel, 1,0);
+            BitStringSel.Show();
             this.selectables.Name = "selectables";
             this.selectables.RowCount = 1;
             this.selectables.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
