@@ -117,30 +117,30 @@ namespace GeneticAlgorithms
         #region PaintEvents
         private async void data_pb_Paint(object sender, PaintEventArgs e)
         {
-            OnionThing o = new OnionThing(new Point(0,0), new Size(400, 400));
+           // OnionThing o = new OnionThing(new Point(0, 0), new Size(400, 400));
 
             //fs.Draw(e.Graphics);
-            //if (model.algorithm.Logger.History.Count > 0)
-            //{
-            //OnionThing o = new OnionThing(new Point(100, 100), new Size(400, 400));
-            //o.Draw2(e.Graphics, model.bitLength, new List<int> { -1, -1, -3, 4, 13, 7, 4, 2, 1, 0 });
-                        
-            o.Draw2(e.Graphics, 16, model.GetWeights()); 
+            if (model.algorithm.Logger.History.Count > 0 && model.SelectedGeneration != null)
+            {
+                //OnionThing o = new OnionThing(new Point(100, 100), new Size(400, 400));
+                //o.Draw2(e.Graphics, model.bitLength, new List<int> { -1, -1, -3, 4, 13, 7, 4, 2, 1, 0 });
 
-                //Chart chart = new Chart(200, 400, new Point(50, 25), "Latest Population");
-                //chart.values.AddRange(model.SelectedGeneration.IndividualFitness.Values.Select(v => (double)v).ToList());
-                //chart.Draw(e.Graphics);
+                // o.Draw2(e.Graphics, 16, model.GetWeights()); 
 
-                //Chart chartBest = new Chart(200, 400, new Point(50, 350), "Best Of Each Population");
-                //model.algorithm.Logger.History.ForEach(v => chartBest.values.Add(v.HighestFitness));
-                //chartBest.Draw(e.Graphics);
+                Chart chart = new Chart(200, 400, new Point(50, 25), "Latest Population");
+                chart.values.AddRange(model.SelectedGeneration.IndividualFitness.Values.Select(v => (double)v).ToList());
+                chart.Draw(e.Graphics);
 
-                //e.Graphics.DrawString("Generation: " + model.SelectedgenerationNumber, new Font("Arial", 16), new SolidBrush(Color.Black), new Point(50, 600));
-            //}
+                Chart chartBest = new Chart(200, 400, new Point(50, 350), "Best Of Each Population");
+                model.algorithm.Logger.History.ForEach(v => chartBest.values.Add(v.HighestFitness));
+                chartBest.Draw(e.Graphics);
+
+                e.Graphics.DrawString("Generation: " + model.SelectedgenerationNumber, new Font("Arial", 16), new SolidBrush(Color.Black), new Point(50, 600));
+            }
         }
-        #endregion
+            #endregion
 
-        private void prevGen_btn_Click(object sender, EventArgs e)
+            private void prevGen_btn_Click(object sender, EventArgs e)
         {
             model.SelectPreviousGeneration();
             this.data_pb.Invalidate();

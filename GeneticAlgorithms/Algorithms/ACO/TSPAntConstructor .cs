@@ -51,17 +51,6 @@ namespace Algorithms.ACO
             {
                 double[] weights = new double[moves.Count];
 
-                //double summedProbabilities = moves.Aggregate((sum, move) =>
-                //{
-                //    int distance = graph.GetDistance(currentcity, (int)move);
-                //    double visibility = 1d / distance;
-
-                //    double pheramoneIntensity;
-                //    pheramones.TryGetValue(Math.Min(currentcity, move).ToString() + "," + Math.Max(currentcity, move).ToString(), out pheramoneIntensity);
-
-                //    return sum + Math.Pow(visibility, beta) * Math.Pow(pheramoneIntensity, alpha);
-                //});
-
                 for (int j = 0; j < moves.Count; j++)
                 {                
                     int movej = (int)moves[j];
@@ -73,7 +62,7 @@ namespace Algorithms.ACO
 
                     double probability = Math.Pow(visibility, beta) * Math.Pow(pheramoneIntensity, alpha);
 
-                    weights[j] = probability; /// summedProbabilities;
+                    weights[j] = probability;
                 }
 
                 double sum = weights.Sum();

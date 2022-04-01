@@ -20,6 +20,11 @@ namespace Common
             }
         }
 
+        public BitString(char[] sol)
+        {
+            this.Bits = sol;
+        }
+
         public void FlipBitAt(int index)
         {
             if(index < Bits.Length)
