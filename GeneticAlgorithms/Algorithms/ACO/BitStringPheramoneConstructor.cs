@@ -57,7 +57,7 @@ namespace Algorithms.ACO
             for (int i = 0; i < individuals.Count; i++)
             {
                 BitStringIndividual ind = individuals[i];
-                double value = Math.Pow(fitnessCalculator.CalculateFitness(ind),2) / q;
+                double value = fitnessCalculator.CalculateFitness(ind) / q;
                 for (int j = 0; j < ind.Solution.Bits.Length; j++)
                 {
                     string key = j + "," + ind.Solution.Bits[j];
