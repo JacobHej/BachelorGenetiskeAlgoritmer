@@ -35,12 +35,12 @@
             this.selectables.ColumnCount = 2;
             this.selectables.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.selectables.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            //BitStringLength
-            BitLengthSel = new BitStringSelector.RandomBitStringIndividual();
-            BitLengthSel.FormBorderStyle = FormBorderStyle.None;
-            BitLengthSel.TopLevel = false;
-            this.selectables.Controls.Add(BitLengthSel, 0, 0);
-            BitLengthSel.Show();
+            //BitSel
+            BitSel = new BitStringSelector.BitStringSelector();
+            BitSel.FormBorderStyle = FormBorderStyle.None;
+            BitSel.TopLevel = false;
+            this.selectables.Controls.Add(BitSel, 0, 0);
+            BitSel.Show();
             //MuPlusLambda
             MPLSel = new MuPlusLambdaSelector.MuPlusLambdaSelector();
             MPLSel.FormBorderStyle = FormBorderStyle.None;
@@ -51,7 +51,6 @@
             this.selectables.Name = "selectables";
             this.selectables.RowCount = 1;
             this.selectables.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.formatter.TabIndex = 0;
 
             // 
             // TSPOnePlusOneEA

@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "8FUpNXmiBgDa1lNW36QkYELvNLLzrYnT4lsjXwHbfK7KW3qW1SdboWC6NVFh3K3ISDWybxFSWdn9j1N0MmYjbQ==",
+  "dgSpecHash": "jRHpkyMiu89YS7F5qpyjGtXPOR6qoBCSJthwxvU1q/8gAz1APjw8wcyYb4/4EWGTNAsvpzX2gNcQpaCuNFDIag==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Benchmarking\\Benchmarking.csproj",
+  "projectFilePath": "C:\\Users\\KafferAffer\\source\\repos\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Benchmarking\\Benchmarking.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Jacob Hejlsberg\\.nuget\\packages\\mathnet.numerics\\4.15.0\\mathnet.numerics.4.15.0.nupkg.sha512",
-    "C:\\Users\\Jacob Hejlsberg\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
-    "C:\\Users\\Jacob Hejlsberg\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
+    "C:\\Users\\KafferAffer\\.nuget\\packages\\mathnet.numerics\\4.15.0\\mathnet.numerics.4.15.0.nupkg.sha512",
+    "C:\\Users\\KafferAffer\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\KafferAffer\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

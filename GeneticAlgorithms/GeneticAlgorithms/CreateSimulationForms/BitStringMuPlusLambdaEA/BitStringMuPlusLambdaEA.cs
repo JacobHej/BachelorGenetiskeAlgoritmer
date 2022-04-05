@@ -16,7 +16,7 @@ namespace GeneticAlgorithms.CreateSimulationForms.BitStringMuPlusLambdaEA
     public partial class BitStringMuPlusLambdaEA : CreateSimulationForm
     {
 
-        BitStringSelector.RandomBitStringIndividual BitLengthSel;
+        BitStringSelector.BitStringSelector BitSel;
         MuPlusLambdaSelector.MuPlusLambdaSelector MPLSel;
         IFitnessCalculator<BitStringIndividual> problem;
 
@@ -33,8 +33,8 @@ namespace GeneticAlgorithms.CreateSimulationForms.BitStringMuPlusLambdaEA
             int mu = MPLSel.getMu();
             int lambda = MPLSel.getMu();
             double crossOver = MPLSel.getCrossover();
-            int bitLength = BitLengthSel.GetBitStringLength();
-            model.createAlgorithm(problem,bitLength, mu, lambda, crossOver);
+            Func<BitStringIndividual> bitLengthCreator = BitSel.GetBitStringCreator();
+            model.createAlgorithm(problem, bitLengthCreator, mu, lambda, crossOver);
             BitManipV2 A_Form = new BitManipV2(model);
             A_Form.Show();
         }

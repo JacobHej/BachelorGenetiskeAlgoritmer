@@ -1,6 +1,8 @@
 using GeneticAlgorithms.CreateSimulationForms;
+using GeneticAlgorithms.CreateSimulationForms.ACOSelector;
 using GeneticAlgorithms.CreateSimulationForms.BitStringSelector;
 using GeneticAlgorithms.CreateSimulationForms.MuPlusLambdaSelector;
+using GeneticAlgorithms.CreateSimulationForms.SimulatedAnnealingSelector;
 using GeneticAlgorithms.CreateSimulationForms.TSPMutator;
 using GeneticAlgorithms.CreateSimulationForms.TSPOnePlusOneEA;
 using GeneticAlgorithms.CreateSimulationForms.TSPSelector;

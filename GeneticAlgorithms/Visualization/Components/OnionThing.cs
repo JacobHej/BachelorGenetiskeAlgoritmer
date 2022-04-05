@@ -9,79 +9,123 @@ namespace Visualization.Components
 {
     public class OnionThing : IDrawable
     {
-        private Point conorTR;
+        private Point conorTL;
         private Size size;
-        public OnionThing(Point conorTR, Size size)
+        public OnionThing(Point conorTL, Size size)
         {
-            this.conorTR = conorTR;
+            this.conorTL = conorTL;
             this.size =  size;
         }
 
         public void Draw(Graphics g)
         {
-            Point p1 = new Point(conorTR.X + (size.Width / 2), conorTR.Y); ;
-            Point p3 = new Point(conorTR.X + (size.Width / 2), conorTR.Y + size.Height);
+            Point p1 = new Point(conorTL.X + (size.Width / 2), conorTL.Y); ;
+            Point p3 = new Point(conorTL.X + (size.Width / 2), conorTL.Y + size.Height);
 
             //draw left
-            Point p2 = new Point(conorTR.X-(size.Width/2), conorTR.Y + (size.Height / 2));
+            Point p2 = new Point(conorTL.X-(size.Width/2), conorTL.Y + (size.Height / 2));
             ZeichneBezier(15, p1, p2, p3, g);
 
-            p2 = new Point(conorTR.X + (size.Width*3 / 2), conorTR.Y + (size.Height / 2));
+            p2 = new Point(conorTL.X + (size.Width*3 / 2), conorTL.Y + (size.Height / 2));
             ZeichneBezier(15, p1, p2, p3, g);
+        }
+
+        private void drawBoundingBox(Graphics g)
+        {
+            Pen pen = new Pen(Color.Red, 2);
+            Point conorTR = new Point(conorTL.X + size.Width, conorTL.Y);
+            Point conorBR = new Point(conorTL.X + size.Width, conorTL.Y + size.Height);
+            Point conorBL = new Point(conorTL.X, conorTL.Y + size.Height);
+
+            g.DrawLine(pen, conorTL, conorTR);
+            g.DrawLine(pen, conorBR, conorTR);
+            g.DrawLine(pen, conorBR, conorBL);
+            g.DrawLine(pen, conorTL, conorBL);
+        }
+
+        public void drawEdge(Graphics g)
+        {
+            int length = 20;
+            int sum = 0;
+            double heightInterval = ((double)size.Height) / ((double)length);
+
+
+            PointF[] pointsLeft = new PointF[length+1];
+            PointF[] pointsRight = new PointF[length+1];
+
+            var preciseWeights = Enumerable.Range(1, length / 2).Reverse();
+            var halfWeights = preciseWeights.Select(i => sum += i).ToList();
+            // concatinate the weights with the reversed verison (in the onion when you go up past the middle the weights should go down)
+            halfWeights.AddRange(halfWeights.AsEnumerable().Reverse().ToList());
+            int midValue = halfWeights[length/2];
+            halfWeights.RemoveAt(length/2);
+            var weights = halfWeights.ToArray();
+
+
+            int maxWeight = midValue;
+            double weightOffset = (((double)size.Width) / 2d) / ((double)maxWeight);
+            int xCenter = conorTL.X + size.Width / 2;
+
+
+            pointsLeft[0] = new PointF(xCenter, conorTL.Y);
+            pointsRight[0] = new PointF(xCenter, conorTL.Y);
+
+            for (int i = 0; i < weights.Length; i++)
+            {
+                pointsLeft[i+1] = new PointF((float)(xCenter - weights[i] * weightOffset), (float) (conorTL.Y + heightInterval * (i + 1)));
+                pointsRight[i + 1] = new PointF((float)(xCenter + weights[i] * weightOffset), (float)(conorTL.Y + heightInterval * (i + 1)));
+            }
+
+            pointsLeft[length] = new PointF(xCenter, conorTL.Y + size.Height);
+            pointsRight[length] = new PointF(xCenter, conorTL.Y + size.Height);
+
+            Pen bkStift = new Pen(Color.Gray, 2);
+            g.DrawCurve(bkStift, pointsLeft);
+            g.DrawCurve(bkStift, pointsRight);
+
         }
 
         public void Draw2(Graphics g, int length, List<KeyValuePair<int, int>> actualWeights)
         {
-            int heightInterval = size.Height / length;
 
-            PointF[] pointsLeft = new PointF[length + 2];
-            PointF[] pointsRight = new PointF[length + 2];
+            drawEdge(g);
+
+            double heightInterval = ((double)size.Height) / ((double)length);
+
+            List<PointF> pointsList = new List<PointF>();
 
             // weights from only on bit to all btis
             int sum = 0;
-            var halfWeights = Enumerable.Range(1, length / 2).Reverse().Select(i => sum += i).ToList();
-            // concatinate the weights with the reversed verison (in the onion when you go up past the middle the weights should go down)
-            halfWeights.AddRange(halfWeights.AsEnumerable().Reverse().ToList());
-            var weights = halfWeights.ToArray();
+            Enumerable.Range(1, length / 2).Select(i => sum += i).ToList();
 
-            int maxWeight = sum;
-            int weightOffset = (size.Width / 2) / maxWeight;
-            int xCenter = conorTR.X + size.Width/2;
+            double weightOffset = ((double)size.Width) / (double)(2*sum);
+            int xCenter = conorTL.X + size.Width/2;
 
-            pointsLeft[0] = new PointF(xCenter, conorTR.Y);
-            pointsRight[0] = new PointF(xCenter, conorTR.Y);
+            pointsList.Add(new PointF(xCenter, conorTL.Y + size.Height));
 
-            for (int i = 0; i < length; i++)
+            foreach (KeyValuePair<int, int> pair in actualWeights)
             {
-                pointsLeft[i + 1] = new PointF(xCenter - weights[i] * weightOffset, conorTR.Y + heightInterval * (i + 1));
-                pointsRight[i + 1] = new PointF(xCenter + weights[i] * weightOffset, conorTR.Y + heightInterval * (i + 1));
+                pointsList.Add(new PointF(xCenter+(int)(((double)pair.Key)*weightOffset),(float)(conorTL.Y+size.Height-heightInterval*pair.Value)));
             }
 
-            pointsLeft[length + 1] = new PointF(xCenter, conorTR.Y + size.Height + heightInterval);
-            pointsRight[length + 1] = new PointF(xCenter, conorTR.Y + size.Height + heightInterval);
+
 
             Pen bkStift = new Pen(Color.Red, 2);
-            g.DrawCurve(bkStift, pointsLeft);
-            g.DrawCurve(bkStift, pointsRight);
 
             // draw the bit line
             PointF[] pointsBit = new PointF[actualWeights.Count + 2];
-
-            pointsBit[actualWeights.Count + 1] = new PointF(xCenter, conorTR.Y);
-            pointsBit[0] = new PointF(xCenter, conorTR.Y + size.Height + heightInterval);
-
-            int count = 1;
-            actualWeights.ForEach(
+            if (size.Width/length>5&&size.Height/length>5)
+            {
+                pointsList.ForEach(
                 x => {
-                    PointF point = new PointF(xCenter + x.Key * weightOffset, conorTR.Y + size.Height - heightInterval * x.Value);
-                    pointsBit[count] = point; 
-                    count++;
-
-                    g.DrawEllipse(bkStift, new Rectangle(new Point((int)point.X - 5, (int)point.Y - 5), new Size(10, 10)));
+                    g.DrawEllipse(bkStift, new Rectangle(new Point((int)x.X - 5, (int)x.Y - 5), new Size(10, 10)));
                 });
-
-
-            g.DrawCurve(bkStift, pointsBit);
+            }
+            
+            if (pointsList.Count()>1)
+            {
+                g.DrawLines(bkStift,pointsList.ToArray());
+            }
         }
 
 

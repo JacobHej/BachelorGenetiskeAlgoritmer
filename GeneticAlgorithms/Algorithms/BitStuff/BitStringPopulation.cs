@@ -24,6 +24,18 @@ namespace Algorithms.BitStuff
             }
         }
 
+        public BitStringPopulation(int populationSize, Func<BitStringIndividual> bitStringCreator) : base(populationSize)
+        {
+            this.bitStringLength = bitStringLength;
+
+            Individuals = new List<BitStringIndividual>();
+
+            for (int i = 0; i < populationSize; i++)
+            {
+                Individuals.Add(bitStringCreator());
+            }
+        }
+
         public BitStringPopulation(List<BitStringIndividual> individuals, int bitStringLength) : base(individuals.Count)
         {
             this.bitStringLength = bitStringLength;

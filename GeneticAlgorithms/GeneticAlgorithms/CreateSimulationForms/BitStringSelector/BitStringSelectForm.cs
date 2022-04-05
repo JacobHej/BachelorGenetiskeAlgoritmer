@@ -11,6 +11,6 @@ namespace GeneticAlgorithms.CreateSimulationForms.BitStringSelector
 {
     public abstract class BitStringSelectForm : Form
     {
-        public abstract BitStringIndividual GetBitString();
+        public abstract Func<BitStringIndividual> GetBitStringCreator();
     }
 }

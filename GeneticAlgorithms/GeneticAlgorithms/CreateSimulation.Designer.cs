@@ -56,9 +56,9 @@
             "BinVal",
             "TSP"
             });
-            this.problem_box.Location = new System.Drawing.Point(200, 0);
+            this.problem_box.Location = new System.Drawing.Point(50, 0);
             this.problem_box.Name = "problem_box";
-            this.problem_box.Size = new System.Drawing.Size(150, 50);
+            this.problem_box.Size = new System.Drawing.Size(300, 50);
             this.problem_box.TabIndex = 2;
             this.problem_box.Text = "Problem";
             this.problem_box.SelectedIndexChanged += new System.EventHandler(this.problem_box_SelectedIndexChanged);
@@ -70,18 +70,20 @@
             this.solution_box.FormattingEnabled = true;
             this.solution_box.Items.AddRange(new object[] {
             "1+1EA",
-            "Mu+LambdaEA"
+            "Mu+LambdaEA",
+            "Simulated Annealing",
+            "Rank Based ACO"
             });
             this.solution_box.Location = new System.Drawing.Point(650, 0);
             this.solution_box.Name = "solution_box";
-            this.solution_box.Size = new System.Drawing.Size(150, 50);
+            this.solution_box.Size = new System.Drawing.Size(300, 50);
             this.solution_box.TabIndex = 2;
             this.solution_box.Text = "Solution";
             this.solution_box.SelectedIndexChanged += new System.EventHandler(this.solution_box_SelectedIndexChanged);
             // 
             // panel1
             // 
-            this.panel1.Dock = DockStyle.Bottom;
+            this.panel1.Anchor = AnchorStyles.Top;
             this.panel1.Location = new System.Drawing.Point(0, 100);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1000, 900);
@@ -99,10 +101,12 @@
             this.Controls.Add(this.startOver_btn);
             this.Name = "CreateSimulation";
             this.Text = "CreateSimulation";
+            this.Resize += new EventHandler(this.ContentResized);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
+
 
         #endregion
 

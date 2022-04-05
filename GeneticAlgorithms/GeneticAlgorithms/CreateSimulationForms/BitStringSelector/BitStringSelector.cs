@@ -13,12 +13,23 @@ namespace GeneticAlgorithms.CreateSimulationForms.BitStringSelector
 {
     public partial class BitStringSelector : Form
     {
-        BitStringSelectForm BitString;
-        public BitStringSelector()
+        BitStringSelectForm? BitString;
+
+        public BitStringSelector(bool zero = true, bool random = true, bool custom = true)
         {
             InitializeComponent();
-            BitStringSelectorBox.Items.Add("Random BitString");
-            BitStringSelectorBox.Items.Add("Custom BitString");
+            if (zero)
+            {
+                BitStringSelectorBox.Items.Add("Zero BitString");
+            }
+            if (random)
+            {
+                BitStringSelectorBox.Items.Add("Random BitString");
+            }
+            if (custom)
+            {
+                BitStringSelectorBox.Items.Add("Custom BitString");
+            }
             BitStringSelectorBox.SelectedIndex = 0;
         }
 
@@ -28,6 +39,9 @@ namespace GeneticAlgorithms.CreateSimulationForms.BitStringSelector
             BitString = null;
             switch ((String)BitStringSelectorBox.SelectedItem)
             {
+                case "Zero BitString":
+                    BitString = new ZeroBitStringIndividual();
+                    break;
                 case "Random BitString":
                     BitString = new RandomBitStringIndividual();
                     break;
@@ -42,9 +56,9 @@ namespace GeneticAlgorithms.CreateSimulationForms.BitStringSelector
             BitString.Show();
         }
 
-        public BitStringIndividual GetBitString()
+        public Func<BitStringIndividual> GetBitStringCreator()
         {
-            return BitString.GetBitString();
+            return BitString.GetBitStringCreator();
         }
     }
 }

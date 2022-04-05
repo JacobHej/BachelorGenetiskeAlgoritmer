@@ -51,7 +51,15 @@ namespace GeneticAlgorithms
 
         private void pause_btn_Click(object sender, EventArgs e)
         {
-            model.EvolutionSimulation.Stop();
+            pauseClick();
+        }
+
+        private void pauseClick()
+        {
+            if (model.EvolutionSimulation != null)
+            {
+                model.EvolutionSimulation.Stop();
+            }
 
             this.pause_btn.Enabled = false;
             this.interval_tb.Enabled = true;
@@ -82,7 +90,14 @@ namespace GeneticAlgorithms
             model.EvolutionSimulation = new TimedEvent(interval, new Action(async () =>
             {
                 await model.Evolve();
-                this.Invoke(new Action(() => this.Invalidate(true)));
+                try
+                {
+                    this.Invoke(new Action(() => this.Invalidate(true)));
+                }
+                catch (ObjectDisposedException ex)
+                {
+                    model.EvolutionSimulation.Stop();
+                }
             }));
 
             model.EvolutionSimulation.Start();
@@ -116,6 +131,18 @@ namespace GeneticAlgorithms
             {
                 e.Handled = true;
             }
+        }
+
+
+        private void BitManipV2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            pauseClick();
+        }
+
+        private void restart_btn_Click(object sender, EventArgs e)
+        {
+            model.restartAlgorithm();
+            this.Invalidate(true);
         }
     }
 }

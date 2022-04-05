@@ -19,9 +19,9 @@ namespace GeneticAlgorithms.CreateSimulationForms.BitStringSelector
             InitializeComponent();
         }
 
-        public override BitStringIndividual GetBitString()
+        public override Func<BitStringIndividual> GetBitStringCreator()
         {
-            return new BitStringIndividual(new BitString(BitStringInput.Text));
+            return () => new BitStringIndividual(new BitString(BitStringInput.Text));
         }
 
         private  Boolean isBitString(string text)

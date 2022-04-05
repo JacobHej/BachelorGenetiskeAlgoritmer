@@ -30,8 +30,8 @@ namespace GeneticAlgorithms.CreateSimulationForms.BitStringOnePlusOneEA
         protected override void createAlgorithm_Click(object sender, EventArgs e)
         {
             BitStringOnePlusOneEAModel model = new BitStringOnePlusOneEAModel();
-            BitStringIndividual bitString = BitStringSel.GetBitString();
-            model.createAlgorithm(problem, bitString);
+            Func<BitStringIndividual> bitStringCreator = BitStringSel.GetBitStringCreator();
+            model.createAlgorithm(problem, bitStringCreator);
             BitManipV2 A_Form = new BitManipV2(model);
             A_Form.Show();
         }

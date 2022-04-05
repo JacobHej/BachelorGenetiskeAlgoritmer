@@ -79,7 +79,13 @@ namespace GeneticAlgorithms
             model.EvolutionSimulation = new TimedEvent(interval, new Action(async () =>
             {
                 await model.Evolve();
-                this.Invoke(new Action(() => this.Invalidate(true)));
+                try
+                {
+                    this.Invoke(new Action(() => this.Invalidate(true)));
+                } catch (ObjectDisposedException ex)
+                {
+                    model.EvolutionSimulation.Stop();
+                }
             }));
 
             model.EvolutionSimulation.Start();
@@ -87,7 +93,15 @@ namespace GeneticAlgorithms
 
         private void pause_btn_Click(object sender, EventArgs e)
         {
-            model.EvolutionSimulation.Stop();
+            pauseClick();
+        }
+
+        private void pauseClick()
+        {
+            if (model.EvolutionSimulation != null)
+            {
+                model.EvolutionSimulation.Stop();
+            }
 
             this.pause_btn.Enabled = false;
             this.interval_tb.Enabled = true;
@@ -117,26 +131,23 @@ namespace GeneticAlgorithms
         #region PaintEvents
         private async void data_pb_Paint(object sender, PaintEventArgs e)
         {
-            OnionThing o = new OnionThing(new Point(0,0), new Size(400, 400));
+            OnionThing o = new OnionThing(new Point(50,650), new Size(200, 200));
+            o.Draw2(e.Graphics, model.bitLength, model.GetWeights());
 
-            //fs.Draw(e.Graphics);
-            //if (model.algorithm.Logger.History.Count > 0)
-            //{
-            //OnionThing o = new OnionThing(new Point(100, 100), new Size(400, 400));
-            //o.Draw2(e.Graphics, model.bitLength, new List<int> { -1, -1, -3, 4, 13, 7, 4, 2, 1, 0 });
-                        
-            o.Draw2(e.Graphics, 16, model.GetWeights()); 
+            if (model.algorithm.Logger.History.Count > 0)
+            {
 
-                //Chart chart = new Chart(200, 400, new Point(50, 25), "Latest Population");
-                //chart.values.AddRange(model.SelectedGeneration.IndividualFitness.Values.Select(v => (double)v).ToList());
-                //chart.Draw(e.Graphics);
 
-                //Chart chartBest = new Chart(200, 400, new Point(50, 350), "Best Of Each Population");
-                //model.algorithm.Logger.History.ForEach(v => chartBest.values.Add(v.HighestFitness));
-                //chartBest.Draw(e.Graphics);
+                Chart chart = new Chart(200, 400, new Point(50, 50), "Latest Population");
+                chart.values.AddRange(model.SelectedGeneration.IndividualFitness.Values.Select(v => (double)v).ToList());
+                chart.Draw(e.Graphics);
 
-                //e.Graphics.DrawString("Generation: " + model.SelectedgenerationNumber, new Font("Arial", 16), new SolidBrush(Color.Black), new Point(50, 600));
-            //}
+                Chart chartBest = new Chart(200, 400, new Point(50, 350), "Best Of Each Population");
+                model.algorithm.Logger.History.ForEach(v => chartBest.values.Add(v.HighestFitness));
+                chartBest.Draw(e.Graphics);
+
+                e.Graphics.DrawString("Generation: " + model.SelectedgenerationNumber, new Font("Arial", 16), new SolidBrush(Color.Black), new Point(50, 600));
+            }
         }
         #endregion
 
@@ -167,6 +178,18 @@ namespace GeneticAlgorithms
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BitManipV2_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            pauseClick();
+        }
+
+
+        private void restart_btn_Click(object sender, EventArgs e)
+        {
+            model.restartAlgorithm();
+            this.Invalidate(true);
         }
     }
 }

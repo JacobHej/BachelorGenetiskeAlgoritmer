@@ -41,7 +41,6 @@ namespace GeneticAlgorithms.CreateSimulationForms.TSPMuPlusLambdaEA
             this.selectables.Name = "selectables";
             this.selectables.RowCount = 1;
             this.selectables.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.formatter.TabIndex = 0;
             //TSP SELECTOR
             this.TSPSel = new TSPSelector.TSPSelector();
             TSPSel.FormBorderStyle = FormBorderStyle.None;

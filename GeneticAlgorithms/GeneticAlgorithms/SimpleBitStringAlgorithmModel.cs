@@ -31,7 +31,10 @@ namespace GeneticAlgorithms
         public async Task Evolve()
         {
             await algorithm.Evolve();
-            SelectedGeneration = algorithm.Logger.History.Last();
+            if (algorithm.Logger.History.Count > 0)
+            {
+                SelectedGeneration = algorithm.Logger.History.Last();
+            }
         }
 
         public async Task Optimize(int maxItrTotal, int maxItrNoImprovement, int maxFitness)
@@ -126,18 +129,23 @@ namespace GeneticAlgorithms
             int startIndex = (bits.Length / 2) - 1;
             for (int i = 0; i <= (bits.Length / 2) - 1; i++)
             {
-                bool wasOne = bits[i].Equals('1');
-                sum -= wasOne ? startIndex - i  + 1: 0;
-                count += wasOne ? 1 : 0;
+                if (bits[i].Equals('1'))
+                {
+                    sum -= startIndex - i + 1;
+                    count++;
+                }
             }
 
             // count from middle and up
-            startIndex = (bits.Length / 2) + ((bits.Length % 2) == 0 ? 0 : 1);
+            startIndex = ((bits.Length+1) / 2);
             for (int i = startIndex; i < bits.Length; i++)
             {
-                bool wasOne = bits[i].Equals('1');
-                sum += wasOne ? i - startIndex + 1 : 0;
-                count += wasOne ? 1 : 0;
+                if (bits[i].Equals('1'))
+                {
+                    sum += i - startIndex + 1;
+                    count++;
+
+                }
             }
 
             return new KeyValuePair<int, int>(sum, count);

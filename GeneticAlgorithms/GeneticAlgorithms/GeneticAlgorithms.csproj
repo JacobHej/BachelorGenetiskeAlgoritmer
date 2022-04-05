@@ -8,6 +8,14 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Optimize>False</Optimize>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Optimize>True</Optimize>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\Algorithms\Algorithms.csproj" />
     <ProjectReference Include="..\Benchmarking\Benchmarking.csproj" />
@@ -21,6 +29,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="CreateSimulationForms\ACOSelector\ACOSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\BitStringACO\BitStringACO.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="CreateSimulationForms\BitStringOnePlusOneEA\BitStringOnePlusOneEA.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -28,7 +42,19 @@
     <Compile Update="CreateSimulationForms\BitStringMuPlusLambdaEA\BitStringMuPlusLambdaEA.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="CreateSimulationForms\BitStringSelector\ZeroBitStringIndividual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\BitStringSimulatedAnnealing\BitStringSimulatedAnnealing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\TSPACO\TSPACO.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="CreateSimulationForms\TSPMuPlusLambdaEA\TSPMuPlusLambdaEA_retired.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\TSPSimulatedAnnealing\TSPSimulatedAnnealing.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

@@ -17,6 +17,12 @@ namespace GeneticAlgorithms.CreateSimulationForms
             InitializeComponent();
         }
 
+
+        private void ContentResized(object sender, EventArgs e)
+        {
+            selectables.Width = this.Width;
+        }
+
         protected virtual void createAlgorithm_Click(object sender, EventArgs e)
         {
             throw new NotImplementedException();

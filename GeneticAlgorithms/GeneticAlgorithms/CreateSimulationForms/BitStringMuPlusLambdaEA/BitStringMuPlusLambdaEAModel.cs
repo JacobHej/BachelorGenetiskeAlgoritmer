@@ -13,10 +13,10 @@ namespace GeneticAlgorithms.CreateSimulationForms.BitStringMuPlusLambdaEA
 {
     public class BitStringMuPlusLambdaEAModel : SimpleBitStringAlgorithmModel
     {
-        public void createAlgorithm(IFitnessCalculator<BitStringIndividual> problem, int bitLength, int mu, int lambda = 5, double crossChance = 0.5)
+        public void createAlgorithm(IFitnessCalculator<BitStringIndividual> problem, Func<BitStringIndividual> bitStringCreator, int mu, int lambda = 5, double crossChance = 0.5)
         {
             
-            this.bitLength = bitLength;
+            this.bitLength = bitStringCreator().Solution.Bits.Length;
 
 
             algorithmFactory = new Func<GeneticAlgorithmBase<BitStringIndividual>>(() =>
@@ -28,7 +28,7 @@ namespace GeneticAlgorithms.CreateSimulationForms.BitStringMuPlusLambdaEA
                     new RandomSelector<BitStringPopulation, BitStringIndividual>(),
                     new LoggerBase<BitStringIndividual>(),
                     new ReplaceWorstReplacer<BitStringPopulation, BitStringIndividual>(),
-                    new BitStringPopulation(mu,bitLength),
+                    new BitStringPopulation(mu, bitStringCreator),
                     lambda,
                 crossChance);
             });

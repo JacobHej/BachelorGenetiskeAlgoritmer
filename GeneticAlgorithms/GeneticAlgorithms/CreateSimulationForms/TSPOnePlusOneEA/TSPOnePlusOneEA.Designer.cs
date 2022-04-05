@@ -52,7 +52,6 @@ namespace GeneticAlgorithms.CreateSimulationForms.TSPOnePlusOneEA
             this.selectables.Name = "selectables";
             this.selectables.RowCount = 1;
             this.selectables.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.formatter.TabIndex = 0;
 
             // 
             // TSPOnePlusOneEA

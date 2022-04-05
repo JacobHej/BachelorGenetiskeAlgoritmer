@@ -23,9 +23,9 @@ namespace Common
         public BitString(String s)
         {
             List<char> list = new List<char>();
-            foreach(char c in s)
+            foreach (char c in s)
             {
-                if (c=='0'||c=='1')
+                if (c == '0' || c == '1')
                 {
                     list.Add(c);
                 }
@@ -35,6 +35,36 @@ namespace Common
                 }
             }
             Bits = list.ToArray();
+        }
+
+        public BitString(Char[] bitString)
+        {
+            foreach (char c in bitString)
+            {
+                if (!(c == '0' || c == '1'))
+                {
+                    throw new ArgumentException("Input String had a non binary char");
+                }
+            }
+            Bits = bitString;
+        }
+
+        static public BitString getRandomBitString(int size)
+        {
+            Char[] bitString = new char[size];
+            Random r = new Random();
+            for (int i = 0; i < size; i++)
+            {
+                if (r.NextDouble()<0.5)
+                {
+                    bitString[i] = '0';
+                }
+                else
+                {
+                    bitString[i] = '1';
+                }
+            }
+            return new BitString(bitString);
         }
 
         public void FlipBitAt(int index)
@@ -55,12 +85,9 @@ namespace Common
 
         public BitString Copy()
         {
-            BitString copy = new BitString(Bits.Length);
-            for (int i = 0; i<Bits.Length; i++)
-            {
-                copy.SetBitAt(i, Bits[i]);
-            }
-            return copy;
+            Char[] bitString = new char[Bits.Length];
+            Bits.CopyTo(bitString,0);
+            return new BitString(bitString);
         }
     }
 }
