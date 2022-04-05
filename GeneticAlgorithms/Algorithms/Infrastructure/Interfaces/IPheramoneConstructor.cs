@@ -10,6 +10,5 @@ namespace Algorithms.Infrastructure.Interfaces
     public interface IPheramoneConstructor<TIndividual> where TIndividual : IIndividual
     {
         public Dictionary<string, double> ConstructPheramones(Dictionary<string, double> previousPheramones, List<TIndividual> individuals);
-        public Dictionary<string, double> InitializePheromones(CoordinateGraph graph, double iniitalPheromone);
     }
 }

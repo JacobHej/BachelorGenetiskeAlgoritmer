@@ -20,6 +20,11 @@ namespace Common
             }
         }
 
+        public BitString(char[] sol)
+        {
+            this.Bits = sol;
+        }
+
         public BitString(String s)
         {
             List<char> list = new List<char>();

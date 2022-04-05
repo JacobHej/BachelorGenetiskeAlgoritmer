@@ -1,44 +1,3 @@
-C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Visualization.deps.json
-C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Visualization.dll
-C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\ref\Visualization.dll
-C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Visualization.pdb
-C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.csproj.AssemblyReference.cache
-C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.GeneratedMSBuildEditorConfig.editorconfig
-C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.AssemblyInfoInputs.cache
-C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.AssemblyInfo.cs
-C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.csproj.CoreCompileInputs.cache
-C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.dll
-C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\ref\Visualization.dll
-C:\Workspaces\BacehelorProject\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.pdb
-C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Visualization.deps.json
-C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Visualization.dll
-C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\ref\Visualization.dll
-C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Visualization.pdb
-C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Common.dll
-C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Common.pdb
-C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.csproj.AssemblyReference.cache
-C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.AssemblyInfoInputs.cache
-C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.AssemblyInfo.cs
-C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.csproj.CoreCompileInputs.cache
-C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.csproj.CopyComplete
-C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.dll
-C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\ref\Visualization.dll
-C:\Users\Gamer\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.pdb
-C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Visualization.deps.json
-C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Visualization.dll
-C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\ref\Visualization.dll
-C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Visualization.pdb
-C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Common.dll
-C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Common.pdb
-C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.AssemblyInfoInputs.cache
-C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.AssemblyInfo.cs
-C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.csproj.CoreCompileInputs.cache
-C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.csproj.CopyComplete
-C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.dll
-C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\ref\Visualization.dll
-C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.pdb
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Visualization.deps.json
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Visualization.dll
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\ref\Visualization.dll
@@ -54,22 +13,3 @@ C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\V
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.dll
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\ref\Visualization.dll
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.pdb
-<<<<<<< HEAD
-C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.csproj.AssemblyReference.cache
-=======
-C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Visualization.deps.json
-C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Visualization.dll
-C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\ref\Visualization.dll
-C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Visualization.pdb
-C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Common.dll
-C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Common.pdb
-C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.csproj.AssemblyReference.cache
-C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.AssemblyInfoInputs.cache
-C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.AssemblyInfo.cs
-C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.csproj.CoreCompileInputs.cache
-C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.csproj.CopyComplete
-C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.dll
-C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\ref\Visualization.dll
-C:\Users\JAHE\OneDrive - SimCorp\Desktop\New folder\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.pdb
->>>>>>> a7ea99683076bd32421b5b1f94d6b34f442e02e2

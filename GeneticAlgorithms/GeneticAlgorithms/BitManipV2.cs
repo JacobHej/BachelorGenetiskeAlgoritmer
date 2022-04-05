@@ -49,7 +49,7 @@ namespace GeneticAlgorithms
             {
                 int MaxItr_i = string.IsNullOrEmpty(MaxItr_tb.Text) ? 0 : int.Parse(MaxItr_tb.Text);
                 int ItrWithoutImpr_i = string.IsNullOrEmpty(ItrWithoutImpr_tb.Text) ? 0 : int.Parse(ItrWithoutImpr_tb.Text);
-                int TargetFitness_i = string.IsNullOrEmpty(TargetFitness_tb.Text) ? 0 : int.Parse(TargetFitness_tb.Text);
+                int TargetFitness_i = string.IsNullOrEmpty(TargetFitness_tb.Text) ? int.MaxValue : int.Parse(TargetFitness_tb.Text);
                 await model.Optimize(MaxItr_i, ItrWithoutImpr_i, TargetFitness_i);
             });
 
@@ -149,9 +149,9 @@ namespace GeneticAlgorithms
                 e.Graphics.DrawString("Generation: " + model.SelectedgenerationNumber, new Font("Arial", 16), new SolidBrush(Color.Black), new Point(50, 600));
             }
         }
-        #endregion
+            #endregion
 
-        private void prevGen_btn_Click(object sender, EventArgs e)
+            private void prevGen_btn_Click(object sender, EventArgs e)
         {
             model.SelectPreviousGeneration();
             this.data_pb.Invalidate();

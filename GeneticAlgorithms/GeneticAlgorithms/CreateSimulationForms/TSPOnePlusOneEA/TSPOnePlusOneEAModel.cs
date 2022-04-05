@@ -33,6 +33,20 @@ namespace GeneticAlgorithms.CreateSimulationForms.TSPOnePlusOneEA
 
             });
 
+            //var fitnessCalculator = new TravelingSalesPersonFitnessCalculator();
+            //var pheromoneConstructor = new MinMaxTSPPheramoneConstructor(p, fitnessCalculator, 1d / Math.Pow(graph.Verticies.Length, 2), 1d - (1d / graph.Verticies.Length));
+
+            //algorithmFactory = new Func<GeneticAlgorithmBase<TravelingSalesPersonIndividual>>(() =>
+            //{
+            //    return new MMASAlgorithm<TravelingSalesPersonPopulation, TravelingSalesPersonIndividual>(
+            //        fitnessCalculator,
+            //        pheromoneConstructor,
+            //        new TSPAntConstructor(graph, alpha, beta),
+            //        new LoggerBase<TravelingSalesPersonIndividual>(),
+            //        pheromoneConstructor.InitializePheromones(graph, 1d));
+
+            //});
+
             this.graph = graph;
             algorithm = algorithmFactory();
         }

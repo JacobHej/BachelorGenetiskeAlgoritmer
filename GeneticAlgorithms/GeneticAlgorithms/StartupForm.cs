@@ -33,7 +33,10 @@ namespace GeneticAlgorithms
 
         private void test_btn_Click(object sender, EventArgs e)
         {
-            SimpleBitStringAlgorithmModel a = new SimpleBitStringAlgorithmModel();
+            TestModels.TSPTestModel model = new TestModels.TSPTestModel();
+            model.createAlgorithm();
+            TSPManipV2 A_Form = new TSPManipV2(model);
+            A_Form.Show();
         }
     }
 }

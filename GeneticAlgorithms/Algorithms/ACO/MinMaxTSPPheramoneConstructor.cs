@@ -11,16 +11,18 @@ using System.Threading.Tasks;
 
 namespace Algorithms.ACO
 {
-    public class TSPPheramoneConstructor : PheramoneConstructorBase<TravelingSalesPersonIndividual>
+    public class MinMaxTSPPheramoneConstructor : PheramoneConstructorBase<TravelingSalesPersonIndividual>
     {
         private double p;
-        private double q;
+        private double min;
+        private double max;
         private IFitnessCalculator<TravelingSalesPersonIndividual> fitnessCalculator;
-        public TSPPheramoneConstructor(double p, double q, IFitnessCalculator<TravelingSalesPersonIndividual> fitnessCalculator)
+        public MinMaxTSPPheramoneConstructor(double p, IFitnessCalculator<TravelingSalesPersonIndividual> fitnessCalculator, double min, double max)
         {
             this.p = p;
-            this.q = q;
             this.fitnessCalculator = fitnessCalculator;
+            this.min = min;
+            this.max = max;
         }
 
         /// <summary>
@@ -57,13 +59,13 @@ namespace Algorithms.ACO
             // evaporate old pheromones
             foreach(KeyValuePair<string, double> pheromone in previousPheramones)
             {
-                newPheramones.Add(pheromone.Key, pheromone.Value * p);
+                newPheramones.Add(pheromone.Key, Math.Max(pheromone.Value * (1d - p), min));
             }
 
             for (int i = 0; i < xBestForPheramones; i++)
             {
                 TravelingSalesPersonIndividual ind = individuals[i];
-                double value = q / (-1 * fitnessCalculator.CalculateFitness(ind));
+                double value = p;
 
                 int from = ind.Solution[0];
                 int to;
@@ -79,11 +81,7 @@ namespace Algorithms.ACO
                     if (newPheramones.TryGetValue(key, out val))
                     {
                         newPheramones.Remove(key);
-                        newPheramones.Add(key, val + value);
-                    }
-                    else
-                    {
-                        newPheramones.Add(key, value);
+                        newPheramones.Add(key, Math.Min((1d - p) * val + value, max));
                     }
                 }
 
@@ -94,11 +92,7 @@ namespace Algorithms.ACO
                 if (newPheramones.TryGetValue(key, out val))
                 {
                     newPheramones.Remove(key);
-                    newPheramones.Add(key, val + value);
-                }
-                else
-                {
-                    newPheramones.Add(key, value);
+                    newPheramones.Add(key, Math.Min((1d - p) * val + value, max));
                 }
             }
 
