@@ -29,10 +29,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="CreateSimulationForms\ACOSelector\ACOSelector.cs">
+    <Compile Update="CreateSimulationForms\BitStringMMAS\BitStringMMAS.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="CreateSimulationForms\BitStringACO\BitStringACO.cs">
+    <Compile Update="CreateSimulationForms\VariableSelector\VariableSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\BitStringASRank\BitStringASRank.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="CreateSimulationForms\BitStringOnePlusOneEA\BitStringOnePlusOneEA.cs">
@@ -48,7 +51,10 @@
     <Compile Update="CreateSimulationForms\BitStringSimulatedAnnealing\BitStringSimulatedAnnealing.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="CreateSimulationForms\TSPACO\TSPACO.cs">
+    <Compile Update="CreateSimulationForms\TSPASRank\TSPASRank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CreateSimulationForms\TSPMMAS\TSPMMAS.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="CreateSimulationForms\TSPMuPlusLambdaEA\TSPMuPlusLambdaEA_retired.cs">

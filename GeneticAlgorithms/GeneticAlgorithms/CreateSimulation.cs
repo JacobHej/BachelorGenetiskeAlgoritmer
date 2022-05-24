@@ -1,10 +1,13 @@
 ﻿using Algorithms;
 using Algorithms.BitStuff;
 using GeneticAlgorithms.CreateSimulationForms;
+using GeneticAlgorithms.CreateSimulationForms.BitStringASRank;
+using GeneticAlgorithms.CreateSimulationForms.BitStringMMAS;
 using GeneticAlgorithms.CreateSimulationForms.BitStringMuPlusLambdaEA;
 using GeneticAlgorithms.CreateSimulationForms.BitStringOnePlusOneEA;
 using GeneticAlgorithms.CreateSimulationForms.BitStringSimulatedAnnealing;
-using GeneticAlgorithms.CreateSimulationForms.TSPACO;
+using GeneticAlgorithms.CreateSimulationForms.TSPASRank;
+using GeneticAlgorithms.CreateSimulationForms.TSPMMAS;
 using GeneticAlgorithms.CreateSimulationForms.TSPMuPlusLambdaEA;
 using GeneticAlgorithms.CreateSimulationForms.TSPOnePlusOneEA;
 using GeneticAlgorithms.CreateSimulationForms.TSPSimulatedAnnealing;
@@ -157,8 +160,64 @@ namespace GeneticAlgorithms
                     panel1.Controls.Add(frm);
                     frm.Show();
                     break;
-                case (3, 3)://TSP RBACO
-                    frm = new TSPACO();
+                case (0, 3)://OneMax ASRank
+                    frm = new BitStringASRank(new OneMaxFitnessCalculator(), "OneMax - ASRank");
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                    frm.TopLevel = false;
+                    panel1.Controls.Clear();
+                    panel1.Controls.Add(frm);
+                    frm.Show();
+                    break;
+                case (1, 3)://LeadingOnes ASRank
+                    frm = new BitStringASRank(new LeadingOnesFitnessCalculator(), "Leading Ones - ASRank");
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                    frm.TopLevel = false;
+                    panel1.Controls.Clear();
+                    panel1.Controls.Add(frm);
+                    frm.Show();
+                    break;
+                case (2, 3)://Binval  ASRank
+                    frm = new BitStringASRank(new BinValFitnessCalculator(), "Binary Value - ASRank");
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                    frm.TopLevel = false;
+                    panel1.Controls.Clear();
+                    panel1.Controls.Add(frm);
+                    frm.Show();
+                    break;
+                case (3, 3)://TSP ASRank
+                    frm = new TSPASRank();
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                    frm.TopLevel = false;
+                    panel1.Controls.Clear();
+                    panel1.Controls.Add(frm);
+                    frm.Show();
+                    break;
+                case (0, 4)://OneMax MMAS
+                    frm = new BitStringMMAS(new OneMaxFitnessCalculator(), "OneMax - MMAS");
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                    frm.TopLevel = false;
+                    panel1.Controls.Clear();
+                    panel1.Controls.Add(frm);
+                    frm.Show();
+                    break;
+                case (1, 4)://LeadingOnes MMAS
+                    frm = new BitStringMMAS(new LeadingOnesFitnessCalculator(), "Leading Ones - MMAS");
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                    frm.TopLevel = false;
+                    panel1.Controls.Clear();
+                    panel1.Controls.Add(frm);
+                    frm.Show();
+                    break;
+                case (2, 4)://BinVal MMAS
+                    frm = new BitStringMMAS(new BinValFitnessCalculator(), "Binary Value - MMAS");
+                    frm.FormBorderStyle = FormBorderStyle.None;
+                    frm.TopLevel = false;
+                    panel1.Controls.Clear();
+                    panel1.Controls.Add(frm);
+                    frm.Show();
+                    break;
+                case (3, 4)://TSP MMAS
+                    frm = new TSPMMAS();
                     frm.FormBorderStyle = FormBorderStyle.None;
                     frm.TopLevel = false;
                     panel1.Controls.Clear();

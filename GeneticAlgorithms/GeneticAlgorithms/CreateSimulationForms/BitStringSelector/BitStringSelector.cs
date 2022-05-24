@@ -14,6 +14,7 @@ namespace GeneticAlgorithms.CreateSimulationForms.BitStringSelector
     public partial class BitStringSelector : Form
     {
         BitStringSelectForm? BitString;
+        List<Action> actions = new List<Action>();
 
         public BitStringSelector(bool zero = true, bool random = true, bool custom = true)
         {
@@ -54,11 +55,22 @@ namespace GeneticAlgorithms.CreateSimulationForms.BitStringSelector
             BitString.TopLevel = false;
             BitStringScene.Controls.Add(BitString);
             BitString.Show();
+            foreach (Action action in actions)
+            {
+                BitString.addListenerOnBitsChange(action);
+            }
         }
 
         public Func<BitStringIndividual> GetBitStringCreator()
         {
             return BitString.GetBitStringCreator();
+        }
+
+
+        public void addListenerOnBitsChange(Action action)
+        {
+            BitString.addListenerOnBitsChange(action);
+            actions.Add(action);
         }
     }
 }

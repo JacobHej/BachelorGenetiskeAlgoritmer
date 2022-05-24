@@ -71,5 +71,10 @@ namespace GeneticAlgorithms.CreateSimulationForms.BitStringSelector
             }
             
         }
+
+        public override void addListenerOnBitsChange(Action action)
+        {
+            this.BitStringLengthInput.TextChanged += new EventHandler((obj, e) => action());
+        }
     }
 }

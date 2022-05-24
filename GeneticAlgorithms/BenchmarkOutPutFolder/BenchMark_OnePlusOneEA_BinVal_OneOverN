@@ -5,6 +5,7 @@ Generations Best/Mean/Worst: 1, 1, 4
 BROKEN OptimizationTime Best/Mean/Worst: 2147483647, 0,09, -2147483648
 
 ---IterationsPerGeneration---
+
 0: 1
 1: 1
 2: 2

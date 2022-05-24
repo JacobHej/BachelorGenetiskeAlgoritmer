@@ -10,12 +10,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GeneticAlgorithms.CreateSimulationForms.TSPACO
+namespace GeneticAlgorithms.CreateSimulationForms.TSPASRank
 {
-    public class TSPACOModel : SimpleTSPAlgorithmModel
+    public class TSPASRankModel : SimpleTSPAlgorithmModel
     {
 
-        public void createAlgorithm(CoordinateGraph graph, double pheromoneStrength, double lengthStrength, double evaporateFactor, double pheromonePlacementFactor, double initialPheromone, int populationSize, int xNrOfRanks)
+        public void createAlgorithm(CoordinateGraph graph, double alpha, double beta, double p, double q, double initialPheromone, int populationSize, int xNrOfRanks)
         {
             if (graph == null)
             {
@@ -24,7 +24,7 @@ namespace GeneticAlgorithms.CreateSimulationForms.TSPACO
 
 
             var fitnessCalculator = new TravelingSalesPersonFitnessCalculator();
-            var pheromoneConstructor = new TSPPheramoneConstructor(evaporateFactor, pheromonePlacementFactor, fitnessCalculator);
+            var pheromoneConstructor = new TSPPheramoneConstructor(p, q, fitnessCalculator);
 
             algorithmFactory = new Func<GeneticAlgorithmBase<TravelingSalesPersonIndividual>>(() =>
             {
@@ -33,7 +33,7 @@ namespace GeneticAlgorithms.CreateSimulationForms.TSPACO
                     pheromoneConstructor,
                     new SelectXBestSelector<TravelingSalesPersonPopulation, TravelingSalesPersonIndividual>(
                         new TravelingSalesPersonFitnessCalculator()),
-                    new TSPAntConstructor(graph, pheromoneStrength, lengthStrength),
+                    new TSPAntConstructor(graph, alpha, beta),
                     new LoggerBase<TravelingSalesPersonIndividual>(),
                     pheromoneConstructor.InitializePheromones(graph, initialPheromone),
                     populationSize,

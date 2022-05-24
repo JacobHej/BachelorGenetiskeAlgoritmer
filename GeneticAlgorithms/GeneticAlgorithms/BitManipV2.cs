@@ -134,7 +134,7 @@ namespace GeneticAlgorithms
             OnionThing o = new OnionThing(new Point(50,650), new Size(200, 200));
             o.Draw2(e.Graphics, model.bitLength, model.GetWeights());
 
-            if (model.algorithm.Logger.History.Count > 0)
+            if (model.algorithm.Logger.History.Count > 0 && model.SelectedGeneration != null)
             {
 
 
@@ -147,6 +147,7 @@ namespace GeneticAlgorithms
                 chartBest.Draw(e.Graphics);
 
                 e.Graphics.DrawString("Generation: " + model.SelectedgenerationNumber, new Font("Arial", 16), new SolidBrush(Color.Black), new Point(50, 600));
+                e.Graphics.DrawString("Iteration: " + model.algorithm.Iterations, new Font("Arial", 16), new SolidBrush(Color.Black), new Point(50, 620));
             }
         }
             #endregion

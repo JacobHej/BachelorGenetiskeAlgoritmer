@@ -72,5 +72,28 @@ namespace GeneticAlgorithms.CreateSimulationForms.BitStringSelector
             }
             
         }
+
+        public int getBitLength()
+        {
+            try
+            {
+                int x = int.Parse(BitStringLengthInput.Text);
+                if (x > 0)
+                {
+                    return x;
+                }
+                throw new ArgumentException("bit string length was not positve");
+            }
+            catch (Exception)
+            {
+               throw new ArgumentException("bit string length was not integer");
+            }
+        }
+
+
+        public override void addListenerOnBitsChange(Action action)
+        {
+            this.BitStringLengthInput.TextChanged += new EventHandler((obj, e) => action());
+        }
     }
 }

@@ -1,5 +1,4 @@
 using GeneticAlgorithms.CreateSimulationForms;
-using GeneticAlgorithms.CreateSimulationForms.ACOSelector;
 using GeneticAlgorithms.CreateSimulationForms.BitStringSelector;
 using GeneticAlgorithms.CreateSimulationForms.MuPlusLambdaSelector;
 using GeneticAlgorithms.CreateSimulationForms.SimulatedAnnealingSelector;

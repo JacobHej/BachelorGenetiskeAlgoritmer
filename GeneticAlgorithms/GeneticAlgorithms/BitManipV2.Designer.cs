@@ -67,6 +67,7 @@
             this.nextGen_btn.MinimumSize = new System.Drawing.Size(100, 70);
             this.nextGen_btn.Text = "Next Generation";
             this.nextGen_btn.UseVisualStyleBackColor = true;
+            this.nextGen_btn.Click += new System.EventHandler(this.nextGen_btn_Click);
             // 
             // prevGen_btn
             // 
@@ -75,6 +76,7 @@
             this.prevGen_btn.MinimumSize = new System.Drawing.Size(100, 70);
             this.prevGen_btn.Text = "Previous Generation";
             this.prevGen_btn.UseVisualStyleBackColor = true;
+            this.prevGen_btn.Click += new System.EventHandler(this.prevGen_btn_Click);
             // 
             // interval_lbl
             // 

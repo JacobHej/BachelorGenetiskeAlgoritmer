@@ -31,7 +31,7 @@ namespace GeneticAlgorithms
                 SimpleGraph graph = Converter.CoordinateGraphToSimpleGraph(
                     model.graph,
                     Math.Min(graph_pb.Width, graph_pb.Height)-padding,
-                    model.algorithm.Logger.History.Last().HighestFitnessIndividual?.Solution
+                    model.SelectedGeneration.HighestFitnessIndividual?.Solution
                     );
 
                 graph.Draw(e.Graphics);
@@ -61,6 +61,7 @@ namespace GeneticAlgorithms
                 model.EvolutionSimulation.Stop();
             }
 
+            this.restart_btn.Enabled = true;
             this.pause_btn.Enabled = false;
             this.interval_tb.Enabled = true;
             this.play_btn.Enabled = true;
@@ -80,6 +81,7 @@ namespace GeneticAlgorithms
                 this.interval_tb.BackColor = Color.White;
             }
 
+            this.restart_btn.Enabled = false;
             this.interval_tb.Enabled = false;
             this.play_btn.Enabled = false;
             this.pause_btn.Enabled = true;
@@ -131,6 +133,18 @@ namespace GeneticAlgorithms
             {
                 e.Handled = true;
             }
+        }
+
+        private void prevGen_btn_Click(object sender, EventArgs e)
+        {
+            model.SelectPreviousGeneration();
+            this.graph_pb.Invalidate();
+        }
+
+        private void nextGen_btn_Click(object sender, EventArgs e)
+        {
+            model.SelectNextGeneration();
+            this.graph_pb.Invalidate();
         }
 
 

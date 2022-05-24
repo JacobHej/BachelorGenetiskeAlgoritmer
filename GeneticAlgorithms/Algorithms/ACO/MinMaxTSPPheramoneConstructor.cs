@@ -83,6 +83,7 @@ namespace Algorithms.ACO
                         newPheramones.Remove(key);
                         newPheramones.Add(key, Math.Min((1d - p) * val + value, max));
                     }
+                    
                 }
 
                 from = ind.Solution[0];

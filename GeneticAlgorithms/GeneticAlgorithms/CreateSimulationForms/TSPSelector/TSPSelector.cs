@@ -34,5 +34,10 @@ namespace GeneticAlgorithms.CreateSimulationForms.TSPSelector
             }
             return g;
         }
+
+        public void addListenerOnIndexChanged(Action action)
+        {
+            this.comboBox1.SelectedIndexChanged += new EventHandler((sender,e)=>action());
+        }
     }
 }

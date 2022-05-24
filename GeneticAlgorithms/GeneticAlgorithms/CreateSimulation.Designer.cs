@@ -72,7 +72,8 @@
             "1+1EA",
             "Mu+LambdaEA",
             "Simulated Annealing",
-            "Rank Based ACO"
+            "ASRank",
+            "MMAS"
             });
             this.solution_box.Location = new System.Drawing.Point(650, 0);
             this.solution_box.Name = "solution_box";

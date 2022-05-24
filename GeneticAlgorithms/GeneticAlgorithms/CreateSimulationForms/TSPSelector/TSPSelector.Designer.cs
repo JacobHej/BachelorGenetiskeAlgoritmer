@@ -42,6 +42,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.TabIndex = 1;
             this.comboBox1.DataSource = new List<string>(ResourceManager.tspFiles.Keys);
+            //this.comboBox1.SelectedIndexChanged = 
 
             // 
             // bitLength_label

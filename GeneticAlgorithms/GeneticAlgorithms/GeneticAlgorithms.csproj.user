@@ -45,12 +45,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="CreateSimulationForms\TSPMutator\TwoOptMutatorForm.cs">
-<<<<<<< HEAD
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="CreateSimulationForms\TSPMuPlusLambdaEA\TSPMuPlusLambdaEA.cs">
-=======
->>>>>>> ac3c027bfdb26504021f2c81024b8817b1e3e0fc
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="CreateSimulationForms\TSPOnePlusOneEA\TSPOnePlusOneEA.cs">

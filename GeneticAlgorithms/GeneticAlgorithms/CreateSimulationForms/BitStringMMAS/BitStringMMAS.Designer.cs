@@ -1,8 +1,8 @@
 ﻿using GeneticAlgorithms.CreateSimulationForms.TSPMutator;
 
-namespace GeneticAlgorithms.CreateSimulationForms.TSPACO
+namespace GeneticAlgorithms.CreateSimulationForms.BitStringMMAS
 {
-    partial class TSPACO
+    partial class BitStringMMAS
     {
         /// <summary>
         /// Required designer variable.
@@ -34,31 +34,23 @@ namespace GeneticAlgorithms.CreateSimulationForms.TSPACO
             //
             // selectables
             //
-            this.selectables.ColumnCount = 3;
-            this.selectables.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.selectables.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.selectables.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
+            this.selectables.ColumnCount = 2;
+            this.selectables.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.selectables.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.selectables.Name = "selectables";
             this.selectables.RowCount = 1;
             this.selectables.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            //TSP SELECTOR
-            this.TSPSel = new TSPSelector.TSPSelector();
-            TSPSel.FormBorderStyle = FormBorderStyle.None;
-            TSPSel.TopLevel = false;
-            this.selectables.Controls.Add(TSPSel, 0, 0);
-            TSPSel.Show();
-            //TSP MUTATOR SELECTOR
-            mutSel = new TSPMutatorSelector();
-            mutSel.FormBorderStyle = FormBorderStyle.None;
-            mutSel.TopLevel = false;
-            this.selectables.Controls.Add(mutSel, 1, 0);
-            mutSel.Show();
+            //BitStringSelector
+            BitSel.FormBorderStyle = FormBorderStyle.None;
+            BitSel.TopLevel = false;
+            this.selectables.Controls.Add(BitSel, 0, 0);
+            BitSel.Show();
             //ACO SELECTOR
-            ACOSel = new ACOSelector.ACOSelector();
-            ACOSel.FormBorderStyle = FormBorderStyle.None;
-            ACOSel.TopLevel = false;
-            this.selectables.Controls.Add(ACOSel,2, 0);
-            ACOSel.Show();
+            ASRank.FormBorderStyle = FormBorderStyle.None;
+            ASRank.TopLevel = false;
+            this.selectables.Controls.Add(ASRank, 1, 0);
+            ASRank.Show();
+
 
             this.Dock = DockStyle.Fill;
             this.Name = "TSPMuPlusLambda";
