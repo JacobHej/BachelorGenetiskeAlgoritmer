@@ -23,9 +23,11 @@ namespace Algorithms.OnePlusOneEA
             newPopulation.Individuals.Sort(comparer);
             individuals.Sort(comparer);
 
+            int j = individuals.Count - 1; 
+
             for(int i = 0; i < newPopulation.Individuals.Count; i++)
             {
-                newPopulation.Individuals[i] = individuals[newPopulation.Individuals.Count - 1 - i];
+                newPopulation.Individuals[i] = individuals[j--];
             }
 
             return newPopulation;

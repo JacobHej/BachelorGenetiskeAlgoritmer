@@ -78,7 +78,7 @@ namespace Algorithms.ACO
                     key = Math.Min(from, to) + "," + Math.Max(from,to);
                     from = to; 
 
-                    if (newPheramones.TryGetValue(key, out val))
+                    if (previousPheramones.TryGetValue(key, out val))
                     {
                         newPheramones.Remove(key);
                         newPheramones.Add(key, Math.Min((1d - p) * val + value, max));
@@ -90,7 +90,7 @@ namespace Algorithms.ACO
                 to = ind.Solution[ind.Solution.Count() - 1];
                 key = Math.Min(from, to) + "," + Math.Max(from, to);
 
-                if (newPheramones.TryGetValue(key, out val))
+                if (previousPheramones.TryGetValue(key, out val))
                 {
                     newPheramones.Remove(key);
                     newPheramones.Add(key, Math.Min((1d - p) * val + value, max));

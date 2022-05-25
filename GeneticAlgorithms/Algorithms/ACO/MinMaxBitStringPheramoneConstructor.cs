@@ -45,7 +45,6 @@ namespace Algorithms.ACO
 
         public override Dictionary<string, double> ConstructPheramones(Dictionary<string, double> previousPheramones, List<BitStringIndividual> individuals)
         {
-            double n = individuals.FirstOrDefault().Solution.Bits.Length;
             Dictionary<string, double> newPheramones = new Dictionary<string, double>();
 
             // evaporate old pheromones

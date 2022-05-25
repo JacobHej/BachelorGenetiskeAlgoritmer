@@ -23,6 +23,7 @@ namespace Algorithms.Benchmark
         {
             AmountOfGenerations++;
             History[0] = new Generation<TIndividual>(population, fitnessCalculator, iteration);
+            generationLogged?.Invoke(null, History.Last());
         }
     }
 }

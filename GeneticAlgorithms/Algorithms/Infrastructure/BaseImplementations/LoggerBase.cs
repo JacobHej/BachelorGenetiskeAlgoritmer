@@ -21,6 +21,14 @@ namespace Algorithms.Infrastructure.BaseImplementations
         public virtual void LogGeneration(IPopulation<TIndividual> population, IFitnessCalculator<TIndividual> fitnessCalculator, int iteration)
         {
             History.Add(new Generation<TIndividual>(population, fitnessCalculator, iteration));
+            generationLogged?.Invoke(null, History.Last());
         }
+
+        public void AttachOnLogGenerationEvent(EventHandler<Generation<TIndividual>> eventHandler)
+        {
+            generationLogged += eventHandler;
+        }
+
+        protected EventHandler<Generation<TIndividual>> generationLogged;
     }
 }
