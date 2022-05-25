@@ -32,7 +32,7 @@ namespace GeneticAlgorithms
             SelectedGeneration = algorithm.Logger.History.Last();
         }
 
-        public async Task Optimize(int maxItrTotal, int maxItrNoImprovement, int maxLength)
+        public async Task Optimize(int? maxItrTotal, int? maxItrNoImprovement, int? maxLength)
         {
             int startIterations = algorithm.Iterations;
             await algorithm.Optimize(new Predicate<IGeneticAlgorithm<TravelingSalesPersonIndividual>>((algorithm) =>
@@ -44,13 +44,13 @@ namespace GeneticAlgorithms
                 }
 
                 //Max fitness check
-                if (algorithm.Logger?.History?.Last()?.HighestFitness >= int.MaxValue- maxLength)
+                if (maxLength!=null && algorithm.Logger?.History?.Last()?.HighestFitness >= int.MaxValue- maxLength)
                 {
                     return true;
                 }
 
                 //Max Total iterations check
-                if (algorithm.Iterations - startIterations >= maxItrTotal)
+                if (maxItrTotal!=null && algorithm.Iterations - startIterations >= maxItrTotal)
                 {
                     return true;
                 }
@@ -70,7 +70,7 @@ namespace GeneticAlgorithms
                     highestFitnessSoFar = algorithm.Logger?.History?.Last()?.HighestFitness;
                     return false;
                 }
-                if (algorithm.Iterations - prevIterations > maxItrNoImprovement)
+                if (maxItrNoImprovement != null && algorithm.Iterations - prevIterations > maxItrNoImprovement)
                 {
                     return true;
                 }

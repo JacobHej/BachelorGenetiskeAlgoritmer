@@ -37,9 +37,16 @@ namespace GeneticAlgorithms
             }
         }
 
-        public async Task Optimize(int maxItrTotal, int maxItrNoImprovement, int maxFitness)
+        public async Task Optimize(int? maxItrTotal, int? maxItrNoImprovement, int? maxFitness)
         {
             int startIterations = algorithm.Iterations;
+            int? highestFitnessSoFar = null;
+            if (algorithm.Logger?.History.Count > 0)
+            {
+                highestFitnessSoFar = algorithm.Logger.History.Last().HighestFitness;
+            }
+            
+            int prevIterations = startIterations;
             await algorithm.Optimize(new Predicate<IGeneticAlgorithm<BitStringIndividual>>((algorithm) =>
             {
                 
@@ -49,19 +56,20 @@ namespace GeneticAlgorithms
                 }
 
                 //Max fitness check
-                if (algorithm.Logger?.History?.Last()?.HighestFitness >= maxFitness)
+                if (maxFitness != null && algorithm.Logger?.History?.Last()?.HighestFitness >= maxFitness)
                 {
                     return true;
                 }
 
                 //Max Total iterations check
-                if (algorithm.Iterations-startIterations >= maxItrTotal)
+                if (maxItrTotal!=null && algorithm.Iterations-startIterations >= maxItrTotal)
                 {
                     return true;
                 }
 
-                int? highestFitnessSoFar = null;
-                int prevIterations = startIterations;
+                //Checcking if there is improvement and set timestamp if so
+                
+                
                 if (highestFitnessSoFar == null)
                 {
                     highestFitnessSoFar = algorithm.Logger?.History?.Last()?.HighestFitness;
@@ -75,7 +83,9 @@ namespace GeneticAlgorithms
                     highestFitnessSoFar = algorithm.Logger?.History?.Last()?.HighestFitness;
                     return false;
                 }
-                if (algorithm.Iterations - prevIterations > maxItrNoImprovement)
+
+                //If timestamp is too far away it means no improvement
+                if (maxItrNoImprovement != null && algorithm.Iterations - prevIterations > maxItrNoImprovement)
                 {
                     return true;
                 }

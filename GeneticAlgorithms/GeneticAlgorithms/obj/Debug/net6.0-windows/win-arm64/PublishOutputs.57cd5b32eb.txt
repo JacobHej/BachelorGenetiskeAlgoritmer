@@ -1,0 +1,12 @@
+C:\Users\KafferAffer\Downloads\Published\GeneticAlgorithms.pdb
+C:\Users\KafferAffer\Downloads\Published\D3DCompiler_47.dll
+C:\Users\KafferAffer\Downloads\Published\PenImc_cor3.dll
+C:\Users\KafferAffer\Downloads\Published\PresentationNative_cor3.dll
+C:\Users\KafferAffer\Downloads\Published\vcruntime140_cor3.dll
+C:\Users\KafferAffer\Downloads\Published\wpfgfx_cor3.dll
+C:\Users\KafferAffer\Downloads\Published\Algorithms.pdb
+C:\Users\KafferAffer\Downloads\Published\Benchmarking.pdb
+C:\Users\KafferAffer\Downloads\Published\Common.pdb
+C:\Users\KafferAffer\Downloads\Published\IOParsing.pdb
+C:\Users\KafferAffer\Downloads\Published\Visualization.pdb
+C:\Users\KafferAffer\Downloads\Published\GeneticAlgorithms.exe

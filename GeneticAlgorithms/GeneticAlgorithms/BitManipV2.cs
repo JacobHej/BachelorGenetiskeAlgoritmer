@@ -47,9 +47,9 @@ namespace GeneticAlgorithms
         {
             await Task.Run(async () =>
             {
-                int MaxItr_i = string.IsNullOrEmpty(MaxItr_tb.Text) ? 0 : int.Parse(MaxItr_tb.Text);
-                int ItrWithoutImpr_i = string.IsNullOrEmpty(ItrWithoutImpr_tb.Text) ? 0 : int.Parse(ItrWithoutImpr_tb.Text);
-                int TargetFitness_i = string.IsNullOrEmpty(TargetFitness_tb.Text) ? int.MaxValue : int.Parse(TargetFitness_tb.Text);
+                int? MaxItr_i = string.IsNullOrEmpty(MaxItr_tb.Text) ? null : int.Parse(MaxItr_tb.Text);
+                int? ItrWithoutImpr_i = string.IsNullOrEmpty(ItrWithoutImpr_tb.Text) ? null : int.Parse(ItrWithoutImpr_tb.Text);
+                int? TargetFitness_i = string.IsNullOrEmpty(TargetFitness_tb.Text) ? null : int.Parse(TargetFitness_tb.Text);
                 await model.Optimize(MaxItr_i, ItrWithoutImpr_i, TargetFitness_i);
             });
 

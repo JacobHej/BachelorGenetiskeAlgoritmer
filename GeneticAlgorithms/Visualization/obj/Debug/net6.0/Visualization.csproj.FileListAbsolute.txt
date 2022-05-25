@@ -15,7 +15,6 @@ C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\V
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.pdb
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Visualization.deps.json
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Visualization.dll
-C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\ref\Visualization.dll
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Visualization.pdb
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Common.dll
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\bin\Debug\net6.0\Common.pdb
@@ -28,3 +27,4 @@ C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.dll
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\ref\Visualization.dll
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\Visualization.pdb
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Visualization\obj\Debug\net6.0\refint\Visualization.dll

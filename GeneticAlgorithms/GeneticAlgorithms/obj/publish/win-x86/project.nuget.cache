@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "5rMyYlENqjdcenWvQUObqrn6ostI3rOTrO9JT82MU+orCzwi9xBQ9wQhxT8h/WBef7fTAnGd9Tg0buuxVqK2Dg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\KafferAffer\\source\\repos\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\GeneticAlgorithms\\GeneticAlgorithms.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\KafferAffer\\.nuget\\packages\\mathnet.numerics\\4.15.0\\mathnet.numerics.4.15.0.nupkg.sha512",
+    "C:\\Users\\KafferAffer\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\KafferAffer\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512",
+    "C:\\Users\\KafferAffer\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\6.0.2\\microsoft.netcore.app.runtime.win-x86.6.0.2.nupkg.sha512",
+    "C:\\Users\\KafferAffer\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\6.0.2\\microsoft.windowsdesktop.app.runtime.win-x86.6.0.2.nupkg.sha512",
+    "C:\\Users\\KafferAffer\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\6.0.2\\microsoft.aspnetcore.app.runtime.win-x86.6.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

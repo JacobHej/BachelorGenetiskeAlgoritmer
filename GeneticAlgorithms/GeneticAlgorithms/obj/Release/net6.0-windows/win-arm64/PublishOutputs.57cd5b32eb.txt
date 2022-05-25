@@ -1,0 +1,16 @@
+C:\Users\KafferAffer\Downloads\Published\GeneticAlgorithms.exe
+C:\Users\KafferAffer\Downloads\Published\GeneticAlgorithms.dll
+C:\Users\KafferAffer\Downloads\Published\GeneticAlgorithms.deps.json
+C:\Users\KafferAffer\Downloads\Published\GeneticAlgorithms.runtimeconfig.json
+C:\Users\KafferAffer\Downloads\Published\GeneticAlgorithms.pdb
+C:\Users\KafferAffer\Downloads\Published\MathNet.Numerics.dll
+C:\Users\KafferAffer\Downloads\Published\Algorithms.dll
+C:\Users\KafferAffer\Downloads\Published\Benchmarking.dll
+C:\Users\KafferAffer\Downloads\Published\Common.dll
+C:\Users\KafferAffer\Downloads\Published\IOParsing.dll
+C:\Users\KafferAffer\Downloads\Published\Visualization.dll
+C:\Users\KafferAffer\Downloads\Published\Algorithms.pdb
+C:\Users\KafferAffer\Downloads\Published\Benchmarking.pdb
+C:\Users\KafferAffer\Downloads\Published\Common.pdb
+C:\Users\KafferAffer\Downloads\Published\IOParsing.pdb
+C:\Users\KafferAffer\Downloads\Published\Visualization.pdb

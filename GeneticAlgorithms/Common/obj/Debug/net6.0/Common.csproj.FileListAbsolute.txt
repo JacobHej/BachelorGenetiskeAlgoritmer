@@ -23,7 +23,6 @@ C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\C
 C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\obj\Debug\net6.0\Common.pdb
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\bin\Debug\net6.0\Common.deps.json
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\bin\Debug\net6.0\Common.dll
-C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\bin\Debug\net6.0\ref\Common.dll
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\bin\Debug\net6.0\Common.pdb
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\obj\Debug\net6.0\Common.csproj.AssemblyReference.cache
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\obj\Debug\net6.0\Common.GeneratedMSBuildEditorConfig.editorconfig
@@ -33,3 +32,4 @@ C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\obj\Debug\net6.0\Common.dll
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\obj\Debug\net6.0\ref\Common.dll
 C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\obj\Debug\net6.0\Common.pdb
+C:\Users\KafferAffer\source\repos\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\Common\obj\Debug\net6.0\refint\Common.dll
