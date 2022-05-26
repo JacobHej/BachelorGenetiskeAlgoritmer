@@ -35,7 +35,12 @@ namespace Visualization.Components
             List<double> normalizedValues = new List<double>();
             double maxVal = values.MaxBy(x => x);
             values.ForEach(x => normalizedValues.Add(x / maxVal));
-
+            double jumpSize = 1;
+            if (values.Count>width)
+            {
+                jumpSize = values.Count / width;
+            }
+            
             for (int i = 0; i < values.Count; i++)
             {
                 Point p1 = new Point(lowerLeft.X + i * offSet + 10, lowerLeft.Y);

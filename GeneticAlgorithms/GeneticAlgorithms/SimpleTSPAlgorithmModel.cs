@@ -44,7 +44,7 @@ namespace GeneticAlgorithms
                 }
 
                 //Max fitness check
-                if (maxLength!=null && algorithm.Logger?.History?.Last()?.HighestFitness >= int.MaxValue- maxLength)
+                if (maxLength!=null && -algorithm.Logger?.History?.Last()?.HighestFitness <= maxLength)
                 {
                     return true;
                 }
