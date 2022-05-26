@@ -31,12 +31,28 @@ namespace GeneticAlgorithms
 
         }
 
-        private void test_btn_Click(object sender, EventArgs e)
+        private async void test_btn_Click(object sender, EventArgs e)
         {
-            TestModels.TSPTestModel model = new TestModels.TSPTestModel();
-            model.createAlgorithm();
-            TSPManipV2 A_Form = new TSPManipV2(model);
-            A_Form.Show();
+            //TestModels.TSPTestModel model = new TestModels.TSPTestModel();
+            //model.createAlgorithm();
+            //TSPManipV2 A_Form = new TSPManipV2(model);
+            //A_Form.Show();
+
+            BenchmarkModel model = new BenchmarkModel(@"C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\BenchmarkOutPutFolder");
+            await model.OnePlusOneEA_OneMax_OneOverN();
+            //await model.OnePlusOneEA_OneMax_OneOverNX();
+            //await model.OnePlusOneEA_LeadingOnes_OneOverN();
+            //await model.OnePlusOneEA_LeadingOnes_OneOverNX();
+            //await model.OnePlusOneEA_BinVal_OneOverN();
+            //await model.OnePlusOneEA_BinVal_OneOverNX();
+            //await model.OnePlusOneEA_TSP_TwoOpt();
+            //await model.OnePlusOneEA_TSP_TwoOptPoisson2();
+            //await model.OnePlusOneEA_TSP_TwoOptPoisson2_1And5MilIterations();
+            //await model.SimulatedAnnealing_OneMax_ALL();
+            //await model.SimulatedAnnealing_LeadingOnes_ALL();
+            //await model.SimulatedAnnealing_BinVal_ALL();
+            //await model.SimulatedAnnealing_TSP_ALL();
+           
         }
     }
 }

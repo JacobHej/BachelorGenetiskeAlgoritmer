@@ -13,10 +13,10 @@ namespace Common
         public BitString(int size)
         {
             Bits = new char[size];
-
+            Random r = new Random();
             for (int i = 0; i < Bits.Length; i++)
             {
-                Bits[i] = '0';
+                Bits[i] = r.Next(2) == 0 ? '0' : '1';
             }
         }
 

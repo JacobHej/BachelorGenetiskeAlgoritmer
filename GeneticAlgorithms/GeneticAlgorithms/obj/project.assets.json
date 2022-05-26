@@ -246,19 +246,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\KafferAffer\\.nuget\\packages\\": {}
+    "C:\\Users\\Jacob Hejlsberg\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\KafferAffer\\source\\repos\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\GeneticAlgorithms\\GeneticAlgorithms.csproj",
+      "projectUniqueName": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachNew\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\GeneticAlgorithms\\GeneticAlgorithms.csproj",
       "projectName": "GeneticAlgorithms",
-      "projectPath": "C:\\Users\\KafferAffer\\source\\repos\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\GeneticAlgorithms\\GeneticAlgorithms.csproj",
-      "packagesPath": "C:\\Users\\KafferAffer\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\KafferAffer\\source\\repos\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\GeneticAlgorithms\\obj\\",
+      "projectPath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachNew\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\GeneticAlgorithms\\GeneticAlgorithms.csproj",
+      "packagesPath": "C:\\Users\\Jacob Hejlsberg\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachNew\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\GeneticAlgorithms\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\KafferAffer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Jacob Hejlsberg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -272,20 +279,20 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\KafferAffer\\source\\repos\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Algorithms\\Algorithms.csproj": {
-              "projectPath": "C:\\Users\\KafferAffer\\source\\repos\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Algorithms\\Algorithms.csproj"
+            "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachNew\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Algorithms\\Algorithms.csproj": {
+              "projectPath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachNew\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Algorithms\\Algorithms.csproj"
             },
-            "C:\\Users\\KafferAffer\\source\\repos\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Benchmarking\\Benchmarking.csproj": {
-              "projectPath": "C:\\Users\\KafferAffer\\source\\repos\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Benchmarking\\Benchmarking.csproj"
+            "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachNew\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Benchmarking\\Benchmarking.csproj": {
+              "projectPath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachNew\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Benchmarking\\Benchmarking.csproj"
             },
-            "C:\\Users\\KafferAffer\\source\\repos\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj": {
-              "projectPath": "C:\\Users\\KafferAffer\\source\\repos\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj"
+            "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachNew\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj": {
+              "projectPath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachNew\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Common\\Common.csproj"
             },
-            "C:\\Users\\KafferAffer\\source\\repos\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\IOParsing\\IOParsing.csproj": {
-              "projectPath": "C:\\Users\\KafferAffer\\source\\repos\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\IOParsing\\IOParsing.csproj"
+            "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachNew\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\IOParsing\\IOParsing.csproj": {
+              "projectPath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachNew\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\IOParsing\\IOParsing.csproj"
             },
-            "C:\\Users\\KafferAffer\\source\\repos\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Visualization\\Visualization.csproj": {
-              "projectPath": "C:\\Users\\KafferAffer\\source\\repos\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Visualization\\Visualization.csproj"
+            "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachNew\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Visualization\\Visualization.csproj": {
+              "projectPath": "C:\\Users\\Jacob Hejlsberg\\Desktop\\BachNew\\BachelorGenetiskeAlgoritmer\\GeneticAlgorithms\\Visualization\\Visualization.csproj"
             }
           }
         }
@@ -317,7 +324,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

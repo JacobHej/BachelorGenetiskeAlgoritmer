@@ -23,7 +23,7 @@ namespace Algorithms.OnePlusOneEA
 
         protected int fitness = int.MinValue;
 
-        public int Mu;
+        public int Lambda;
         public int CrossoverProbability;
         public int maxAttempts = 1000;
 
@@ -45,7 +45,7 @@ namespace Algorithms.OnePlusOneEA
             this.selector = selector;
             this.Logger = logger;
             this.replacer = replacer;
-            this.Mu = mu;
+            this.Lambda = mu;
             this.CrossoverProbability = (int) Math.Round((crossoverProbability * 100) % 100);
         }
 
@@ -64,7 +64,7 @@ namespace Algorithms.OnePlusOneEA
                     List<TIndividual> newIndividuals = new List<TIndividual>();
                     Random random = new Random();
 
-                    for (int i = 0; i < Mu; i++)
+                    for (int i = 0; i < Lambda; i++)
                     {
                         TIndividual newIndividual;
 
@@ -90,7 +90,7 @@ namespace Algorithms.OnePlusOneEA
                         newIndividuals.Add(newIndividual);
                     }
 
-                    TPopulation newPopulation = replacer.Replace(population, newIndividuals, fitnessCalculator);
+                    TPopulation newPopulation = replacer.Replace(population, newIndividuals.Concat(population.Individuals).ToList(), fitnessCalculator);
 
                     int newFitness = 0;
                     newPopulation.Individuals.ForEach(i => newFitness += fitnessCalculator.CalculateFitness(i));

@@ -18,15 +18,17 @@ namespace Benchmarking
             Predicate<IGeneticAlgorithm<TIndividual>> timedStoppingCriteria =
                 (algorithm) => { return stoppingCriteria(algorithm) || cancellationToken.IsCancellationRequested; };
 
-            Task<IterationSummary<TIndividual>>[] tasks = new Task<IterationSummary<TIndividual>>[amountOfTests];
+            Task<BenchmarkSummary<TIndividual>.IterationSummary<TIndividual>>[] tasks 
+                = new Task<BenchmarkSummary<TIndividual>.IterationSummary<TIndividual>>[amountOfTests];
 
             for (int i = 0; i < amountOfTests; i++)
             {
 #pragma warning disable CS8619 // Nullability of reference types in value doesn't match target type.
-                tasks[i] = Task<IterationSummary<TIndividual>>.Run(async () =>
+                tasks[i] = Task<BenchmarkSummary<TIndividual>.IterationSummary<TIndividual>>.Run(async () =>
                 {
                     IGeneticAlgorithm<TIndividual> algorithm = algorithmFactory();
-                    IterationSummary<TIndividual> iteration = new IterationSummary<TIndividual>();
+                    BenchmarkSummary<TIndividual>.IterationSummary<TIndividual> iteration 
+                        = new BenchmarkSummary<TIndividual>.IterationSummary<TIndividual>();
 
                     await algorithm.Optimize(timedStoppingCriteria);
 
@@ -58,7 +60,9 @@ namespace Benchmarking
             int maxGen = int.MinValue;
             double meanGen = 0;
 
-            List<IGeneticAlgorithm<TIndividual>> algorithms = new List<IGeneticAlgorithm<TIndividual>>();
+            int minItr = int.MaxValue;
+            int maxItr = int.MinValue;
+            double meanItr = 0;
 
             foreach (var result in results)
             {
@@ -67,7 +71,9 @@ namespace Benchmarking
                 maxGen = Math.Max(maxGen, result.Generations);
                 meanGen += result.Generations;
 
-                algorithms.Add(result.Algorithm);
+                minItr = Math.Min(minItr, result.Algorithm.Iterations);
+                maxItr = Math.Max(maxItr, result.Algorithm.Iterations);
+                meanItr += result.Algorithm.Iterations;
                 count++;
             }
 
@@ -78,7 +84,10 @@ namespace Benchmarking
                 (int)Math.Round(meanGen / count),
                 minGen,
                 maxGen,
-                algorithms);
+                (int)Math.Round(meanItr / count),
+                minItr,
+                maxItr,
+                results.ToList());
         }
 
         public static async Task<BenchmarkSummary<TIndividual>> BenchmarkSynchronousAsync<TIndividual>(
@@ -87,13 +96,15 @@ namespace Benchmarking
            int amountOfTests = 100, int testTimeout = int.MaxValue)
            where TIndividual : IIndividual
         {
-            List<IterationSummary<TIndividual>> summeries = new List<IterationSummary<TIndividual>>();
+            List<BenchmarkSummary<TIndividual>.IterationSummary<TIndividual>> summeries 
+                = new List<BenchmarkSummary<TIndividual>.IterationSummary<TIndividual>>();
 
             for (int i = 0; i < amountOfTests; i++)
             {
 #pragma warning disable CS8619 // Nullability of reference types in value doesn't match target type.
                 IGeneticAlgorithm<TIndividual> algorithm = algorithmFactory();
-                IterationSummary<TIndividual> iteration = new IterationSummary<TIndividual>();
+                BenchmarkSummary<TIndividual>.IterationSummary<TIndividual> iteration 
+                    = new BenchmarkSummary<TIndividual>.IterationSummary<TIndividual>();
 
                 CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
                 CancellationToken cancellationToken = cancellationTokenSource.Token;
@@ -101,11 +112,19 @@ namespace Benchmarking
                     (algorithm) => { return stoppingCriteria(algorithm) || cancellationToken.IsCancellationRequested; };
 
                 Stopwatch stopWatch = new Stopwatch();
+
+                algorithm.Logger.AttachOnLogGenerationEvent(
+                    (sender, generation) => iteration.GenerationTimeStamps.Add(stopWatch.ElapsedMilliseconds));
+
                 stopWatch.Start();
 
                 Task task;
                 if (await Task.WhenAny(task = algorithm.Optimize(timedStoppingCriteria), Task.Delay(testTimeout)) != task)
-                    cancellationTokenSource.Cancel(); iteration.TaskTimedOut = true;
+                {
+                    cancellationTokenSource.Cancel(); 
+                    iteration.TaskTimedOut = true; 
+                    await task;
+                }
 
                 stopWatch.Stop();
 
@@ -127,7 +146,9 @@ namespace Benchmarking
             int maxGen = int.MinValue;
             double meanGen = 0;
 
-            List<IGeneticAlgorithm<TIndividual>> algorithms = new List<IGeneticAlgorithm<TIndividual>>();
+            int minItr = int.MaxValue;
+            int maxItr = int.MinValue;
+            double meanItr = 0;
 
             foreach (var result in summeries)
             {
@@ -141,7 +162,9 @@ namespace Benchmarking
                 maxGen = Math.Max(maxGen, result.Generations);
                 meanGen += result.Generations;
 
-                algorithms.Add(result.Algorithm);
+                minItr = Math.Min(minItr, result.Algorithm.Iterations);
+                maxItr = Math.Max(maxItr, result.Algorithm.Iterations);
+                meanItr += result.Algorithm.Iterations;
                 count++;
             }
 
@@ -152,15 +175,10 @@ namespace Benchmarking
                 (int)Math.Round(meanGen / count),
                 minGen,
                 maxGen,
-                algorithms);
-        }
-
-        private sealed class IterationSummary<TIndividual> where TIndividual : IIndividual
-        {
-            public bool TaskTimedOut;
-            public int Generations;
-            public double OptimizationTime;
-            public IGeneticAlgorithm<TIndividual> Algorithm;
+                (int)Math.Round(meanItr / count),
+                minItr,
+                maxItr,
+                summeries);
         }
     }
 }
