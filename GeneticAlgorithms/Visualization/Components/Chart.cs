@@ -40,7 +40,12 @@ namespace Visualization.Components
             }
             
             double maxVal = values.MaxBy(x => x);
-            var yscale = maxVal / height;
+            double yscale = 0;
+            if (maxVal > 0)
+            {
+                yscale = height / maxVal;
+            }
+            
 
 
 
@@ -48,7 +53,7 @@ namespace Visualization.Components
             for (double i = 0; i < Math.Min(values.Count,(width-20)); i++)
             {
                 Point p1 = new Point(lowerLeft.X + (int)(i * offSet) + 10, lowerLeft.Y);
-                Point p2 = new Point(location.X + (int)(i * offSet) + 10, (int)Math.Round(lowerLeft.Y - (lowerLeft.Y - location.Y) * yscale));
+                Point p2 = new Point(location.X + (int)(i * offSet) + 10, (int)Math.Round((lowerLeft.Y) -  values[(int)(i*jump)] * yscale));
                 new ChartLine(p1, p2, Color.Blue, (float)(offSet * 0.1)).Draw(g);
             }
 
