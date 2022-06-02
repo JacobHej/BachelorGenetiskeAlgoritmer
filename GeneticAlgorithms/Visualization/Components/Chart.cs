@@ -39,14 +39,16 @@ namespace Visualization.Components
                 
             }
             
-            List<double> normalizedValues = new List<double>();
             double maxVal = values.MaxBy(x => x);
-            values.ForEach(x => normalizedValues.Add(x / maxVal));
-            
+            var yscale = maxVal / height;
+
+
+
+
             for (double i = 0; i < Math.Min(values.Count,(width-20)); i++)
             {
                 Point p1 = new Point(lowerLeft.X + (int)(i * offSet) + 10, lowerLeft.Y);
-                Point p2 = new Point(location.X + (int)(i * offSet) + 10, (int)Math.Round(lowerLeft.Y - (lowerLeft.Y - location.Y) * normalizedValues[(int)(i*jump)]));
+                Point p2 = new Point(location.X + (int)(i * offSet) + 10, (int)Math.Round(lowerLeft.Y - (lowerLeft.Y - location.Y) * yscale));
                 new ChartLine(p1, p2, Color.Blue, (float)(offSet * 0.1)).Draw(g);
             }
 
