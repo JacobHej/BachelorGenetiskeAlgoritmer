@@ -82,7 +82,7 @@ namespace GeneticAlgorithms
                 try
                 {
                     this.Invoke(new Action(() => this.Invalidate(true)));
-                } catch (ObjectDisposedException ex)
+                } catch (Exception ex)
                 {
                     model.EvolutionSimulation.Stop();
                 }
