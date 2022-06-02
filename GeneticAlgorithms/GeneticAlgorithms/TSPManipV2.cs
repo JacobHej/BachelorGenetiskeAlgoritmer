@@ -25,7 +25,7 @@ namespace GeneticAlgorithms
         private void graph_pb_Paint(object sender, PaintEventArgs e)
         {
             int padding = 50;
-            if (model.algorithm.Logger.History.Count > 0)
+            if (model.SelectedGeneration != null)
             {
 
                 SimpleGraph graph = Converter.CoordinateGraphToSimpleGraph(
