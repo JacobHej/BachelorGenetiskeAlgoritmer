@@ -10,14 +10,26 @@ namespace Common
     {
         public char[] Bits;
 
-        public BitString(int size)
+
+        public BitString(int size, bool random = true)
         {
             Bits = new char[size];
-            Random r = new Random();
-            for (int i = 0; i < Bits.Length; i++)
+            if (random)
             {
-                Bits[i] = r.Next(2) == 0 ? '0' : '1';
+                Random r = new Random();
+                for (int i = 0; i < Bits.Length; i++)
+                {
+                    Bits[i] = r.Next(2) == 0 ? '0' : '1';
+                }
             }
+            else
+            {
+                for (int i = 0; i < Bits.Length; i++)
+                {
+                    Bits[i] = '0';
+                }
+            }
+            
         }
 
 

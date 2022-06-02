@@ -24,7 +24,7 @@ namespace GeneticAlgorithms.CreateSimulationForms.BitStringOnePlusOneEA
         {
             this.problem = problem;
             InitializeComponent();
-            this.headline.Text = "Binary Value - One Plus One EA";
+            this.headline.Text = headlineText;
         }
 
         protected override void createAlgorithm_Click(object sender, EventArgs e)

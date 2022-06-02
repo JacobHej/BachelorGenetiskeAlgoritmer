@@ -102,6 +102,10 @@ namespace Algorithms.OnePlusOneEA
                         Logger.LogGeneration(newPopulation, fitnessCalculator, iterations);
                         return;
                     }
+                    else if(newFitness<fitness)
+                    {
+                        int illebjerg = 10;
+                    }
                 }
             });
         }

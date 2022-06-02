@@ -13,9 +13,9 @@ namespace Algorithms
     {
         public BitString Solution { get; protected set; }
 
-        public BitStringIndividual(int size)
+        public BitStringIndividual(int size, bool random = true)
         {
-            Solution = new BitString(size);
+            Solution = new BitString(size, random);
         }
 
         public BitStringIndividual(BitString sol)

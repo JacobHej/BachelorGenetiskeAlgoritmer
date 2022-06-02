@@ -61,7 +61,7 @@ namespace GeneticAlgorithms.CreateSimulationForms.BitStringSelector
                 int x = int.Parse(BitStringLengthInput.Text);
                 if (x > 0)
                 {
-                    return () => new BitStringIndividual(x);
+                    return () => new BitStringIndividual(x,false);
                 }
                 throw new ArgumentException("bit string length was not positve");
             }

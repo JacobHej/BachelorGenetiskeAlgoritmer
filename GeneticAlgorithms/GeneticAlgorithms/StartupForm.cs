@@ -39,7 +39,8 @@ namespace GeneticAlgorithms
             //A_Form.Show();
 
             BenchmarkModel model = new BenchmarkModel(@"C:\Users\Jacob Hejlsberg\Desktop\BachelorGenetiskeAlgoritmer\GeneticAlgorithms\BenchmarkOutPutFolder");
-            await model.OnePlusOneEA_OneMax_OneOverN();
+            await model.ErikTest();
+            //await model.OnePlusOneEA_OneMax_OneOverN();
             //await model.OnePlusOneEA_OneMax_OneOverNX();
             //await model.OnePlusOneEA_LeadingOnes_OneOverN();
             //await model.OnePlusOneEA_LeadingOnes_OneOverNX();
@@ -52,6 +53,9 @@ namespace GeneticAlgorithms
             //await model.SimulatedAnnealing_LeadingOnes_ALL();
             //await model.SimulatedAnnealing_BinVal_ALL();
             //await model.SimulatedAnnealing_TSP_ALL();
+
+
+
            
         }
     }

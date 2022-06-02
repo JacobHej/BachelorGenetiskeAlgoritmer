@@ -29,6 +29,35 @@ namespace GeneticAlgorithms
         }
 
         #region MuPlusLambda
+
+        public async Task ErikTest()
+        {
+
+            ResourceManager.tspFiles.TryGetValue("berlin52", out String[] tspFilePaths);
+            CoordinateGraph g = Parser.LoadTSPGraph(tspFilePaths[0]);
+
+            BenchmarkSummary<TravelingSalesPersonIndividual> result = await Benchmarker.BenchmarkSynchronousAsync<TravelingSalesPersonIndividual>(
+                            new Func<MuPlusLambdaEaAlgorithm<TravelingSalesPersonPopulation, TravelingSalesPersonIndividual>>(() =>
+                                new MuPlusLambdaEaAlgorithm<TravelingSalesPersonPopulation, TravelingSalesPersonIndividual>(
+                                    new PartiallyMatchedCrossover(),
+                                    new PoissonTwoOptMutator(2),
+                                    new TravelingSalesPersonFitnessCalculator(),
+                                    new RandomSelector<TravelingSalesPersonPopulation, TravelingSalesPersonIndividual>(),
+                                    new BenchmarkLogger<TravelingSalesPersonIndividual>(),
+                                    new ReplaceWorstReplacer<TravelingSalesPersonPopulation, TravelingSalesPersonIndividual>(),
+                                    new TravelingSalesPersonPopulation(1, g),
+                                    1,
+                                    0
+                                )
+                                ),
+                            new Predicate<IGeneticAlgorithm<TravelingSalesPersonIndividual>>((algorithm) =>
+                            {
+                                return algorithm.Iterations > 50000;
+                            }),
+                            10
+                            );
+        }
+
         private async Task MuPlusLambdaRegressionToOnePLusOneEATSP(CoordinateGraph g)
         {
             BenchmarkSummary<TravelingSalesPersonIndividual> result = await Benchmarker.BenchmarkSynchronousAsync<TravelingSalesPersonIndividual>(
@@ -1088,7 +1117,7 @@ The stopping criteria was finding the optimal solution with no timeout";
                 int[] internalResult = new int[amountOfIntervals];
                 for(int intervalCounter = 1; intervalCounter<amountOfIntervals; intervalCounter++)
                 {
-                    while(generationCounter< itrLst.Count && itrLst[generationCounter] <= intervalCounter * itrInterval)
+                    while(generationCounter < itrLst.Count && itrLst[generationCounter] <= intervalCounter * itrInterval)
                     {
                         prevFitness = fitLst[generationCounter];
                         generationCounter++;

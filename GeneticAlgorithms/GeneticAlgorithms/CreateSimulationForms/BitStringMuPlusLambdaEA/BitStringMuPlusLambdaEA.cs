@@ -31,7 +31,7 @@ namespace GeneticAlgorithms.CreateSimulationForms.BitStringMuPlusLambdaEA
         {
             BitStringMuPlusLambdaEAModel model = new BitStringMuPlusLambdaEAModel();
             int mu = MPLSel.getMu();
-            int lambda = MPLSel.getMu();
+            int lambda = MPLSel.getLambda();
             double crossOver = MPLSel.getCrossover();
             Func<BitStringIndividual> bitLengthCreator = BitSel.GetBitStringCreator();
             model.createAlgorithm(problem, bitLengthCreator, mu, lambda, crossOver);

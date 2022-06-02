@@ -30,21 +30,23 @@ namespace Visualization.Components
             new ChartLine(new Point(location.X, location.Y + height), new Point(location.X + width, location.Y + height), Color.Black, 3).Draw(g);
 
             Point lowerLeft = new Point(location.X, location.Y + height);
-            int offSet = (width - 20) / values.Count;
+            double offSet = ((double)width - (double)20) / values.Count;
+            double jump = 1;
+            while (offSet < 1)
+            {
+                jump = jump / offSet;
+                offSet = 1;
+                
+            }
             
             List<double> normalizedValues = new List<double>();
             double maxVal = values.MaxBy(x => x);
             values.ForEach(x => normalizedValues.Add(x / maxVal));
-            double jumpSize = 1;
-            if (values.Count>width)
-            {
-                jumpSize = values.Count / width;
-            }
             
-            for (int i = 0; i < values.Count; i++)
+            for (double i = 0; i < Math.Min(values.Count,(width-20)); i++)
             {
-                Point p1 = new Point(lowerLeft.X + i * offSet + 10, lowerLeft.Y);
-                Point p2 = new Point(location.X + i * offSet + 10, (int)Math.Round(lowerLeft.Y - (lowerLeft.Y - location.Y) * normalizedValues[i]));
+                Point p1 = new Point(lowerLeft.X + (int)(i * offSet) + 10, lowerLeft.Y);
+                Point p2 = new Point(location.X + (int)(i * offSet) + 10, (int)Math.Round(lowerLeft.Y - (lowerLeft.Y - location.Y) * normalizedValues[(int)(i*jump)]));
                 new ChartLine(p1, p2, Color.Blue, (float)(offSet * 0.1)).Draw(g);
             }
 
